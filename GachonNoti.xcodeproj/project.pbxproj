@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BE92FA7EE6AF1D622F8EFB3 /* Pods_GachonNoti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8AFDC350F255A5D1B89B1D /* Pods_GachonNoti.framework */; };
+		9E4CF9EE6DA47DE6FD71FC39 /* Pods_GachonNotiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51202F3BBA32F3800125DA7B /* Pods_GachonNotiTests.framework */; };
+		C8E421A78AE3EC525153C9FB /* Pods_GachonNotiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E05A45F827AD526D15D5D6 /* Pods_GachonNotiUITests.framework */; };
+		CEC3DDB522BFD5EE00230441 /* maintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3DDB322BFD5EE00230441 /* maintable.swift */; };
+		CEC3DDB622BFD5EE00230441 /* maintablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3DDB422BFD5EE00230441 /* maintablePresenter.swift */; };
 		CEFB9D8622BF899000D685DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB9D8522BF899000D685DC /* AppDelegate.swift */; };
-		CEFB9D8822BF899000D685DC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB9D8722BF899000D685DC /* FirstViewController.swift */; };
-		CEFB9D8A22BF899000D685DC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB9D8922BF899000D685DC /* SecondViewController.swift */; };
 		CEFB9D8D22BF899000D685DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFB9D8B22BF899000D685DC /* Main.storyboard */; };
 		CEFB9D8F22BF899300D685DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFB9D8E22BF899300D685DC /* Assets.xcassets */; };
 		CEFB9D9222BF899300D685DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFB9D9022BF899300D685DC /* LaunchScreen.storyboard */; };
 		CEFB9D9D22BF899300D685DC /* GachonNotiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB9D9C22BF899300D685DC /* GachonNotiTests.swift */; };
 		CEFB9DA822BF899400D685DC /* GachonNotiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB9DA722BF899400D685DC /* GachonNotiUITests.swift */; };
+		CEFB9DB622BF8AAB00D685DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEFB9DB522BF8AAB00D685DC /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +39,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		370D9F07C353819D097D9207 /* Pods-GachonNotiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachonNotiUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GachonNotiUITests/Pods-GachonNotiUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3AA4967124002D87A02CBDC2 /* Pods-GachonNoti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachonNoti.release.xcconfig"; path = "Pods/Target Support Files/Pods-GachonNoti/Pods-GachonNoti.release.xcconfig"; sourceTree = "<group>"; };
+		3C8BF745723F9436616A5B5A /* Pods-GachonNotiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachonNotiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GachonNotiTests/Pods-GachonNotiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		51202F3BBA32F3800125DA7B /* Pods_GachonNotiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachonNotiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B8AFDC350F255A5D1B89B1D /* Pods_GachonNoti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachonNoti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8E05A45F827AD526D15D5D6 /* Pods_GachonNotiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachonNotiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD20B9307C16596F90365ACA /* Pods-GachonNotiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachonNotiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GachonNotiUITests/Pods-GachonNotiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CEC3DDB322BFD5EE00230441 /* maintable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = maintable.swift; sourceTree = "<group>"; };
+		CEC3DDB422BFD5EE00230441 /* maintablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = maintablePresenter.swift; sourceTree = "<group>"; };
 		CEFB9D8222BF899000D685DC /* GachonNoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GachonNoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFB9D8522BF899000D685DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEFB9D8722BF899000D685DC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		CEFB9D8922BF899000D685DC /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		CEFB9D8C22BF899000D685DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEFB9D8E22BF899300D685DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEFB9D9122BF899300D685DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +60,10 @@
 		CEFB9DA322BF899300D685DC /* GachonNotiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GachonNotiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFB9DA722BF899400D685DC /* GachonNotiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GachonNotiUITests.swift; sourceTree = "<group>"; };
 		CEFB9DA922BF899400D685DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEFB9DB522BF8AAB00D685DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEFB9DB722BF8CCF00D685DC /* GachonNoti.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GachonNoti.entitlements; sourceTree = "<group>"; };
+		D805E3AB9D152D92B84EEDBC /* Pods-GachonNoti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachonNoti.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GachonNoti/Pods-GachonNoti.debug.xcconfig"; sourceTree = "<group>"; };
+		FF7E5DEC6E8710A6F8EEFBE1 /* Pods-GachonNotiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachonNotiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GachonNotiTests/Pods-GachonNotiTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BE92FA7EE6AF1D622F8EFB3 /* Pods_GachonNoti.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E4CF9EE6DA47DE6FD71FC39 /* Pods_GachonNotiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +87,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8E421A78AE3EC525153C9FB /* Pods_GachonNotiUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		155D98B605ACEB85B40BC620 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B8AFDC350F255A5D1B89B1D /* Pods_GachonNoti.framework */,
+				51202F3BBA32F3800125DA7B /* Pods_GachonNotiTests.framework */,
+				B8E05A45F827AD526D15D5D6 /* Pods_GachonNotiUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D21182A9268A177F55EF8F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D805E3AB9D152D92B84EEDBC /* Pods-GachonNoti.debug.xcconfig */,
+				3AA4967124002D87A02CBDC2 /* Pods-GachonNoti.release.xcconfig */,
+				3C8BF745723F9436616A5B5A /* Pods-GachonNotiTests.debug.xcconfig */,
+				FF7E5DEC6E8710A6F8EEFBE1 /* Pods-GachonNotiTests.release.xcconfig */,
+				370D9F07C353819D097D9207 /* Pods-GachonNotiUITests.debug.xcconfig */,
+				CD20B9307C16596F90365ACA /* Pods-GachonNotiUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CEC3DDAD22BFCE0100230441 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				CEC3DDB322BFD5EE00230441 /* maintable.swift */,
+				CEC3DDB422BFD5EE00230441 /* maintablePresenter.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		CEC3DDAE22BFCE0F00230441 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
 		CEFB9D7922BF899000D685DC = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +140,8 @@
 				CEFB9D9B22BF899300D685DC /* GachonNotiTests */,
 				CEFB9DA622BF899400D685DC /* GachonNotiUITests */,
 				CEFB9D8322BF899000D685DC /* Products */,
+				1D21182A9268A177F55EF8F1 /* Pods */,
+				155D98B605ACEB85B40BC620 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +158,11 @@
 		CEFB9D8422BF899000D685DC /* GachonNoti */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3DDAE22BFCE0F00230441 /* setting */,
+				CEC3DDAD22BFCE0100230441 /* main */,
+				CEFB9DB722BF8CCF00D685DC /* GachonNoti.entitlements */,
+				CEFB9DB522BF8AAB00D685DC /* GoogleService-Info.plist */,
 				CEFB9D8522BF899000D685DC /* AppDelegate.swift */,
-				CEFB9D8722BF899000D685DC /* FirstViewController.swift */,
-				CEFB9D8922BF899000D685DC /* SecondViewController.swift */,
 				CEFB9D8B22BF899000D685DC /* Main.storyboard */,
 				CEFB9D8E22BF899300D685DC /* Assets.xcassets */,
 				CEFB9D9022BF899300D685DC /* LaunchScreen.storyboard */,
@@ -135,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEFB9DAC22BF899400D685DC /* Build configuration list for PBXNativeTarget "GachonNoti" */;
 			buildPhases = (
+				687A576DA3C9B113D16C5401 /* [CP] Check Pods Manifest.lock */,
 				CEFB9D7E22BF899000D685DC /* Sources */,
 				CEFB9D7F22BF899000D685DC /* Frameworks */,
 				CEFB9D8022BF899000D685DC /* Resources */,
+				394838647E6BBDA77C44729A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +215,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEFB9DAF22BF899400D685DC /* Build configuration list for PBXNativeTarget "GachonNotiTests" */;
 			buildPhases = (
+				4A1808710CD5507937E5AFA3 /* [CP] Check Pods Manifest.lock */,
 				CEFB9D9422BF899300D685DC /* Sources */,
 				CEFB9D9522BF899300D685DC /* Frameworks */,
 				CEFB9D9622BF899300D685DC /* Resources */,
@@ -170,6 +234,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEFB9DB222BF899400D685DC /* Build configuration list for PBXNativeTarget "GachonNotiUITests" */;
 			buildPhases = (
+				F5D669EEB3AF9D59DD41F9B4 /* [CP] Check Pods Manifest.lock */,
 				CEFB9D9F22BF899300D685DC /* Sources */,
 				CEFB9DA022BF899300D685DC /* Frameworks */,
 				CEFB9DA122BF899300D685DC /* Resources */,
@@ -196,6 +261,11 @@
 				TargetAttributes = {
 					CEFB9D8122BF899000D685DC = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					CEFB9D9722BF899300D685DC = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -233,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEFB9D9222BF899300D685DC /* LaunchScreen.storyboard in Resources */,
+				CEFB9DB622BF8AAB00D685DC /* GoogleService-Info.plist in Resources */,
 				CEFB9D8F22BF899300D685DC /* Assets.xcassets in Resources */,
 				CEFB9D8D22BF899000D685DC /* Main.storyboard in Resources */,
 			);
@@ -254,14 +325,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		394838647E6BBDA77C44729A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GachonNoti/Pods-GachonNoti-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GachonNoti/Pods-GachonNoti-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A1808710CD5507937E5AFA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GachonNotiTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		687A576DA3C9B113D16C5401 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GachonNoti-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5D669EEB3AF9D59DD41F9B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GachonNotiUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CEFB9D7E22BF899000D685DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEFB9D8A22BF899000D685DC /* SecondViewController.swift in Sources */,
 				CEFB9D8622BF899000D685DC /* AppDelegate.swift in Sources */,
-				CEFB9D8822BF899000D685DC /* FirstViewController.swift in Sources */,
+				CEC3DDB622BFD5EE00230441 /* maintablePresenter.swift in Sources */,
+				CEC3DDB522BFD5EE00230441 /* maintable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,8 +600,10 @@
 		};
 		CEFB9DAD22BF899400D685DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D805E3AB9D152D92B84EEDBC /* Pods-GachonNoti.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GachonNoti/GachonNoti.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V8NQD3S88F;
 				INFOPLIST_FILE = GachonNoti/Info.plist;
@@ -452,8 +620,10 @@
 		};
 		CEFB9DAE22BF899400D685DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AA4967124002D87A02CBDC2 /* Pods-GachonNoti.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GachonNoti/GachonNoti.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V8NQD3S88F;
 				INFOPLIST_FILE = GachonNoti/Info.plist;
@@ -470,6 +640,7 @@
 		};
 		CEFB9DB022BF899400D685DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C8BF745723F9436616A5B5A /* Pods-GachonNotiTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -491,6 +662,7 @@
 		};
 		CEFB9DB122BF899400D685DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF7E5DEC6E8710A6F8EEFBE1 /* Pods-GachonNotiTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +684,7 @@
 		};
 		CEFB9DB322BF899400D685DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 370D9F07C353819D097D9207 /* Pods-GachonNotiUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +705,7 @@
 		};
 		CEFB9DB422BF899400D685DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD20B9307C16596F90365ACA /* Pods-GachonNotiUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
