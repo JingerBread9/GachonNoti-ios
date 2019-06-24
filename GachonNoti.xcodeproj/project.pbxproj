@@ -10,6 +10,10 @@
 		4BE92FA7EE6AF1D622F8EFB3 /* Pods_GachonNoti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8AFDC350F255A5D1B89B1D /* Pods_GachonNoti.framework */; };
 		9E4CF9EE6DA47DE6FD71FC39 /* Pods_GachonNotiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51202F3BBA32F3800125DA7B /* Pods_GachonNotiTests.framework */; };
 		C8E421A78AE3EC525153C9FB /* Pods_GachonNotiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E05A45F827AD526D15D5D6 /* Pods_GachonNotiUITests.framework */; };
+		CE576A8422C0D8B400E1BA5B /* requestHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8322C0D8B400E1BA5B /* requestHTTP.swift */; };
+		CE576A8722C0F2BE00E1BA5B /* mainDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8622C0F2BE00E1BA5B /* mainDetail.swift */; };
+		CE576A8922C0F2CF00E1BA5B /* mainDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8822C0F2CF00E1BA5B /* mainDetailPresenter.swift */; };
+		CE576A8B22C0F7C600E1BA5B /* strFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8A22C0F7C600E1BA5B /* strFunc.swift */; };
 		CEC3DDB522BFD5EE00230441 /* maintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3DDB322BFD5EE00230441 /* maintable.swift */; };
 		CEC3DDB622BFD5EE00230441 /* maintablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3DDB422BFD5EE00230441 /* maintablePresenter.swift */; };
 		CEFB9D8622BF899000D685DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB9D8522BF899000D685DC /* AppDelegate.swift */; };
@@ -46,6 +50,10 @@
 		7B8AFDC350F255A5D1B89B1D /* Pods_GachonNoti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachonNoti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E05A45F827AD526D15D5D6 /* Pods_GachonNotiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachonNotiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD20B9307C16596F90365ACA /* Pods-GachonNotiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachonNotiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GachonNotiUITests/Pods-GachonNotiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CE576A8322C0D8B400E1BA5B /* requestHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = requestHTTP.swift; sourceTree = "<group>"; };
+		CE576A8622C0F2BE00E1BA5B /* mainDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainDetail.swift; sourceTree = "<group>"; };
+		CE576A8822C0F2CF00E1BA5B /* mainDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainDetailPresenter.swift; sourceTree = "<group>"; };
+		CE576A8A22C0F7C600E1BA5B /* strFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strFunc.swift; sourceTree = "<group>"; };
 		CEC3DDB322BFD5EE00230441 /* maintable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = maintable.swift; sourceTree = "<group>"; };
 		CEC3DDB422BFD5EE00230441 /* maintablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = maintablePresenter.swift; sourceTree = "<group>"; };
 		CEFB9D8222BF899000D685DC /* GachonNoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GachonNoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +125,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE576A8522C0F2A900E1BA5B /* mainDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CE576A8622C0F2BE00E1BA5B /* mainDetail.swift */,
+				CE576A8822C0F2CF00E1BA5B /* mainDetailPresenter.swift */,
+			);
+			path = mainDetail;
+			sourceTree = "<group>";
+		};
 		CEC3DDAD22BFCE0100230441 /* main */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +175,10 @@
 		CEFB9D8422BF899000D685DC /* GachonNoti */ = {
 			isa = PBXGroup;
 			children = (
+				CE576A8A22C0F7C600E1BA5B /* strFunc.swift */,
+				CE576A8322C0D8B400E1BA5B /* requestHTTP.swift */,
 				CEC3DDAE22BFCE0F00230441 /* setting */,
+				CE576A8522C0F2A900E1BA5B /* mainDetail */,
 				CEC3DDAD22BFCE0100230441 /* main */,
 				CEFB9DB722BF8CCF00D685DC /* GachonNoti.entitlements */,
 				CEFB9DB522BF8AAB00D685DC /* GoogleService-Info.plist */,
@@ -336,7 +356,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GachonNoti/Pods-GachonNoti-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -344,7 +366,9 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,8 +449,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE576A8722C0F2BE00E1BA5B /* mainDetail.swift in Sources */,
+				CE576A8B22C0F7C600E1BA5B /* strFunc.swift in Sources */,
 				CEFB9D8622BF899000D685DC /* AppDelegate.swift in Sources */,
+				CE576A8422C0D8B400E1BA5B /* requestHTTP.swift in Sources */,
 				CEC3DDB622BFD5EE00230441 /* maintablePresenter.swift in Sources */,
+				CE576A8922C0F2CF00E1BA5B /* mainDetailPresenter.swift in Sources */,
 				CEC3DDB522BFD5EE00230441 /* maintable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

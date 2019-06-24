@@ -81,11 +81,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Print full message.
         print(userInfo)
         if (userInfo.description.contains("body = ")){
-            let tmp = userInfo.description.components(separatedBy: "body = ")[1].components(separatedBy: ";")[0]
+            //let tmp = userInfo.description.components(separatedBy: "body = ")[1].components(separatedBy: ";")[0]
             //print(tmp)
-            Messaging.messaging().unsubscribe(fromTopic: tmp) { error in
-                print("unSubscribed to " + tmp)
-            }
         }
     }
     
@@ -104,11 +101,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Print full message.
         print(userInfo)
         if (userInfo.description.contains("body = ")){
-            let tmp = userInfo.description.components(separatedBy: "body = ")[1].components(separatedBy: ";")[0]
+            //let tmp = userInfo.description.components(separatedBy: "body = ")[1].components(separatedBy: ";")[0]
             //print(tmp)
-            Messaging.messaging().unsubscribe(fromTopic: tmp) { error in
-                print("unSubscribed to " + tmp)
-            }
         }
         
         completionHandler(UIBackgroundFetchResult.newData)
@@ -150,15 +144,12 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         // Print full message.
         print(userInfo)
         if (userInfo.description.contains("body = ")){
-            let tmp = userInfo.description.components(separatedBy: "body = ")[1].components(separatedBy: ";")[0]
+            //let tmp = userInfo.description.components(separatedBy: "body = ")[1].components(separatedBy: ";")[0]
             //print(tmp)
-            Messaging.messaging().unsubscribe(fromTopic: tmp) { error in
-                print("unSubscribed to " + tmp)
-            }
         }
         
         // Change this to your preferred presentation option
-        completionHandler([])
+        completionHandler([.alert,.sound])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -173,11 +164,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         // Print full message.
         print(userInfo)
         if (userInfo.description.contains("body = ")){
-            let tmp = userInfo.description.components(separatedBy: "body = ")[1].components(separatedBy: ";")[0]
+            //let tmp = userInfo.description.components(separatedBy: "body = ")[1].components(separatedBy: ";")[0]
             //print(tmp)
-            Messaging.messaging().unsubscribe(fromTopic: tmp) { error in
-                print("unSubscribed to " + tmp)
-            }
         }
         
         completionHandler()
