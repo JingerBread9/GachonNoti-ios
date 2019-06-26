@@ -38,6 +38,12 @@ class maintablePresenter {
         userView = nil
     }
     
+    func reloadData(){
+        self.data = [[String]]()
+        self.cnt = 0
+        self.findNoti(num: "0")
+    }
+    
     func getData() -> [[String]]{
         return data
     }
@@ -54,7 +60,7 @@ class maintablePresenter {
     
     private func request(num:String){
         userView?.show_hud()
-        let url = "http://m.gachon.ac.kr/gachon/notice.jsp?pageNum=" + num + "&pageSize=10&boardType_seq=358"
+        let url = "http://m.gachon.ac.kr/gachon/notice.jsp?pageNum=" + num + "&pageSize=20&boardType_seq=358"
         requestHTTP(url: url,completion: { result in
             do {
                 let doc: Document = try SwiftSoup.parse(result)
@@ -92,13 +98,9 @@ class maintablePresenter {
                     }
                 }
                 DispatchQueue.main.async {
-                    if (self.cnt == 1){
-                        self.moreLoad()
-                    }else{
-                        self.userView?.dissmiss_hud()
-                        self.loading = false
-                        self.userView?.makeTable(get: self.data)
-                    }
+                    self.userView?.dissmiss_hud()
+                    self.loading = false
+                    self.userView?.makeTable(get: self.data)
                 }
             } catch {}
         })

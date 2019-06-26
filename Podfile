@@ -4,7 +4,9 @@
 pod 'Firebase/Core'
 pod 'Firebase/Messaging'
 pod 'SwiftSoup'
-pod 'JGProgressHUD'
+pod 'PullToRefreshKit'
+pod 'NVActivityIndicatorView'
+pod 'PopupDialog'
 
 target 'GachonNoti' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks

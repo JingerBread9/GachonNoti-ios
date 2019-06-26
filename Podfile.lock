@@ -1,4 +1,5 @@
 PODS:
+  - DynamicBlurView (3.0.1)
   - Firebase/Core (6.3.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.0.2)
@@ -57,23 +58,31 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.2.0):
     - GoogleUtilities/Logger
-  - JGProgressHUD (2.0.3)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - NVActivityIndicatorView (4.7.0):
+    - NVActivityIndicatorView/Presenter (= 4.7.0)
+  - NVActivityIndicatorView/Presenter (4.7.0)
+  - PopupDialog (1.1.0):
+    - DynamicBlurView (~> 3.0.1)
   - Protobuf (3.8.0)
+  - PullToRefreshKit (0.8.8)
   - SwiftSoup (2.2.0)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Messaging
-  - JGProgressHUD
+  - NVActivityIndicatorView
+  - PopupDialog
+  - PullToRefreshKit
   - SwiftSoup
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - DynamicBlurView
     - Firebase
     - FirebaseAnalytics
     - FirebaseAnalyticsInterop
@@ -82,12 +91,15 @@ SPEC REPOS:
     - FirebaseMessaging
     - GoogleAppMeasurement
     - GoogleUtilities
-    - JGProgressHUD
     - nanopb
+    - NVActivityIndicatorView
+    - PopupDialog
     - Protobuf
+    - PullToRefreshKit
     - SwiftSoup
 
 SPEC CHECKSUMS:
+  DynamicBlurView: b1df5415f9bd31897549e5d7077e5ec120a4d636
   Firebase: 8432d732974498afd5987e9001a05f90f1a3d625
   FirebaseAnalytics: 470ddab7253b21ad5a40bebd4a9903d7ae19386a
   FirebaseAnalyticsInterop: efbe45c8385ec626e29f9525e5ebd38520dfb6c1
@@ -96,11 +108,13 @@ SPEC CHECKSUMS:
   FirebaseMessaging: 0ac5310133e6ada4cdd44d42e92038855214a5e9
   GoogleAppMeasurement: a35a645835bae31b6bdc0576396bc23908f12a22
   GoogleUtilities: 996e0db07153674fd1b54b220fda3a3dc3547cba
-  JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
+  PopupDialog: 42fb7a0bc4fafdf89fef8b5b2b127a6023f3e1cc
   Protobuf: 3f617b9a6e73605565086864c9bc26b2bf2dd5a3
+  PullToRefreshKit: 7cc53e720e69f135cffa1a57784dfb534f0222ab
   SwiftSoup: 230991361c5ba249d140161860a3864a28b63860
 
-PODFILE CHECKSUM: 741bf7d4fdb980337464062e2187a1e73145262d
+PODFILE CHECKSUM: 04b9889c249691ae31a98acbc12a4d6ba6a5390c
 
 COCOAPODS: 1.5.3

@@ -29,7 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
             UNUserNotificationCenter.current().requestAuthorization(
                 options: authOptions,
-                completionHandler: {_, _ in })
+                completionHandler: {granted,error in
+                    if(granted){
+                        UserDefaults.standard.set(1, forKey: "isnoti")
+                    }else{
+                        UserDefaults.standard.set(0, forKey: "isnoti")
+                    }
+            })
         } else {
             let settings: UIUserNotificationSettings =
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
@@ -38,9 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerForRemoteNotifications()
         
-        Messaging.messaging().subscribe(toTopic: "noti") { error in
-            print("Subscribed to noti topic")
-        }
+        
         return true
     }
 

@@ -8,7 +8,9 @@
 
 import Foundation
 import UIKit
-import JGProgressHUD
+import PullToRefreshKit
+import NVActivityIndicatorView
+import Firebase
 
 class main_cell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
@@ -22,13 +24,34 @@ class main_cell: UITableViewCell {
 
 class maintable: UITableViewController{
     
-    let hud = JGProgressHUD(style: .dark)
     let userPresenter = maintablePresenter()
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isnoti()
         userPresenter.attachView(self)
+        
+        self.tableView.configRefreshHeader(container:self) {
+            self.userPresenter.reloadData()
+        }
+    }
+    
+    func isnoti(){
+        let isnoti = UserDefaults.standard.value(forKey: "isnoti")
+        if (isnoti == nil){
+            
+        }else{
+            if (isnoti as! Int == 1){
+                Messaging.messaging().subscribe(toTopic: "noti") { error in
+                    UserDefaults.standard.set(1, forKey: "isnoti")
+                }
+            }else{
+                Messaging.messaging().unsubscribe(fromTopic: "noti") { error in
+                    print("unSubscribed to noti topic")
+                }
+            }
+        }
     }
     
     //섹션 별 개수
@@ -43,17 +66,18 @@ class maintable: UITableViewController{
         cell.title.text = data[indexPath.row][0]
         cell.content.text = data[indexPath.row][1]
         cell.date.text = data[indexPath.row][2]
+        
         if (data[indexPath.row][4].contains("n")){
             cell.newC.constant = 35
         }else{
             cell.newC.constant = 0
         }
+        
         if (data[indexPath.row][5].contains("n")){
             cell.saveC.constant = 20
         }else{
             cell.saveC.constant = 0
         }
-        
         
         if (data[indexPath.row][6].contains("noti")){
             cell.backgroundColor = UIColor(red: 254/255, green: 246/255, blue: 227/255, alpha: 1)
@@ -85,18 +109,19 @@ class maintable: UITableViewController{
 extension maintable: mainView {
     
     func makeTable(get:[[String]]){
+        self.tableView.switchRefreshHeader(to: .normal(.success, 0.5))
         tableview.reloadData()
     }
     
     func show_hud(){
-        if (!hud.isVisible){
-            hud.textLabel.text = "로딩중"
-            hud.show(in: self.view)
+        if (!NVActivityIndicatorPresenter.sharedInstance.isAnimating){
+            let activityData = ActivityData()
+            NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
         }
     }
     
     func dissmiss_hud(){
-        hud.dismiss(afterDelay: 0.0)
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
     }
     
 }

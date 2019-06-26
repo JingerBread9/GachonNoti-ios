@@ -14,6 +14,8 @@
 		CE576A8722C0F2BE00E1BA5B /* mainDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8622C0F2BE00E1BA5B /* mainDetail.swift */; };
 		CE576A8922C0F2CF00E1BA5B /* mainDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8822C0F2CF00E1BA5B /* mainDetailPresenter.swift */; };
 		CE576A8B22C0F7C600E1BA5B /* strFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8A22C0F7C600E1BA5B /* strFunc.swift */; };
+		CEAEE50B22C39D2500DDECF1 /* setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEE50A22C39D2500DDECF1 /* setting.swift */; };
+		CEAEE50D22C39D3000DDECF1 /* settingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEE50C22C39D3000DDECF1 /* settingPresenter.swift */; };
 		CEC3DDB522BFD5EE00230441 /* maintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3DDB322BFD5EE00230441 /* maintable.swift */; };
 		CEC3DDB622BFD5EE00230441 /* maintablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3DDB422BFD5EE00230441 /* maintablePresenter.swift */; };
 		CEFB9D8622BF899000D685DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB9D8522BF899000D685DC /* AppDelegate.swift */; };
@@ -54,6 +56,8 @@
 		CE576A8622C0F2BE00E1BA5B /* mainDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainDetail.swift; sourceTree = "<group>"; };
 		CE576A8822C0F2CF00E1BA5B /* mainDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainDetailPresenter.swift; sourceTree = "<group>"; };
 		CE576A8A22C0F7C600E1BA5B /* strFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strFunc.swift; sourceTree = "<group>"; };
+		CEAEE50A22C39D2500DDECF1 /* setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setting.swift; sourceTree = "<group>"; };
+		CEAEE50C22C39D3000DDECF1 /* settingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingPresenter.swift; sourceTree = "<group>"; };
 		CEC3DDB322BFD5EE00230441 /* maintable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = maintable.swift; sourceTree = "<group>"; };
 		CEC3DDB422BFD5EE00230441 /* maintablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = maintablePresenter.swift; sourceTree = "<group>"; };
 		CEFB9D8222BF899000D685DC /* GachonNoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GachonNoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +150,8 @@
 		CEC3DDAE22BFCE0F00230441 /* setting */ = {
 			isa = PBXGroup;
 			children = (
+				CEAEE50A22C39D2500DDECF1 /* setting.swift */,
+				CEAEE50C22C39D3000DDECF1 /* settingPresenter.swift */,
 			);
 			path = setting;
 			sourceTree = "<group>";
@@ -355,9 +361,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GachonNoti/Pods-GachonNoti-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/PullToRefreshKit/PullToRefreshKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -365,9 +374,12 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PullToRefreshKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -453,8 +465,10 @@
 				CE576A8B22C0F7C600E1BA5B /* strFunc.swift in Sources */,
 				CEFB9D8622BF899000D685DC /* AppDelegate.swift in Sources */,
 				CE576A8422C0D8B400E1BA5B /* requestHTTP.swift in Sources */,
+				CEAEE50D22C39D3000DDECF1 /* settingPresenter.swift in Sources */,
 				CEC3DDB622BFD5EE00230441 /* maintablePresenter.swift in Sources */,
 				CE576A8922C0F2CF00E1BA5B /* mainDetailPresenter.swift in Sources */,
+				CEAEE50B22C39D2500DDECF1 /* setting.swift in Sources */,
 				CEC3DDB522BFD5EE00230441 /* maintable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
