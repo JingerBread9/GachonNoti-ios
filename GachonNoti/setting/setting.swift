@@ -99,7 +99,7 @@ class setting: UITableViewController{
         //버전
         if indexPath.section == 1 && indexPath.row == 3 {
             let popup = PopupDialog(title: "버전", message:
-                "1.0.3(4)\n", image: nil)
+                "1.0.4(5)\n", image: nil)
             self.present(popup, animated: true, completion: nil)
         }
         tableView.deselectRow(at: indexPath, animated: true)

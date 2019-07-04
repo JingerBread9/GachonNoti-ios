@@ -130,7 +130,7 @@ class timeTablePresenter {
                 //self.userView?.dissmiss_hud()
             }
             //print(tablearr)
-            self.userView?.setTitle(str: "(" + self.ski + ") " + str)
+            self.userView?.setTitle(str: "(" + self.ski + "학기) " + str)
             self.userView?.makeTable(arrTable: tablearr,max:maxt)
         }).start((self.classdata1 as! String) , (self.classdata2 as! String) , (self.classdata3 as! String))
         

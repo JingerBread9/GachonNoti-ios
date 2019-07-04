@@ -40,7 +40,7 @@ class maintable: UITableViewController{
     }
     
     @objc func refresh(sender: UIBarButtonItem) {
-        //self.refreshControll.beginRefreshing()
+        self.refreshControll.endRefreshing()
         self.userPresenter.reloadData()
     }
 
@@ -130,9 +130,8 @@ class maintable: UITableViewController{
 extension maintable: mainView {
     
     func makeTable(get:[[String]]){
-        //self.tableView.switchRefreshHeader(to: .normal(.success, 0.5))
-        self.refreshControll.endRefreshing()
-        tableview.reloadData()
+        //self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.tableview.reloadData()
     }
     
     func show_hud(){
