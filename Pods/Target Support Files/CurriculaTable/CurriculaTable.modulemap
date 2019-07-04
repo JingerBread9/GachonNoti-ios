@@ -1,0 +1,6 @@
+framework module CurriculaTable {
+  umbrella header "CurriculaTable-umbrella.h"
+
+  export *
+  module * { export * }
+}

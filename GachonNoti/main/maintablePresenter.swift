@@ -68,30 +68,7 @@ class maintablePresenter {
                     if(div.hasClass("list")){
                         for li in try div.select("li"){
                             if (!li.description.contains("icon_notice.gif")){
-                                var href = try li.select("a").attr("href")
-                                let newSeq = href.split2(w1: "boardType_seq=",w2: "&")
-                                let newNo = href.split2(w1: "board_no=",w2: "&")
-                                href = "http://www.gachon.ac.kr/community/opencampus/06.jsp?" + "mode=view&boardType_seq=" + newSeq + "&board_no=" + newNo
-                                //print(href)
-                                var title = try li.select("a").select("strong").html()
-                                title = title.replace(target: " ", withString: "")
-                                //print(title)
-                                var content = try li.select("a").html()
-                                content = content.description.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil)
-                                content = content.replace(target: title, withString: "")
-                                content = content.replace(target: "  ", withString: "")
-                                //print(content)
-                                let date = try li.select("span").html()
-                                //print(date)
-                                var new = "n"
-                                var save = "n"
-                                if (!li.description.contains("icon_new.gif")){
-                                    new = "y"
-                                }
-                                if (!li.description.contains("icon_file.gif")){
-                                    save = "y"
-                                }
-                                self.data.append([title,content,date,href,new,save,"content"])
+                                self.parseList(li: li,cate : "content")
                             }
                         }
                         break
@@ -116,30 +93,7 @@ class maintablePresenter {
                     if(div.hasClass("list")){
                         for li in try div.select("li"){
                             if (li.description.contains("icon_notice.gif")){
-                                var href = try li.select("a").attr("href")
-                                let newSeq = href.split2(w1: "boardType_seq=",w2: "&")
-                                let newNo = href.split2(w1: "board_no=",w2: "&")
-                                href = "http://www.gachon.ac.kr/community/opencampus/06.jsp?" + "mode=view&boardType_seq=" + newSeq + "&board_no=" + newNo
-                                //print(href)
-                                var title = try li.select("a").select("strong").html()
-                                title = title.replace(target: " ", withString: "")
-                                //print(title)
-                                var content = try li.select("a").html()
-                                content = content.description.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil)
-                                content = content.replace(target: title, withString: "")
-                                content = content.replace(target: "  ", withString: "")
-                                //print(content)
-                                let date = try li.select("span").html()
-                                //print(date)
-                                var new = "n"
-                                var save = "n"
-                                if (!li.description.contains("icon_new.gif")){
-                                    new = "y"
-                                }
-                                if (!li.description.contains("icon_file.gif")){
-                                    save = "y"
-                                }
-                                self.data.append([title,content,date,href,new,save,"noti"])
+                                self.parseList(li: li,cate : "noti")
                             }
                         }
                         break
@@ -152,6 +106,34 @@ class maintablePresenter {
         })
     }
     
+    private func parseList(li:SwiftSoup.Element,cate:String){
+        do{
+            var href = try li.select("a").attr("href")
+            let newSeq = href.split2(w1: "boardType_seq=",w2: "&")
+            let newNo = href.split2(w1: "board_no=",w2: "&")
+            href = "http://www.gachon.ac.kr/community/opencampus/06.jsp?" + "mode=view&boardType_seq=" + newSeq + "&board_no=" + newNo
+            //print(href)
+            var title = try li.select("a").select("strong").html()
+            title = title.replace(" ", "")
+            //print(title)
+            var content = try li.select("a").html()
+            content = content.description.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil)
+            content = content.replace(title,  "")
+            content = content.replace("  ",  "")
+            //print(content)
+            let date = try li.select("span").html()
+            //print(date)
+            var new = "n"
+            var save = "n"
+            if (!li.description.contains("icon_new.gif")){
+                new = "y"
+            }
+            if (!li.description.contains("icon_file.gif")){
+                save = "y"
+            }
+            self.data.append([title,content,date,href,new,save,cate])
+        }catch {}
+    }
 }
 
 

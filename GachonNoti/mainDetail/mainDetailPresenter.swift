@@ -64,23 +64,20 @@ class mainDetailPresenter{
                                     //print(href2)
                                     self.request(href: href2)
                                 }else{
-                                    boardview = boardview.replace(target: "src=\"/", withString: "src=\"http://www.gachon.ac.kr/")
-                                    boardview = boardview.replace(target: "href=\"/", withString: "href=\"http://www.gachon.ac.kr/")
+                                    boardview = boardview.replace("src=\"/",
+                                                                  "src=\"http://www.gachon.ac.kr/")
+                                    boardview = boardview.replace("href=\"/",
+                                                                  "href=\"http://www.gachon.ac.kr/")
                                     DispatchQueue.main.async {
                                         self.userView?.show_web(js: boardview)
                                     }
-                                    
                                 }
                             }
                         }
                         break
                     }
                 }
-               
             } catch {}
-            
-            
         })
     }
-    
 }

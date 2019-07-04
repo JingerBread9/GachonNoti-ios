@@ -64,22 +64,32 @@ class setting: UITableViewController{
         }
         //만든이
         if indexPath.section == 1 && indexPath.row == 0 {
-            UIApplication.shared.openURL(NSURL(string: "https://github.com/wiffy-io")! as URL)
+            //UIApplication.shared.openURL(NSURL(string: "https://github.com/wiffy-io")! as URL)
+            let popup = PopupDialog(title: "만든이", message:
+                "박정호 - 소프트웨어학과\n(iveinvalue@gmail.com)\n\n" +
+                "박상현 - 소프트웨어학과\n(okpsh0033@gmail.com)\n", image: nil)
+            self.present(popup, animated: true, completion: nil)
         }
+//        pod 'CurriculaTable'
+//        pod 'DTZFloatingActionButton'
+//        pod 'lottie-ios'
         //오픈소스정보
         if indexPath.section == 1 && indexPath.row == 1 {
             let popup = PopupDialog(title: "오픈소스 정보", message:
-                "https://github.com/scinfu/SwiftSoup\n" +
-                "https://github.com/Orderella/PopupDialog\n" +
-                "https://github.com/LeoMobileDeveloper/PullToRefreshKit\n" +
-                "https://github.com/ninjaprox/NVActivityIndicatorView", image: nil)
+                "SwiftSoup\nhttps://github.com/scinfu/SwiftSoup\n\n" +
+                "CurriculaTable\nhttps://github.com/yzyzsun/CurriculaTable\n\n" +
+                "DTZFloatingActionButton\nhttps://github.com/hintoz/DTZFloatingActionButton\n\n" +
+                "Lottie-ios\nhttps://github.com/airbnb/lottie-ios\n\n" +
+                "PopupDialog\nhttps://github.com/Orderella/PopupDialog\n\n" +
+                "PullToRefreshKit\nhttps://github.com/LeoMobileDeveloper/PullToRefreshKit\n\n" +
+                "NVActivityIndicatorView\nhttps://github.com/ninjaprox/NVActivityIndicatorView\n\n", image: nil)
             self.present(popup, animated: true, completion: nil)
         }
         //도움을 주신 분들
         if indexPath.section == 1 && indexPath.row == 2 {
             requestHTTP(url: "http://wiffy.io/gachon/thanks.txt",completion: { result in
                 //print(result)
-                let rslt = result.replace(target: ",", withString: "\n")
+                let rslt = result.replace(",",  "\n") + "\n"
                 DispatchQueue.main.async {
                     let popup = PopupDialog(title: "후원 목록", message: rslt, image: nil)
                     self.present(popup, animated: true, completion: nil)
@@ -89,7 +99,7 @@ class setting: UITableViewController{
         //버전
         if indexPath.section == 1 && indexPath.row == 3 {
             let popup = PopupDialog(title: "버전", message:
-                "1.0.2(3)", image: nil)
+                "1.0.3(4)\n", image: nil)
             self.present(popup, animated: true, completion: nil)
         }
         tableView.deselectRow(at: indexPath, animated: true)

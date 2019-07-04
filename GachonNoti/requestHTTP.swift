@@ -17,3 +17,23 @@ func requestHTTP(url:String, completion: @escaping (String)->()){
     }
     taskk2.resume()
 }
+
+func requestHTTPEUC(url:String, completion: @escaping (String)->()){
+    let url3 = URL(string: url)
+    let taskk2 = URLSession.shared.dataTask(with: url3! as URL) { data, response, error in
+        guard let data = data, error == nil else { return }
+        //let result = NSString(data: data, encoding: String.Encoding.e)! as String
+        guard let result = String(data: data, encoding: String.Encoding(rawValue: CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(
+            CFStringEncodings.EUC_KR.rawValue)))) else {
+            completion("<no-data>")
+            return
+        }
+        if (result.contains("haksuNo")){
+            completion(result)
+        }else{
+            completion("<no-data>")
+        }
+        
+    }
+    taskk2.resume()
+}

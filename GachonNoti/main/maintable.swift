@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import PullToRefreshKit
+//import PullToRefreshKit
 import NVActivityIndicatorView
 import Firebase
 
@@ -25,6 +25,7 @@ class main_cell: UITableViewCell {
 class maintable: UITableViewController{
     
     let userPresenter = maintablePresenter()
+    var refreshControll = UIRefreshControl()
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
@@ -32,11 +33,17 @@ class maintable: UITableViewController{
         isnoti()
         userPresenter.attachView(self)
         
-        self.tableView.configRefreshHeader(container:self) {
-            self.userPresenter.reloadData()
-        }
+        refreshControll = UIRefreshControl()
+        refreshControll.tintColor = UIColor.white
+        refreshControll.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+        tableView.refreshControl = refreshControll
     }
     
+    @objc func refresh(sender: UIBarButtonItem) {
+        //self.refreshControll.beginRefreshing()
+        self.userPresenter.reloadData()
+    }
+
     func isnoti(){
         let isnoti = UserDefaults.standard.value(forKey: "isnoti")
         if (isnoti == nil){
@@ -62,28 +69,41 @@ class maintable: UITableViewController{
     //테이블 데이터 로드
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "main_cell", for: indexPath) as! main_cell
+        
         let data = userPresenter.getData()
-        cell.title.text = data[indexPath.row][0]
-        cell.content.text = data[indexPath.row][1]
-        cell.date.text = data[indexPath.row][2]
-        
-        if (data[indexPath.row][4].contains("n")){
-            cell.newC.constant = 35
-        }else{
-            cell.newC.constant = 0
+        if (data.count > indexPath.row){
+            cell.title.text = data[indexPath.row][0]
+            
+            if (data[indexPath.row][0].contains("메디컬")){
+                cell.title.textColor = UIColor(red: 70/255, green: 170/255, blue: 70/255, alpha: 0.9)
+            }else if (data[indexPath.row][0].contains("글로벌")){
+                cell.title.textColor = UIColor(red: 200/255, green: 70/255, blue: 70/255, alpha: 0.9)
+            }else{
+                cell.title.textColor = UIColor(red: 47/255, green: 90/255, blue: 168/255, alpha: 1)
+            }
+            
+            cell.content.text = data[indexPath.row][1]
+            cell.date.text = data[indexPath.row][2]
+            
+            if (data[indexPath.row][4].contains("n")){
+                cell.newC.constant = 35
+            }else{
+                cell.newC.constant = 0
+            }
+            
+            if (data[indexPath.row][5].contains("n")){
+                cell.saveC.constant = 20
+            }else{
+                cell.saveC.constant = 0
+            }
+            
+            if (data[indexPath.row][6].contains("noti")){
+                cell.backgroundColor = UIColor(red: 254/255, green: 246/255, blue: 227/255, alpha: 1)
+            }else{
+                cell.backgroundColor = UIColor.white
+            }
         }
         
-        if (data[indexPath.row][5].contains("n")){
-            cell.saveC.constant = 20
-        }else{
-            cell.saveC.constant = 0
-        }
-        
-        if (data[indexPath.row][6].contains("noti")){
-            cell.backgroundColor = UIColor(red: 254/255, green: 246/255, blue: 227/255, alpha: 1)
-        }else{
-            cell.backgroundColor = UIColor.white
-        }
         return cell
     }
     
@@ -103,13 +123,15 @@ class maintable: UITableViewController{
             userPresenter.moreLoad()
         }
     }
+    
    
 }
 
 extension maintable: mainView {
     
     func makeTable(get:[[String]]){
-        self.tableView.switchRefreshHeader(to: .normal(.success, 0.5))
+        //self.tableView.switchRefreshHeader(to: .normal(.success, 0.5))
+        self.refreshControll.endRefreshing()
         tableview.reloadData()
     }
     

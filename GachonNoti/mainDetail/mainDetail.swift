@@ -29,7 +29,7 @@ class mainDetail: UIViewController , UIWebViewDelegate {
         super.viewDidLoad()
         initTitle()
         userPresenter.attachView(self,href: href!)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "웹페이지 연결", style: .done, target: self, action: #selector(move))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem : .action, target: self, action: #selector(move))
         web.delegate = self
     }
     
@@ -54,11 +54,12 @@ extension mainDetail: DetailView {
     }
     
     func initTitle(){
-        titlee.text = titleS
+        self.navigationItem.title = titleS?.replace("[", "").replace("]", "")
+        titlee.text = dateS
         contentt.text = contentS
         contentt.lineBreakMode = .byWordWrapping
         contentt.numberOfLines = 2;
-        datee.text = dateS
+        datee.text = ""
     }
     
 }

@@ -10,12 +10,17 @@
 		4BE92FA7EE6AF1D622F8EFB3 /* Pods_GachonNoti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8AFDC350F255A5D1B89B1D /* Pods_GachonNoti.framework */; };
 		9E4CF9EE6DA47DE6FD71FC39 /* Pods_GachonNotiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51202F3BBA32F3800125DA7B /* Pods_GachonNotiTests.framework */; };
 		C8E421A78AE3EC525153C9FB /* Pods_GachonNotiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E05A45F827AD526D15D5D6 /* Pods_GachonNotiUITests.framework */; };
+		CE48D8D922CC768F00368CD3 /* findTableXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48D8D822CC768F00368CD3 /* findTableXML.swift */; };
+		CE48D8DC22CCAFC000368CD3 /* notfound.json in Resources */ = {isa = PBXBuildFile; fileRef = CE48D8DB22CCAFC000368CD3 /* notfound.json */; };
 		CE576A8422C0D8B400E1BA5B /* requestHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8322C0D8B400E1BA5B /* requestHTTP.swift */; };
 		CE576A8722C0F2BE00E1BA5B /* mainDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8622C0F2BE00E1BA5B /* mainDetail.swift */; };
 		CE576A8922C0F2CF00E1BA5B /* mainDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8822C0F2CF00E1BA5B /* mainDetailPresenter.swift */; };
 		CE576A8B22C0F7C600E1BA5B /* strFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8A22C0F7C600E1BA5B /* strFunc.swift */; };
 		CEAEE50B22C39D2500DDECF1 /* setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEE50A22C39D2500DDECF1 /* setting.swift */; };
 		CEAEE50D22C39D3000DDECF1 /* settingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEE50C22C39D3000DDECF1 /* settingPresenter.swift */; };
+		CEAEE51122C9E0F300DDECF1 /* timeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEE50F22C9E0F300DDECF1 /* timeTable.swift */; };
+		CEAEE51222C9E0F300DDECF1 /* timeTable.Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEE51022C9E0F300DDECF1 /* timeTable.Presenter.swift */; };
+		CEAEE51422CA325D00DDECF1 /* findBuildingXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEE51322CA325D00DDECF1 /* findBuildingXML.swift */; };
 		CEC3DDB522BFD5EE00230441 /* maintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3DDB322BFD5EE00230441 /* maintable.swift */; };
 		CEC3DDB622BFD5EE00230441 /* maintablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3DDB422BFD5EE00230441 /* maintablePresenter.swift */; };
 		CEFB9D8622BF899000D685DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB9D8522BF899000D685DC /* AppDelegate.swift */; };
@@ -52,12 +57,17 @@
 		7B8AFDC350F255A5D1B89B1D /* Pods_GachonNoti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachonNoti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E05A45F827AD526D15D5D6 /* Pods_GachonNotiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachonNotiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD20B9307C16596F90365ACA /* Pods-GachonNotiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachonNotiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GachonNotiUITests/Pods-GachonNotiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CE48D8D822CC768F00368CD3 /* findTableXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = findTableXML.swift; sourceTree = "<group>"; };
+		CE48D8DB22CCAFC000368CD3 /* notfound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notfound.json; sourceTree = "<group>"; };
 		CE576A8322C0D8B400E1BA5B /* requestHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = requestHTTP.swift; sourceTree = "<group>"; };
 		CE576A8622C0F2BE00E1BA5B /* mainDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainDetail.swift; sourceTree = "<group>"; };
 		CE576A8822C0F2CF00E1BA5B /* mainDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainDetailPresenter.swift; sourceTree = "<group>"; };
 		CE576A8A22C0F7C600E1BA5B /* strFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strFunc.swift; sourceTree = "<group>"; };
 		CEAEE50A22C39D2500DDECF1 /* setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setting.swift; sourceTree = "<group>"; };
 		CEAEE50C22C39D3000DDECF1 /* settingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingPresenter.swift; sourceTree = "<group>"; };
+		CEAEE50F22C9E0F300DDECF1 /* timeTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeTable.swift; sourceTree = "<group>"; };
+		CEAEE51022C9E0F300DDECF1 /* timeTable.Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeTable.Presenter.swift; sourceTree = "<group>"; };
+		CEAEE51322CA325D00DDECF1 /* findBuildingXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findBuildingXML.swift; sourceTree = "<group>"; };
 		CEC3DDB322BFD5EE00230441 /* maintable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = maintable.swift; sourceTree = "<group>"; };
 		CEC3DDB422BFD5EE00230441 /* maintablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = maintablePresenter.swift; sourceTree = "<group>"; };
 		CEFB9D8222BF899000D685DC /* GachonNoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GachonNoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +139,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE48D8DA22CCAFB300368CD3 /* anim */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = anim;
+			sourceTree = "<group>";
+		};
 		CE576A8522C0F2A900E1BA5B /* mainDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +153,17 @@
 				CE576A8822C0F2CF00E1BA5B /* mainDetailPresenter.swift */,
 			);
 			path = mainDetail;
+			sourceTree = "<group>";
+		};
+		CEAEE50E22C9E06C00DDECF1 /* timeTable */ = {
+			isa = PBXGroup;
+			children = (
+				CEAEE50F22C9E0F300DDECF1 /* timeTable.swift */,
+				CEAEE51022C9E0F300DDECF1 /* timeTable.Presenter.swift */,
+				CEAEE51322CA325D00DDECF1 /* findBuildingXML.swift */,
+				CE48D8D822CC768F00368CD3 /* findTableXML.swift */,
+			);
+			path = timeTable;
 			sourceTree = "<group>";
 		};
 		CEC3DDAD22BFCE0100230441 /* main */ = {
@@ -159,6 +187,7 @@
 		CEFB9D7922BF899000D685DC = {
 			isa = PBXGroup;
 			children = (
+				CE48D8DA22CCAFB300368CD3 /* anim */,
 				CEFB9D8422BF899000D685DC /* GachonNoti */,
 				CEFB9D9B22BF899300D685DC /* GachonNotiTests */,
 				CEFB9DA622BF899400D685DC /* GachonNotiUITests */,
@@ -183,11 +212,13 @@
 			children = (
 				CE576A8A22C0F7C600E1BA5B /* strFunc.swift */,
 				CE576A8322C0D8B400E1BA5B /* requestHTTP.swift */,
+				CEAEE50E22C9E06C00DDECF1 /* timeTable */,
 				CEC3DDAE22BFCE0F00230441 /* setting */,
 				CE576A8522C0F2A900E1BA5B /* mainDetail */,
 				CEC3DDAD22BFCE0100230441 /* main */,
 				CEFB9DB722BF8CCF00D685DC /* GachonNoti.entitlements */,
 				CEFB9DB522BF8AAB00D685DC /* GoogleService-Info.plist */,
+				CE48D8DB22CCAFC000368CD3 /* notfound.json */,
 				CEFB9D8522BF899000D685DC /* AppDelegate.swift */,
 				CEFB9D8B22BF899000D685DC /* Main.storyboard */,
 				CEFB9D8E22BF899300D685DC /* Assets.xcassets */,
@@ -330,6 +361,7 @@
 			files = (
 				CEFB9D9222BF899300D685DC /* LaunchScreen.storyboard in Resources */,
 				CEFB9DB622BF8AAB00D685DC /* GoogleService-Info.plist in Resources */,
+				CE48D8DC22CCAFC000368CD3 /* notfound.json in Resources */,
 				CEFB9D8F22BF899300D685DC /* Assets.xcassets in Resources */,
 				CEFB9D8D22BF899000D685DC /* Main.storyboard in Resources */,
 			);
@@ -361,6 +393,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GachonNoti/Pods-GachonNoti-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CurriculaTable/CurriculaTable.framework",
+				"${BUILT_PRODUCTS_DIR}/DTZFloatingActionButton/DTZFloatingActionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
@@ -368,12 +402,15 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/PullToRefreshKit/PullToRefreshKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CurriculaTable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTZFloatingActionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
@@ -381,6 +418,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PullToRefreshKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,11 +503,15 @@
 				CE576A8B22C0F7C600E1BA5B /* strFunc.swift in Sources */,
 				CEFB9D8622BF899000D685DC /* AppDelegate.swift in Sources */,
 				CE576A8422C0D8B400E1BA5B /* requestHTTP.swift in Sources */,
+				CE48D8D922CC768F00368CD3 /* findTableXML.swift in Sources */,
+				CEAEE51422CA325D00DDECF1 /* findBuildingXML.swift in Sources */,
 				CEAEE50D22C39D3000DDECF1 /* settingPresenter.swift in Sources */,
 				CEC3DDB622BFD5EE00230441 /* maintablePresenter.swift in Sources */,
+				CEAEE51222C9E0F300DDECF1 /* timeTable.Presenter.swift in Sources */,
 				CE576A8922C0F2CF00E1BA5B /* mainDetailPresenter.swift in Sources */,
 				CEAEE50B22C39D2500DDECF1 /* setting.swift in Sources */,
 				CEC3DDB522BFD5EE00230441 /* maintable.swift in Sources */,
+				CEAEE51122C9E0F300DDECF1 /* timeTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
