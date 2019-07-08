@@ -87,7 +87,8 @@ class setting: UITableViewController{
         }
         //도움을 주신 분들
         if indexPath.section == 1 && indexPath.row == 2 {
-            requestHTTP(url: "http://wiffy.io/gachon/thanks.txt",completion: { result in
+            let randNum = arc4random_uniform(10000)
+            requestHTTP(url: "http://wiffy.io/gachon/thanks.txt?" + randNum.description,completion: { result in
                 //print(result)
                 let rslt = result.replace(",",  "\n") + "\n"
                 DispatchQueue.main.async {
@@ -99,7 +100,7 @@ class setting: UITableViewController{
         //버전
         if indexPath.section == 1 && indexPath.row == 3 {
             let popup = PopupDialog(title: "버전", message:
-                "1.0.4(5)\n", image: nil)
+                "1.0.5(6)\n", image: nil)
             self.present(popup, animated: true, completion: nil)
         }
         tableView.deselectRow(at: indexPath, animated: true)

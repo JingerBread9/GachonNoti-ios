@@ -40,12 +40,33 @@ class timeTablePresenter {
     
     func attachView(_ view:timeTableView){
         userView = view
+        initTitle()
         userView?.makeFAB()
 //        userView?.makeTable(arrTable: nil)
     }
     
     func detachView() {
         userView = nil
+    }
+    
+    func initTitle(){
+        let today = NSDate()
+        let yearFormatter = DateFormatter()
+        yearFormatter.dateFormat = "yyyy"
+        let monthFormatter = DateFormatter()
+        monthFormatter.dateFormat = "M"
+        
+        let year = yearFormatter.string(from: today as Date)
+        let month = monthFormatter.string(from: today as Date)
+        
+        var semester = 1
+        if (Int(month)! < 9){
+            semester = 1
+        }else{
+            semester = 2
+        }
+        
+        self.userView?.setTitle(str: year.description + "년 " + semester.description + "학기 - 빈 강의실 찾기")
     }
     
     func checkSearch(){
