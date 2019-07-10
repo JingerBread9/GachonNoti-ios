@@ -135,7 +135,8 @@ class timeTablePresenter {
         let url = "http://gcis.gachon.ac.kr/haksa/src/jsp/ssu/ssu1000q.jsp?"
         let url2 = "groupType=" + getCampusHttp() + "&searchYear=" + getYear() + "&searchTerm=" + getSemesterHttp() + "&" + para + "&operationType=MAINSEARCH&comType=DEPT_TOT_CD&comViewValue=N&comResultTarget=cbDeptCD&condition1=CS0000&condition2=20&condition3=TOT"
         requestHTTPEUC(url: url + url2,completion: { result in
-            UserDefaults.standard.set(result, forKey: ski + "-" + getCampusHttp())
+            let resultTMP = result.replace("(M)", "")
+            UserDefaults.standard.set(resultTMP, forKey: ski + "-" + getCampusHttp())
             self.getTablecnt += 1
             if (self.getTablecnt >= 3){
                 self.userView?.dissmiss_hud()

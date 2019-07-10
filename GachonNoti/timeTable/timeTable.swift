@@ -115,7 +115,7 @@ extension timeTable: timeTableView {
     }
     
     func listAlert (arr:Array<String>,arr2:Array<String>,viewController: UIViewController?,title: String, msg: String){
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: nil, message: "건물을 선택해주세요.", preferredStyle: .actionSheet)
         for i in arr{
             func someHandler(alert: UIAlertAction!) {
                 var tmp = Array<String>()
@@ -148,7 +148,7 @@ extension timeTable: timeTableView {
     }
     
     func listAlert2 (arr:Array<String>,viewController: UIViewController?){
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: nil, message: "강의실을 선택해주세요.", preferredStyle: .actionSheet)
         for i in arr{
             func someHandler(alert: UIAlertAction!) {
                 userPresenter.showtable(str: i)
