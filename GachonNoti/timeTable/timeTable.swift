@@ -70,9 +70,6 @@ extension timeTable: timeTableView {
     }
     
     func makeTable(arrTable:Array<CurriculaTableItem>?,max:Int){
-//        let handler = { (curriculum: CurriculaTableItem) in}
-//        let infoSecA = CurriculaTableItem(name: "dd", place: "03", weekday: CurriculaTableWeekday(rawValue: 2)!, startPeriod: 1, endPeriod: 15, textColor: UIColor.white, bgColor: UIColor(red: 1.0, green: 0.73, blue: 0.0, alpha: 1.0), identifier: "(2015-2016-2)-21190850", tapHandler: handler)
-        
         curriculaTable.curricula = arrTable!
         //curriculaTable.bgColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0)
         curriculaTable.numberOfPeriods = 54
@@ -148,7 +145,6 @@ extension timeTable: timeTableView {
             viewController?.present(alertController, animated: true, completion: nil)
         }
         
-       
     }
     
     func listAlert2 (arr:Array<String>,viewController: UIViewController?){

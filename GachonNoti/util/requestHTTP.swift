@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 func requestHTTP(url:String, completion: @escaping (String)->()){
     let url3 = URL(string: url)
     let taskk2 = URLSession.shared.dataTask(with: url3! as URL) { data, response, error in

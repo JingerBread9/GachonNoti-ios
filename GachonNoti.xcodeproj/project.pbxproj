@@ -16,6 +16,10 @@
 		CE576A8722C0F2BE00E1BA5B /* mainDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8622C0F2BE00E1BA5B /* mainDetail.swift */; };
 		CE576A8922C0F2CF00E1BA5B /* mainDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8822C0F2CF00E1BA5B /* mainDetailPresenter.swift */; };
 		CE576A8B22C0F7C600E1BA5B /* strFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8A22C0F7C600E1BA5B /* strFunc.swift */; };
+		CE9D7B6B22D58C5A00ED55B6 /* getNoti.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D7B6A22D58C5A00ED55B6 /* getNoti.swift */; };
+		CE9D7B6D22D58D7D00ED55B6 /* colorFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D7B6C22D58D7D00ED55B6 /* colorFunc.swift */; };
+		CE9D7B6F22D58E0400ED55B6 /* getStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D7B6E22D58E0400ED55B6 /* getStatus.swift */; };
+		CE9D7B7422D5982A00ED55B6 /* campusSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D7B7322D5982A00ED55B6 /* campusSet.swift */; };
 		CEAEE50B22C39D2500DDECF1 /* setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEE50A22C39D2500DDECF1 /* setting.swift */; };
 		CEAEE50D22C39D3000DDECF1 /* settingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEE50C22C39D3000DDECF1 /* settingPresenter.swift */; };
 		CEAEE51122C9E0F300DDECF1 /* timeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEE50F22C9E0F300DDECF1 /* timeTable.swift */; };
@@ -63,6 +67,10 @@
 		CE576A8622C0F2BE00E1BA5B /* mainDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainDetail.swift; sourceTree = "<group>"; };
 		CE576A8822C0F2CF00E1BA5B /* mainDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainDetailPresenter.swift; sourceTree = "<group>"; };
 		CE576A8A22C0F7C600E1BA5B /* strFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strFunc.swift; sourceTree = "<group>"; };
+		CE9D7B6A22D58C5A00ED55B6 /* getNoti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getNoti.swift; sourceTree = "<group>"; };
+		CE9D7B6C22D58D7D00ED55B6 /* colorFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorFunc.swift; sourceTree = "<group>"; };
+		CE9D7B6E22D58E0400ED55B6 /* getStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getStatus.swift; sourceTree = "<group>"; };
+		CE9D7B7322D5982A00ED55B6 /* campusSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campusSet.swift; sourceTree = "<group>"; };
 		CEAEE50A22C39D2500DDECF1 /* setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setting.swift; sourceTree = "<group>"; };
 		CEAEE50C22C39D3000DDECF1 /* settingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingPresenter.swift; sourceTree = "<group>"; };
 		CEAEE50F22C9E0F300DDECF1 /* timeTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeTable.swift; sourceTree = "<group>"; };
@@ -155,6 +163,19 @@
 			path = mainDetail;
 			sourceTree = "<group>";
 		};
+		CE9D7B7022D5923C00ED55B6 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				CE9D7B6E22D58E0400ED55B6 /* getStatus.swift */,
+				CE9D7B6C22D58D7D00ED55B6 /* colorFunc.swift */,
+				CE9D7B6A22D58C5A00ED55B6 /* getNoti.swift */,
+				CE576A8A22C0F7C600E1BA5B /* strFunc.swift */,
+				CE576A8322C0D8B400E1BA5B /* requestHTTP.swift */,
+				CE9D7B7322D5982A00ED55B6 /* campusSet.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
 		CEAEE50E22C9E06C00DDECF1 /* timeTable */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,8 +231,7 @@
 		CEFB9D8422BF899000D685DC /* GachonNoti */ = {
 			isa = PBXGroup;
 			children = (
-				CE576A8A22C0F7C600E1BA5B /* strFunc.swift */,
-				CE576A8322C0D8B400E1BA5B /* requestHTTP.swift */,
+				CE9D7B7022D5923C00ED55B6 /* util */,
 				CEAEE50E22C9E06C00DDECF1 /* timeTable */,
 				CEC3DDAE22BFCE0F00230441 /* setting */,
 				CE576A8522C0F2A900E1BA5B /* mainDetail */,
@@ -504,13 +524,17 @@
 				CEFB9D8622BF899000D685DC /* AppDelegate.swift in Sources */,
 				CE576A8422C0D8B400E1BA5B /* requestHTTP.swift in Sources */,
 				CE48D8D922CC768F00368CD3 /* findTableXML.swift in Sources */,
+				CE9D7B6D22D58D7D00ED55B6 /* colorFunc.swift in Sources */,
 				CEAEE51422CA325D00DDECF1 /* findBuildingXML.swift in Sources */,
 				CEAEE50D22C39D3000DDECF1 /* settingPresenter.swift in Sources */,
 				CEC3DDB622BFD5EE00230441 /* maintablePresenter.swift in Sources */,
 				CEAEE51222C9E0F300DDECF1 /* timeTable.Presenter.swift in Sources */,
 				CE576A8922C0F2CF00E1BA5B /* mainDetailPresenter.swift in Sources */,
 				CEAEE50B22C39D2500DDECF1 /* setting.swift in Sources */,
+				CE9D7B7422D5982A00ED55B6 /* campusSet.swift in Sources */,
 				CEC3DDB522BFD5EE00230441 /* maintable.swift in Sources */,
+				CE9D7B6B22D58C5A00ED55B6 /* getNoti.swift in Sources */,
+				CE9D7B6F22D58E0400ED55B6 /* getStatus.swift in Sources */,
 				CEAEE51122C9E0F300DDECF1 /* timeTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -617,7 +641,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -672,7 +696,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

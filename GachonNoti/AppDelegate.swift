@@ -31,9 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 options: authOptions,
                 completionHandler: {granted,error in
                     if(granted){
-                        UserDefaults.standard.set(1, forKey: "isnoti")
+                        //UserDefaults.standard.set(1, forKey: "isnoti")
                     }else{
-                        UserDefaults.standard.set(0, forKey: "isnoti")
+                        //UserDefaults.standard.set(0, forKey: "isnoti")
+                    }
+                    if (getNoti()){
+                        notiON()
+                    }else{
+                        notiOFF()
                     }
             })
         } else {

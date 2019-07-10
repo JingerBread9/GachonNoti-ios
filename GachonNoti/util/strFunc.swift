@@ -23,7 +23,4 @@ extension String {
         return self.components(separatedBy: w1)[1].components(separatedBy: w2)[0]
     }
     
-   
-    
-    
 }

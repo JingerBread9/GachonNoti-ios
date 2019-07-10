@@ -30,13 +30,28 @@ class maintable: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        isnoti()
         userPresenter.attachView(self)
-        
+        initii()
         refreshControll = UIRefreshControl()
         refreshControll.tintColor = UIColor.white
         refreshControll.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         tableView.refreshControl = refreshControll
+    }
+    
+    func initii(){
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        let isnoti = UserDefaults.standard.value(forKey: appVersion)
+        if (isnoti == nil){
+            UserDefaults.standard.set("aa", forKey: appVersion)
+            justAlert(viewController: self,title: "업데이트 내용", msg: "\n매디컬 캠퍼스 시간표 추가\n알림 버그 수정\n계절학기 추가\n버그리포트 기능 추가")
+        }
+    }
+    
+    func justAlert(viewController: UIViewController?,title: String, msg: String){
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alertController.addAction(cancel)
+        viewController?.present(alertController, animated: true, completion: nil)
     }
     
     @objc func refresh(sender: UIBarButtonItem) {
@@ -44,22 +59,6 @@ class maintable: UITableViewController{
         self.userPresenter.reloadData()
     }
 
-    func isnoti(){
-        let isnoti = UserDefaults.standard.value(forKey: "isnoti")
-        if (isnoti == nil){
-            
-        }else{
-            if (isnoti as! Int == 1){
-                Messaging.messaging().subscribe(toTopic: "noti") { error in
-                    UserDefaults.standard.set(1, forKey: "isnoti")
-                }
-            }else{
-                Messaging.messaging().unsubscribe(fromTopic: "noti") { error in
-                    print("unSubscribed to noti topic")
-                }
-            }
-        }
-    }
     
     //섹션 별 개수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
