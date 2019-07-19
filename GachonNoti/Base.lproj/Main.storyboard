@@ -18,12 +18,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="v73-W1-U80">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i8K-TD-PGa">
+                                    <rect key="frame" x="10" y="11" width="355" height="29"/>
+                                    <color key="backgroundColor" red="0.93743306398391724" green="0.93698269128799438" blue="0.95686548948287964" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <segments>
+                                        <segment title="공지사항"/>
+                                        <segment title="가천뉴스"/>
+                                        <segment title="행사소식"/>
+                                        <segment title="장학소식"/>
+                                    </segments>
+                                    <color key="tintColor" red="0.2926259041" green="0.4718952179" blue="0.80003553630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="selectCate:" destination="UK9-kZ-uhM" eventType="valueChanged" id="xn8-fj-Gbf"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93743306400000004" green="0.9369826913" blue="0.95686548950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstItem="i8K-TD-PGa" firstAttribute="centerX" secondItem="v73-W1-U80" secondAttribute="centerX" id="2x8-vs-dIN"/>
+                                <constraint firstItem="i8K-TD-PGa" firstAttribute="leading" secondItem="v73-W1-U80" secondAttribute="leading" constant="10" id="lBl-sj-zRz"/>
+                                <constraint firstItem="i8K-TD-PGa" firstAttribute="centerY" secondItem="v73-W1-U80" secondAttribute="centerY" id="nNS-Ob-DdS"/>
+                                <constraint firstAttribute="trailing" secondItem="i8K-TD-PGa" secondAttribute="trailing" constant="10" id="sTt-g5-8sr"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="main_cell" id="Rvk-Oh-1Pa" customClass="main_cell" customModule="GachonNoti" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="main_cell" id="Rvk-Oh-1Pa" customClass="main_cell" customModule="GachonNoti" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="78" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rvk-Oh-1Pa" id="veO-HZ-wm5">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[공통]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVi-Pf-iPi">
@@ -33,7 +60,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RG2-jl-oBl">
-                                            <rect key="frame" x="10" y="10" width="355" height="21"/>
+                                            <rect key="frame" x="10" y="10" width="321" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -90,7 +117,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="공지사항" id="qgx-yJ-lPJ"/>
                     <connections>
+                        <outlet property="selectCate_" destination="i8K-TD-PGa" id="aRT-GO-3z0"/>
                         <outlet property="tableview" destination="Q2h-Ie-Ofo" id="hU4-fT-ZHt"/>
+                        <segue destination="FNs-Yd-3fu" kind="push" id="MRl-ET-1qw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkO-WU-ggh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -102,11 +131,11 @@
             <objects>
                 <viewController storyboardIdentifier="mainDetail" id="FNs-Yd-3fu" customClass="mainDetail" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="43I-6B-B5u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vyb-w0-6Hh">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggR-wS-eRs">
                                         <rect key="frame" x="10" y="10" width="355" height="23"/>
@@ -127,7 +156,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efr-6j-lOq">
-                                        <rect key="frame" x="0.0" y="76" width="375" height="571"/>
+                                        <rect key="frame" x="0.0" y="76" width="375" height="478"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                                     </webView>
@@ -178,6 +207,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LQB-ps-37j"/>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="9pR-WL-e3T"/>
                     <connections>
                         <outlet property="contentt" destination="ggR-wS-eRs" id="Yha-7p-2XS"/>
                         <outlet property="datee" destination="vK9-bO-JHD" id="A0t-wg-JUY"/>

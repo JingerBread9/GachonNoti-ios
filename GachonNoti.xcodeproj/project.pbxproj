@@ -16,10 +16,10 @@
 		CE576A8722C0F2BE00E1BA5B /* mainDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8622C0F2BE00E1BA5B /* mainDetail.swift */; };
 		CE576A8922C0F2CF00E1BA5B /* mainDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8822C0F2CF00E1BA5B /* mainDetailPresenter.swift */; };
 		CE576A8B22C0F7C600E1BA5B /* strFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8A22C0F7C600E1BA5B /* strFunc.swift */; };
-		CE9D7B6B22D58C5A00ED55B6 /* getNoti.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D7B6A22D58C5A00ED55B6 /* getNoti.swift */; };
+		CE9D7B6B22D58C5A00ED55B6 /* notiFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D7B6A22D58C5A00ED55B6 /* notiFunc.swift */; };
 		CE9D7B6D22D58D7D00ED55B6 /* colorFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D7B6C22D58D7D00ED55B6 /* colorFunc.swift */; };
-		CE9D7B6F22D58E0400ED55B6 /* getStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D7B6E22D58E0400ED55B6 /* getStatus.swift */; };
-		CE9D7B7422D5982A00ED55B6 /* campusSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D7B7322D5982A00ED55B6 /* campusSet.swift */; };
+		CE9D7B6F22D58E0400ED55B6 /* dateFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D7B6E22D58E0400ED55B6 /* dateFunc.swift */; };
+		CE9D7B7422D5982A00ED55B6 /* campusFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D7B7322D5982A00ED55B6 /* campusFunc.swift */; };
 		CEAEE50B22C39D2500DDECF1 /* setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEE50A22C39D2500DDECF1 /* setting.swift */; };
 		CEAEE50D22C39D3000DDECF1 /* settingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEE50C22C39D3000DDECF1 /* settingPresenter.swift */; };
 		CEAEE51122C9E0F300DDECF1 /* timeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEE50F22C9E0F300DDECF1 /* timeTable.swift */; };
@@ -67,10 +67,10 @@
 		CE576A8622C0F2BE00E1BA5B /* mainDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainDetail.swift; sourceTree = "<group>"; };
 		CE576A8822C0F2CF00E1BA5B /* mainDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainDetailPresenter.swift; sourceTree = "<group>"; };
 		CE576A8A22C0F7C600E1BA5B /* strFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strFunc.swift; sourceTree = "<group>"; };
-		CE9D7B6A22D58C5A00ED55B6 /* getNoti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getNoti.swift; sourceTree = "<group>"; };
+		CE9D7B6A22D58C5A00ED55B6 /* notiFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notiFunc.swift; sourceTree = "<group>"; };
 		CE9D7B6C22D58D7D00ED55B6 /* colorFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorFunc.swift; sourceTree = "<group>"; };
-		CE9D7B6E22D58E0400ED55B6 /* getStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getStatus.swift; sourceTree = "<group>"; };
-		CE9D7B7322D5982A00ED55B6 /* campusSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campusSet.swift; sourceTree = "<group>"; };
+		CE9D7B6E22D58E0400ED55B6 /* dateFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateFunc.swift; sourceTree = "<group>"; };
+		CE9D7B7322D5982A00ED55B6 /* campusFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campusFunc.swift; sourceTree = "<group>"; };
 		CEAEE50A22C39D2500DDECF1 /* setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setting.swift; sourceTree = "<group>"; };
 		CEAEE50C22C39D3000DDECF1 /* settingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingPresenter.swift; sourceTree = "<group>"; };
 		CEAEE50F22C9E0F300DDECF1 /* timeTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeTable.swift; sourceTree = "<group>"; };
@@ -166,12 +166,12 @@
 		CE9D7B7022D5923C00ED55B6 /* util */ = {
 			isa = PBXGroup;
 			children = (
-				CE9D7B6E22D58E0400ED55B6 /* getStatus.swift */,
-				CE9D7B6C22D58D7D00ED55B6 /* colorFunc.swift */,
-				CE9D7B6A22D58C5A00ED55B6 /* getNoti.swift */,
+				CE9D7B7322D5982A00ED55B6 /* campusFunc.swift */,
+				CE9D7B6E22D58E0400ED55B6 /* dateFunc.swift */,
 				CE576A8A22C0F7C600E1BA5B /* strFunc.swift */,
+				CE9D7B6C22D58D7D00ED55B6 /* colorFunc.swift */,
+				CE9D7B6A22D58C5A00ED55B6 /* notiFunc.swift */,
 				CE576A8322C0D8B400E1BA5B /* requestHTTP.swift */,
-				CE9D7B7322D5982A00ED55B6 /* campusSet.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -531,10 +531,10 @@
 				CEAEE51222C9E0F300DDECF1 /* timeTable.Presenter.swift in Sources */,
 				CE576A8922C0F2CF00E1BA5B /* mainDetailPresenter.swift in Sources */,
 				CEAEE50B22C39D2500DDECF1 /* setting.swift in Sources */,
-				CE9D7B7422D5982A00ED55B6 /* campusSet.swift in Sources */,
+				CE9D7B7422D5982A00ED55B6 /* campusFunc.swift in Sources */,
 				CEC3DDB522BFD5EE00230441 /* maintable.swift in Sources */,
-				CE9D7B6B22D58C5A00ED55B6 /* getNoti.swift in Sources */,
-				CE9D7B6F22D58E0400ED55B6 /* getStatus.swift in Sources */,
+				CE9D7B6B22D58C5A00ED55B6 /* notiFunc.swift in Sources */,
+				CE9D7B6F22D58E0400ED55B6 /* dateFunc.swift in Sources */,
 				CEAEE51122C9E0F300DDECF1 /* timeTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

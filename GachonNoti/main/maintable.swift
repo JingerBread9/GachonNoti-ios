@@ -27,6 +27,23 @@ class maintable: UITableViewController{
     let userPresenter = maintablePresenter()
     var refreshControll = UIRefreshControl()
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet var selectCate_: UISegmentedControl!
+    @IBAction func selectCate(_ sender: Any) {
+        let num = selectCate_.selectedSegmentIndex
+        if (num == 0){
+            userPresenter.changeCateNum("358")
+        }
+        if (num == 1){
+            userPresenter.changeCateNum("359")
+        }
+        if (num == 2){
+            userPresenter.changeCateNum("360")
+        }
+        if (num == 3){
+            userPresenter.changeCateNum("361")
+        }
+        self.userPresenter.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +60,7 @@ class maintable: UITableViewController{
         let isnoti = UserDefaults.standard.value(forKey: appVersion)
         if (isnoti == nil){
             UserDefaults.standard.set("aa", forKey: appVersion)
-            justAlert(viewController: self,title: "업데이트 내용", msg: "\n매디컬 캠퍼스 시간표 추가\n알림 버그 수정\n계절학기 추가\n버그리포트 기능 추가")
+            justAlert(viewController: self,title: "업데이트 내용", msg: "\n공지사항 항목 추가\n75분 수업 변경 시간 적용\n")
         }
     }
     

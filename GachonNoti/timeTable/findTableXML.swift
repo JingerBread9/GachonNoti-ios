@@ -142,13 +142,13 @@ class findTableXML: NSObject, XMLParserDelegate {
             return [8,13]
         }
         if (table ==  "C"){
-            return [14,19]
+            return [16,21]
         }
         if (table ==  "D"){
-            return [20,25]
+            return [22,27]
         }
         if (table ==  "E"){
-            return [26,31]
+            return [28,33]
         }
         if (Int(table)! <= 8 && Int(table)! >= 1){
             return [(Int(table)! - 1) * 4, Int(table)! * 4 - 1 - 1]

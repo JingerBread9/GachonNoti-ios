@@ -24,8 +24,13 @@ class maintablePresenter {
     private var userView : mainView?
     private var cnt = 0
     private var loading = false
+    private var selectCateNum = "358"
     
     init(){
+    }
+    
+    func changeCateNum(_ num:String){
+        selectCateNum = num
     }
     
     func attachView(_ view:mainView){
@@ -60,7 +65,7 @@ class maintablePresenter {
     
     private func request(num:String){
         userView?.show_hud()
-        let url = "http://m.gachon.ac.kr/gachon/notice.jsp?pageNum=" + num + "&pageSize=20&boardType_seq=358"
+        let url = "http://m.gachon.ac.kr/gachon/notice.jsp?pageNum=" + num + "&pageSize=20&boardType_seq=" + selectCateNum
         requestHTTP(url: url,completion: { result in
             do {
                 let doc: Document = try SwiftSoup.parse(result)
@@ -85,7 +90,7 @@ class maintablePresenter {
     
     private func findNoti(num:String){
         userView?.show_hud()
-        let url = "http://m.gachon.ac.kr/gachon/notice.jsp?pageNum=" + num + "&pageSize=10&boardType_seq=358"
+        let url = "http://m.gachon.ac.kr/gachon/notice.jsp?pageNum=" + num + "&pageSize=10&boardType_seq=" + selectCateNum
         requestHTTP(url: url,completion: { result in
             do {
                 let doc: Document = try SwiftSoup.parse(result)
@@ -115,6 +120,9 @@ class maintablePresenter {
             //print(href)
             var title = try li.select("a").select("strong").html()
             title = title.replace(" ", "")
+            if (title == ""){
+                title = "[공통]"
+            }
             //print(title)
             var content = try li.select("a").html()
             content = content.description.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil)
