@@ -20,7 +20,12 @@ extension String {
     }
     
     func split2(w1:String,w2:String) -> String{
-        return self.components(separatedBy: w1)[1].components(separatedBy: w2)[0]
+        if (self.contains(w1) && self.contains(w2)){
+             return self.components(separatedBy: w1)[1].components(separatedBy: w2)[0]
+        }else{
+            return ""
+        }
+       
     }
     
 }

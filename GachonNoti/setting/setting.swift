@@ -144,7 +144,31 @@ class setting: UITableViewController{
         
         alert.addAction(UIAlertAction(title: "전송", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0]
-            self.gobug(textField!.text!)
+
+            var device = ""
+            if UIDevice().userInterfaceIdiom == .phone {
+                switch UIScreen.main.nativeBounds.height {
+                case 1136:
+                    device = "iPhone 5 or 5S or 5C"
+                case 1334:
+                    device = "iPhone 6/6S/7/8"
+                case 2208:
+                    device = "iPhone 6+/6S+/7+/8+"
+                case 2436:
+                    device = "iPhone X"
+                default:
+                    device = "unknown"
+                }
+            }
+            
+            let systemVersion = UIDevice.current.systemVersion
+            let systemName = UIDevice.current.systemName
+            let model = UIDevice.current.model
+            let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+            
+            if (textField!.text!.count > 0){
+                self.gobug(textField!.text! + "/" + device + "/" + systemVersion + "/" + systemName + "/" + model + "/" + appVersion)
+            }
         }))
         
         let cancel = UIAlertAction(title: "취소", style: .default, handler: nil)

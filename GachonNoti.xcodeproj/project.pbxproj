@@ -10,6 +10,12 @@
 		4BE92FA7EE6AF1D622F8EFB3 /* Pods_GachonNoti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8AFDC350F255A5D1B89B1D /* Pods_GachonNoti.framework */; };
 		9E4CF9EE6DA47DE6FD71FC39 /* Pods_GachonNotiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51202F3BBA32F3800125DA7B /* Pods_GachonNotiTests.framework */; };
 		C8E421A78AE3EC525153C9FB /* Pods_GachonNotiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E05A45F827AD526D15D5D6 /* Pods_GachonNotiUITests.framework */; };
+		CE32BEFC22E1CFC0002ACCC3 /* myInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BEFB22E1CFC0002ACCC3 /* myInfo.swift */; };
+		CE32BEFE22E21A4B002ACCC3 /* myInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BEFD22E21A4B002ACCC3 /* myInfoPresenter.swift */; };
+		CE32BF0022E24206002ACCC3 /* dataSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BEFF22E24206002ACCC3 /* dataSave.swift */; };
+		CE32BF0222E2431E002ACCC3 /* infoMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BF0122E2431E002ACCC3 /* infoMain.swift */; };
+		CE32BF0822E24577002ACCC3 /* myIDPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BF0622E24577002ACCC3 /* myIDPresenter.swift */; };
+		CE32BF0922E24577002ACCC3 /* myID.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BF0722E24577002ACCC3 /* myID.swift */; };
 		CE48D8D922CC768F00368CD3 /* findTableXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48D8D822CC768F00368CD3 /* findTableXML.swift */; };
 		CE48D8DC22CCAFC000368CD3 /* notfound.json in Resources */ = {isa = PBXBuildFile; fileRef = CE48D8DB22CCAFC000368CD3 /* notfound.json */; };
 		CE576A8422C0D8B400E1BA5B /* requestHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8322C0D8B400E1BA5B /* requestHTTP.swift */; };
@@ -61,6 +67,12 @@
 		7B8AFDC350F255A5D1B89B1D /* Pods_GachonNoti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachonNoti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E05A45F827AD526D15D5D6 /* Pods_GachonNotiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachonNotiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD20B9307C16596F90365ACA /* Pods-GachonNotiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachonNotiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GachonNotiUITests/Pods-GachonNotiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CE32BEFB22E1CFC0002ACCC3 /* myInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myInfo.swift; sourceTree = "<group>"; };
+		CE32BEFD22E21A4B002ACCC3 /* myInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myInfoPresenter.swift; sourceTree = "<group>"; };
+		CE32BEFF22E24206002ACCC3 /* dataSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataSave.swift; sourceTree = "<group>"; };
+		CE32BF0122E2431E002ACCC3 /* infoMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoMain.swift; sourceTree = "<group>"; };
+		CE32BF0622E24577002ACCC3 /* myIDPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myIDPresenter.swift; sourceTree = "<group>"; };
+		CE32BF0722E24577002ACCC3 /* myID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myID.swift; sourceTree = "<group>"; };
 		CE48D8D822CC768F00368CD3 /* findTableXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = findTableXML.swift; sourceTree = "<group>"; };
 		CE48D8DB22CCAFC000368CD3 /* notfound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notfound.json; sourceTree = "<group>"; };
 		CE576A8322C0D8B400E1BA5B /* requestHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = requestHTTP.swift; sourceTree = "<group>"; };
@@ -147,6 +159,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE32BEFA22E1CF95002ACCC3 /* myInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CE32BF0122E2431E002ACCC3 /* infoMain.swift */,
+				CE32BF0A22E2457A002ACCC3 /* myID */,
+				CE32BF0322E24347002ACCC3 /* login */,
+			);
+			path = myInfo;
+			sourceTree = "<group>";
+		};
+		CE32BF0322E24347002ACCC3 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				CE32BEFB22E1CFC0002ACCC3 /* myInfo.swift */,
+				CE32BEFD22E21A4B002ACCC3 /* myInfoPresenter.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		CE32BF0A22E2457A002ACCC3 /* myID */ = {
+			isa = PBXGroup;
+			children = (
+				CE32BF0722E24577002ACCC3 /* myID.swift */,
+				CE32BF0622E24577002ACCC3 /* myIDPresenter.swift */,
+			);
+			path = myID;
+			sourceTree = "<group>";
+		};
 		CE48D8DA22CCAFB300368CD3 /* anim */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +206,7 @@
 		CE9D7B7022D5923C00ED55B6 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				CE32BEFF22E24206002ACCC3 /* dataSave.swift */,
 				CE9D7B7322D5982A00ED55B6 /* campusFunc.swift */,
 				CE9D7B6E22D58E0400ED55B6 /* dateFunc.swift */,
 				CE576A8A22C0F7C600E1BA5B /* strFunc.swift */,
@@ -236,6 +277,7 @@
 				CEC3DDAE22BFCE0F00230441 /* setting */,
 				CE576A8522C0F2A900E1BA5B /* mainDetail */,
 				CEC3DDAD22BFCE0100230441 /* main */,
+				CE32BEFA22E1CF95002ACCC3 /* myInfo */,
 				CEFB9DB722BF8CCF00D685DC /* GachonNoti.entitlements */,
 				CEFB9DB522BF8AAB00D685DC /* GoogleService-Info.plist */,
 				CE48D8DB22CCAFC000368CD3 /* notfound.json */,
@@ -422,6 +464,7 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/PullToRefreshKit/PullToRefreshKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -438,6 +481,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PullToRefreshKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -524,9 +568,14 @@
 				CEFB9D8622BF899000D685DC /* AppDelegate.swift in Sources */,
 				CE576A8422C0D8B400E1BA5B /* requestHTTP.swift in Sources */,
 				CE48D8D922CC768F00368CD3 /* findTableXML.swift in Sources */,
+				CE32BEFE22E21A4B002ACCC3 /* myInfoPresenter.swift in Sources */,
+				CE32BF0022E24206002ACCC3 /* dataSave.swift in Sources */,
+				CE32BEFC22E1CFC0002ACCC3 /* myInfo.swift in Sources */,
+				CE32BF0922E24577002ACCC3 /* myID.swift in Sources */,
 				CE9D7B6D22D58D7D00ED55B6 /* colorFunc.swift in Sources */,
 				CEAEE51422CA325D00DDECF1 /* findBuildingXML.swift in Sources */,
 				CEAEE50D22C39D3000DDECF1 /* settingPresenter.swift in Sources */,
+				CE32BF0822E24577002ACCC3 /* myIDPresenter.swift in Sources */,
 				CEC3DDB622BFD5EE00230441 /* maintablePresenter.swift in Sources */,
 				CEAEE51222C9E0F300DDECF1 /* timeTable.Presenter.swift in Sources */,
 				CE576A8922C0F2CF00E1BA5B /* mainDetailPresenter.swift in Sources */,
@@ -535,6 +584,7 @@
 				CEC3DDB522BFD5EE00230441 /* maintable.swift in Sources */,
 				CE9D7B6B22D58C5A00ED55B6 /* notiFunc.swift in Sources */,
 				CE9D7B6F22D58E0400ED55B6 /* dateFunc.swift in Sources */,
+				CE32BF0222E2431E002ACCC3 /* infoMain.swift in Sources */,
 				CEAEE51122C9E0F300DDECF1 /* timeTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

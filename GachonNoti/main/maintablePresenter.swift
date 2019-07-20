@@ -116,6 +116,9 @@ class maintablePresenter {
             var href = try li.select("a").attr("href")
             let newSeq = href.split2(w1: "boardType_seq=",w2: "&")
             let newNo = href.split2(w1: "board_no=",w2: "&")
+            if (newSeq == ""){
+                throw NSError()
+            }
             href = "http://www.gachon.ac.kr/community/opencampus/06.jsp?" + "mode=view&boardType_seq=" + newSeq + "&board_no=" + newNo
             //print(href)
             var title = try li.select("a").select("strong").html()

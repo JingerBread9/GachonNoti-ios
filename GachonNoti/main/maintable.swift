@@ -22,45 +22,70 @@ class main_cell: UITableViewCell {
     @IBOutlet var saveC: NSLayoutConstraint!
 }
 
-class maintable: UITableViewController{
+class maintable: UITableViewController, UISearchBarDelegate{
+    
     
     let userPresenter = maintablePresenter()
     var refreshControll = UIRefreshControl()
     @IBOutlet weak var tableview: UITableView!
+    
     @IBOutlet var selectCate_: UISegmentedControl!
     @IBAction func selectCate(_ sender: Any) {
         let num = selectCate_.selectedSegmentIndex
-        if (num == 0){
-            userPresenter.changeCateNum("358")
-        }
-        if (num == 1){
-            userPresenter.changeCateNum("359")
-        }
-        if (num == 2){
-            userPresenter.changeCateNum("360")
-        }
-        if (num == 3){
-            userPresenter.changeCateNum("361")
-        }
+        if (num == 0){userPresenter.changeCateNum("358")}
+        if (num == 1){userPresenter.changeCateNum("359")}
+        if (num == 2){userPresenter.changeCateNum("360")}
+        if (num == 3){ userPresenter.changeCateNum("361")}
         self.userPresenter.reloadData()
+    }
+    
+    @IBOutlet var search_: UISearchBar!
+    
+    @IBAction func doneBtnClicked (sender: Any) {
+        self.view.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchStr_ = search_.text!
+        let searchStr = searchStr_.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let num = selectCate_.selectedSegmentIndex
+        if (num == 0){userPresenter.changeCateNum("358&searchopt=title&searchword=" + searchStr)}
+        if (num == 1){userPresenter.changeCateNum("359&searchopt=title&searchword=" + searchStr)}
+        if (num == 2){userPresenter.changeCateNum("360&searchopt=title&searchword=" + searchStr)}
+        if (num == 3){userPresenter.changeCateNum("361&searchopt=title&searchword=" + searchStr)}
+        self.userPresenter.reloadData()
+        search_.showsCancelButton = false
+        search_.endEditing(true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         userPresenter.attachView(self)
-        initii()
+        showUpdateStr()
+        
         refreshControll = UIRefreshControl()
         refreshControll.tintColor = UIColor.white
         refreshControll.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         tableView.refreshControl = refreshControll
+        
+        let toolBarKeyboard = UIToolbar()
+        toolBarKeyboard.sizeToFit()
+        let btnDoneBar = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneBtnClicked))
+        toolBarKeyboard.items = [btnDoneBar]
+        toolBarKeyboard.tintColor = #colorLiteral(red: 0.231372549, green: 0.4784313725, blue: 0.8235294118, alpha: 1)
+        
+        search_.inputAccessoryView = toolBarKeyboard
+        search_.delegate = self
+        search_.layer.borderWidth = 1
+        search_.layer.borderColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1).cgColor
     }
     
-    func initii(){
+    func showUpdateStr(){
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
         let isnoti = UserDefaults.standard.value(forKey: appVersion)
         if (isnoti == nil){
             UserDefaults.standard.set("aa", forKey: appVersion)
-            justAlert(viewController: self,title: "업데이트 내용", msg: "\n공지사항 항목 추가\n75분 수업 변경 시간 적용\n")
+            justAlert(viewController: self,title: "업데이트 내용", msg: "\n공지사항 항목 추가\n검색 기능 추가\n75분 수업 변경 시간 적용\n학생증 추가\n\n")
         }
     }
     
@@ -73,6 +98,11 @@ class maintable: UITableViewController{
     
     @objc func refresh(sender: UIBarButtonItem) {
         self.refreshControll.endRefreshing()
+        let num = selectCate_.selectedSegmentIndex
+        if (num == 0){userPresenter.changeCateNum("358")}
+        if (num == 1){userPresenter.changeCateNum("359")}
+        if (num == 2){userPresenter.changeCateNum("360")}
+        if (num == 3){ userPresenter.changeCateNum("361")}
         self.userPresenter.reloadData()
     }
 
@@ -119,7 +149,6 @@ class maintable: UITableViewController{
                 cell.backgroundColor = UIColor.white
             }
         }
-        
         return cell
     }
     
@@ -136,7 +165,10 @@ class maintable: UITableViewController{
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastElement = userPresenter.getData().count - 1
         if (!userPresenter.isLoading() && indexPath.row == lastElement) {
-            userPresenter.moreLoad()
+            if (userPresenter.getData().count > 10){
+                 userPresenter.moreLoad()
+            }
+           
         }
     }
     
@@ -162,3 +194,4 @@ extension maintable: mainView {
     }
     
 }
+
