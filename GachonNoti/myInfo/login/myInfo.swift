@@ -15,6 +15,8 @@ class myInfo: UIViewController  {
     
     let userPresenter = myInfoPresenter()
     
+    @IBOutlet var grayView2: UIView!
+    @IBOutlet var grayView: UIView!
     @IBOutlet var loginView: UIView!
     @IBOutlet var idForm_: HoshiTextField!
     @IBOutlet var passForm_: HoshiTextField!
@@ -77,6 +79,10 @@ class myInfo: UIViewController  {
         loginView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         loginView.layer.shadowRadius = 3
         loginView.layer.shadowOpacity = 0.5
+        
+        grayView.roundCorners([.topLeft], radius: 10)
+        grayView2.roundCorners([.topRight], radius: 10)
+        
     }
     
   
