@@ -28,21 +28,11 @@ class myIDPresenter {
     init(){
     }
     
-    var mTimer : Timer?
-    
-    @objc func timerCallback(){
-        if (getData("id") != ""){
-            mTimer?.invalidate()
-            mTimer = nil
-            getInfo()
-        }
-    }
-    
     func attachView(_ view:idView){
         userView = view
         
-        if (mTimer == nil){
-            mTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
+        if (getData("id") != ""){
+            getInfo()
         }
     }
     
@@ -51,8 +41,13 @@ class myIDPresenter {
     }
     
     func getInfo(){
-
         let id = getData("id")
+        
+        if (getData("autoLogin") != "1"){
+            setData("id","")
+            setData("pass","")
+        }
+        
         let parr = "{\"USER_ID\":\"" + id + "\",\"fsp_ds_cmd\":[{\"TYPE\":\"N\",\"SQL_ID\":\"mobile/common:USER_INFO_SQL_S01\",\"INSERT_SQL_ID\":\"\",\"UPDATE_SQL_ID\":\"\",\"DELETE_SQL_ID\":\"\",\"SAVE_FLAG_COLUMN\":\"\",\"KEY_ZERO_LEN\":\"\",\"USE_INPUT\":\"N\",\"USE_ORDER\":\"Y\",\"EXEC\":\"\",\"FAIL\":\"\",\"FAIL_MSG\":\"\",\"EXEC_CNT\":0,\"MSG\":\"\"}],\"fsp_action\":\"xDefaultAction\",\"fsp_cmd\":\"execute\"}"
         
         userView?.show_hud()
@@ -69,6 +64,7 @@ class myIDPresenter {
                 self.getInfo2()
             }
         })
+
     }
     
     func getInfo2(){
@@ -76,19 +72,15 @@ class myIDPresenter {
         let parr = "{\"SQL_ID\":\"mobile/affairs:LIB_PS_ID_CARD_SQL_S01\",\"USER_NO\":\"m" + self.USER_NO + "\",\"fsp_action\":\"GcLibAction\",\"fsp_cmd\":\"executeMap\"}"
         
         requestPost("http://smart.gachon.ac.kr:8080//WebJSON",parr,{ result in
-            //print(result)
-            
             self.qr = result.split2(w1: "\"qr\":\"", w2: "\"").replace("\\","")
             
-            if (getData("autoLogin") != "1"){
-                setData("id","")
-                setData("pass","")
-            }
-            
-            DispatchQueue.main.async {
+            let time = DispatchTime.now() + .milliseconds(500)
+            DispatchQueue.main.asyncAfter(deadline: time) {
                 self.userView?.getInfo2(self.qr)
+                
                 self.userView?.dissmiss_hud()
             }
+
         })
     }
     

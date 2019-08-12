@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 protocol infoView: NSObjectProtocol {
     
     func show_hud()
     func dissmiss_hud()
     func reloadView()
+    func justAlert(title: String, msg: String)
     
 }
 
@@ -40,13 +42,22 @@ class myInfoPresenter {
             //print(result)
             if (result.contains("\"eml\":")){
                 //print("로그인성공")
-                setData("id",id)
-                setData("pass",pass)
+                do{
+                    let key = (UIDevice().identifierForVendor?.uuidString ?? "vbiaewhfvewbfew").md5()
+                    let iv = "gqLOHUioQ0QjhuvI"
+                    let aesen = try pass.aesEncrypt(key: key, iv: iv)
+                    //let str3 = try str2.aesDecrypt(key: keyy, iv: ivv)
+                    setData("id",id)
+                    setData("pass",aesen)
+                }catch{
+                }
+                
                 DispatchQueue.main.async {
                     self.userView?.reloadView()
                 }
             }else{
                 //print("로그인실패")
+                self.userView?.justAlert(title: "로그인 실패",msg: "다시한번 확인해주세요.")
             }
             DispatchQueue.main.async {
                 self.userView?.dissmiss_hud()

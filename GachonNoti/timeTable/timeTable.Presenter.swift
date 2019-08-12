@@ -55,7 +55,15 @@ class timeTablePresenter {
     }
     
     func initTitle(){
-        self.userView?.setTitle(str: semesterstr + " - 빈 강의실 찾기")
+        self.userView?.setTitle(str: semesterstr)
+    }
+    
+    func resetData(){
+        ski = year + "-" + semester.description
+        UserDefaults.standard.set("<no-data>", forKey: ski + "-1-" + getCampusHttp())
+        UserDefaults.standard.set("<no-data>", forKey: ski + "-2-" + getCampusHttp())
+        UserDefaults.standard.set("<no-data>", forKey: ski + "-3-" + getCampusHttp())
+        self.userView?.justAlert(viewController: self.userView as? UIViewController, title: "성공", msg: "시간표 데이터를 리셋하였습니다.")
     }
     
     func checkSearch(){
@@ -115,7 +123,7 @@ class timeTablePresenter {
             tablearr.append(infoSecA)
         },dd: {_ in
             //print(tablearr)
-            self.userView?.setTitle(str: "(" + getCampusStr() + " " + self.semesterstr + ") " + str)
+            self.userView?.setTitle(str: str)
             self.userView?.makeTable(arrTable: tablearr,max:maxt)
         }).start(self.classdata1! , self.classdata2! , self.classdata3!)
         

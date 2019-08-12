@@ -10,6 +10,7 @@
 		4BE92FA7EE6AF1D622F8EFB3 /* Pods_GachonNoti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8AFDC350F255A5D1B89B1D /* Pods_GachonNoti.framework */; };
 		9E4CF9EE6DA47DE6FD71FC39 /* Pods_GachonNotiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51202F3BBA32F3800125DA7B /* Pods_GachonNotiTests.framework */; };
 		C8E421A78AE3EC525153C9FB /* Pods_GachonNotiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E05A45F827AD526D15D5D6 /* Pods_GachonNotiUITests.framework */; };
+		CE16119A22E855DD00BB898C /* cryto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16119922E855DD00BB898C /* cryto.swift */; };
 		CE32BEFC22E1CFC0002ACCC3 /* myInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BEFB22E1CFC0002ACCC3 /* myInfo.swift */; };
 		CE32BEFE22E21A4B002ACCC3 /* myInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BEFD22E21A4B002ACCC3 /* myInfoPresenter.swift */; };
 		CE32BF0022E24206002ACCC3 /* dataSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BEFF22E24206002ACCC3 /* dataSave.swift */; };
@@ -22,6 +23,7 @@
 		CE576A8722C0F2BE00E1BA5B /* mainDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8622C0F2BE00E1BA5B /* mainDetail.swift */; };
 		CE576A8922C0F2CF00E1BA5B /* mainDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8822C0F2CF00E1BA5B /* mainDetailPresenter.swift */; };
 		CE576A8B22C0F7C600E1BA5B /* strFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8A22C0F7C600E1BA5B /* strFunc.swift */; };
+		CE91A97E23019AA000070BCF /* tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91A97D23019AA000070BCF /* tabbar.swift */; };
 		CE9D7B6B22D58C5A00ED55B6 /* notiFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D7B6A22D58C5A00ED55B6 /* notiFunc.swift */; };
 		CE9D7B6D22D58D7D00ED55B6 /* colorFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D7B6C22D58D7D00ED55B6 /* colorFunc.swift */; };
 		CE9D7B6F22D58E0400ED55B6 /* dateFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D7B6E22D58E0400ED55B6 /* dateFunc.swift */; };
@@ -67,6 +69,7 @@
 		7B8AFDC350F255A5D1B89B1D /* Pods_GachonNoti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachonNoti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E05A45F827AD526D15D5D6 /* Pods_GachonNotiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachonNotiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD20B9307C16596F90365ACA /* Pods-GachonNotiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachonNotiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GachonNotiUITests/Pods-GachonNotiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CE16119922E855DD00BB898C /* cryto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cryto.swift; sourceTree = "<group>"; };
 		CE32BEFB22E1CFC0002ACCC3 /* myInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myInfo.swift; sourceTree = "<group>"; };
 		CE32BEFD22E21A4B002ACCC3 /* myInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myInfoPresenter.swift; sourceTree = "<group>"; };
 		CE32BEFF22E24206002ACCC3 /* dataSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataSave.swift; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 		CE576A8622C0F2BE00E1BA5B /* mainDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainDetail.swift; sourceTree = "<group>"; };
 		CE576A8822C0F2CF00E1BA5B /* mainDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainDetailPresenter.swift; sourceTree = "<group>"; };
 		CE576A8A22C0F7C600E1BA5B /* strFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strFunc.swift; sourceTree = "<group>"; };
+		CE91A97D23019AA000070BCF /* tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabbar.swift; sourceTree = "<group>"; };
 		CE9D7B6A22D58C5A00ED55B6 /* notiFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notiFunc.swift; sourceTree = "<group>"; };
 		CE9D7B6C22D58D7D00ED55B6 /* colorFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorFunc.swift; sourceTree = "<group>"; };
 		CE9D7B6E22D58E0400ED55B6 /* dateFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateFunc.swift; sourceTree = "<group>"; };
@@ -203,6 +207,14 @@
 			path = mainDetail;
 			sourceTree = "<group>";
 		};
+		CE91A97A23019A4F00070BCF /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				CE91A97D23019AA000070BCF /* tabbar.swift */,
+			);
+			path = tabbar;
+			sourceTree = "<group>";
+		};
 		CE9D7B7022D5923C00ED55B6 /* util */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +225,7 @@
 				CE9D7B6C22D58D7D00ED55B6 /* colorFunc.swift */,
 				CE9D7B6A22D58C5A00ED55B6 /* notiFunc.swift */,
 				CE576A8322C0D8B400E1BA5B /* requestHTTP.swift */,
+				CE16119922E855DD00BB898C /* cryto.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -272,6 +285,7 @@
 		CEFB9D8422BF899000D685DC /* GachonNoti */ = {
 			isa = PBXGroup;
 			children = (
+				CE91A97A23019A4F00070BCF /* tabbar */,
 				CE9D7B7022D5923C00ED55B6 /* util */,
 				CEAEE50E22C9E06C00DDECF1 /* timeTable */,
 				CEC3DDAE22BFCE0F00230441 /* setting */,
@@ -455,6 +469,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GachonNoti/Pods-GachonNoti-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/CurriculaTable/CurriculaTable.framework",
 				"${BUILT_PRODUCTS_DIR}/DTZFloatingActionButton/DTZFloatingActionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
@@ -472,6 +487,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CurriculaTable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTZFloatingActionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
@@ -580,12 +596,14 @@
 				CEAEE51222C9E0F300DDECF1 /* timeTable.Presenter.swift in Sources */,
 				CE576A8922C0F2CF00E1BA5B /* mainDetailPresenter.swift in Sources */,
 				CEAEE50B22C39D2500DDECF1 /* setting.swift in Sources */,
+				CE91A97E23019AA000070BCF /* tabbar.swift in Sources */,
 				CE9D7B7422D5982A00ED55B6 /* campusFunc.swift in Sources */,
 				CEC3DDB522BFD5EE00230441 /* maintable.swift in Sources */,
 				CE9D7B6B22D58C5A00ED55B6 /* notiFunc.swift in Sources */,
 				CE9D7B6F22D58E0400ED55B6 /* dateFunc.swift in Sources */,
 				CE32BF0222E2431E002ACCC3 /* infoMain.swift in Sources */,
 				CEAEE51122C9E0F300DDECF1 /* timeTable.swift in Sources */,
+				CE16119A22E855DD00BB898C /* cryto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

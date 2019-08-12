@@ -11,10 +11,12 @@ import UIKit
 import TextFieldEffects
 import NVActivityIndicatorView
 
+let idPresenter = myIDPresenter()
 class myID: UIViewController {
     
     @IBOutlet var timer: UILabel!
     
+    @IBOutlet var logo: UIImageView!
     @IBOutlet var topView2: UIView!
     @IBOutlet var topView: UIView!
     @IBOutlet var reNew_: UIButton!
@@ -24,7 +26,7 @@ class myID: UIViewController {
     @IBOutlet var dept: UILabel!
     @IBOutlet var sID: UILabel!
     @IBOutlet var name: UILabel!
-    let userPresenter = myIDPresenter()
+    let userPresenter = idPresenter
     
     @IBAction func reNew(_ sender: Any) {
         userPresenter.getInfo2()
@@ -33,10 +35,11 @@ class myID: UIViewController {
     var mTimer : Timer?
     var number : Int = 300
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        logo.isHidden = true
+        timer.isHidden = true
         
         card.layer.cornerRadius = 10
         card.layer.shadowColor = UIColor.gray.cgColor
@@ -53,12 +56,11 @@ class myID: UIViewController {
         topView.roundCorners([.topLeft], radius: 10)
         topView2.roundCorners([.topRight], radius: 10)
         
-        userPresenter.attachView(self)
-        
         if (mTimer == nil){
             mTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
         }
     
+        userPresenter.attachView(self)
     }
     
     @objc func timerCallback(){
@@ -68,11 +70,7 @@ class myID: UIViewController {
             let sec = number % 60
             timer.text = min.description + " 분 " + sec.description + " 초"
         }
-        
     }
-    
-    
-   
     
 }
 
@@ -84,6 +82,8 @@ extension myID: idView {
         name.text = name1
         sID.text = sID1
         dept.text = dept1
+        logo.isHidden = false
+        timer.isHidden = false
         
         if (url.contains("http")){
             let url = URL(string: url)
@@ -92,6 +92,9 @@ extension myID: idView {
             if let imageData = data {
                 let image = UIImage(data: imageData)
                 userPic.image = image
+                userPic.layer.masksToBounds = true
+                userPic.layer.borderWidth = 1
+                userPic.layer.borderColor = UIColor(red:220/255, green:220/255, blue:220/255, alpha: 1).cgColor
             }
         }
 

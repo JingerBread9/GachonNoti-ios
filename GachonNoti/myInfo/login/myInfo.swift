@@ -39,8 +39,19 @@ class myInfo: UIViewController  {
         self.view.endEditing(true)
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (getData("autoLogin") != "0"){
+            autoLogin_.setOn(true, animated: true)
+            setData("autoLogin","1")
+        }else{
+            autoLogin_.setOn(false, animated: true)
+            setData("autoLogin","0")
+        }
+        
         setUI()
         userPresenter.attachView(self)
     }
@@ -91,6 +102,14 @@ extension myInfo: infoView{
         if let parent = self.parent as? infoMain {
             parent.checkToShow()
         }
+        idPresenter.getInfo()
+    }
+    
+    func justAlert(title: String, msg: String){
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alertController.addAction(cancel)
+        self.present(alertController, animated: true, completion: nil)
     }
     
 }

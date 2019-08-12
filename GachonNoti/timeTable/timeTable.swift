@@ -15,6 +15,7 @@ import Lottie
 
 class timeTable: UIViewController , UIWebViewDelegate {
     
+    @IBOutlet var loadT2: UILabel!
     @IBOutlet var loadT: UILabel!
     var starAnimationView = AnimationView()
     @IBOutlet weak var curriculaTable: CurriculaTable!
@@ -50,8 +51,16 @@ class timeTable: UIViewController , UIWebViewDelegate {
         
         loadT.numberOfLines = 0
         loadT.text = "오른쪽 하단 검색으로\n강의실 시간표를 불러오세요."
+        loadT2.numberOfLines = 0
+        loadT2.text = "(현재 시간에 맞춰 자동으로 \n해당 학기 시간표를 가져옵니다.)"
+        
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "데이터 리셋", style: .plain, target: self, action: #selector(del))
     }
 
+    @objc func del(sender: UIBarButtonItem) {
+        userPresenter.resetData()
+    }
 
 }
 
@@ -81,6 +90,7 @@ extension timeTable: timeTableView {
         curriculaTable.isHidden = false
         starAnimationView.isHidden = true
         loadT.isHidden = true
+        loadT2.isHidden = true
     }
     
     func showAlert(viewController: UIViewController?,title: String, msg: String, buttonTitle: String, handler: ((UIAlertAction) -> Swift.Void)?){
@@ -131,7 +141,6 @@ extension timeTable: timeTableView {
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alertController.addAction(cancel)
-        
         
         if UIDevice.current.userInterfaceIdiom == .pad { //디바이스 타입이 iPad일때
             if let popoverController = alertController.popoverPresentationController {

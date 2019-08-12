@@ -89,7 +89,10 @@ class setting: UITableViewController{
                 "Lottie-ios\nhttps://github.com/airbnb/lottie-ios\n\n" +
                 "PopupDialog\nhttps://github.com/Orderella/PopupDialog\n\n" +
                 "PullToRefreshKit\nhttps://github.com/LeoMobileDeveloper/PullToRefreshKit\n\n" +
-                "NVActivityIndicatorView\nhttps://github.com/ninjaprox/NVActivityIndicatorView\n\n", image: nil)
+                "lottie-ios\nhttps://github.com/airbnb/lottie-ios\n\n" +
+                "TextFieldEffects\nhttps://github.com/raulriera/TextFieldEffects\n\n" +
+                "CryptoSwift\nhttps://github.com/krzyzanowskim/CryptoSwift\n\n" +
+                "NVActivityIndicatorView\nhttps://github.com/ninjaprox/NVActivityIndicatorView\n", image: nil)
             self.present(popup, animated: true, completion: nil)
         }
         

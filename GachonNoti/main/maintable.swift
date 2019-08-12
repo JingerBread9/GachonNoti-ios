@@ -78,6 +78,8 @@ class maintable: UITableViewController, UISearchBarDelegate{
         search_.delegate = self
         search_.layer.borderWidth = 1
         search_.layer.borderColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1).cgColor
+        
+        
     }
     
     func showUpdateStr(){
@@ -85,7 +87,7 @@ class maintable: UITableViewController, UISearchBarDelegate{
         let isnoti = UserDefaults.standard.value(forKey: appVersion)
         if (isnoti == nil){
             UserDefaults.standard.set("aa", forKey: appVersion)
-            justAlert(viewController: self,title: "업데이트 내용", msg: "\n공지사항 항목 추가\n검색 기능 추가\n75분 수업 변경 시간 적용\n학생증 추가\n\n")
+            justAlert(viewController: self,title: "업데이트 내용", msg: "버그수정\n")
         }
     }
     

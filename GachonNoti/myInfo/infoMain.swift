@@ -32,8 +32,6 @@ class infoMain: UIViewController {
         checkToShow()
     }
     
-
-    
     func checkToShow(){
         if ((getData("id") == "") || (getData("pass") == "")){
             self.viewLogin.alpha = 1
@@ -46,6 +44,8 @@ class infoMain: UIViewController {
         }
     }
     
-    
+    func afterLogin(){
+        
+    }
 }
 
