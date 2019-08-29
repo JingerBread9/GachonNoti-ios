@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 class infoMain: UIViewController {
     
     @IBOutlet var viewLogin: UIView!
