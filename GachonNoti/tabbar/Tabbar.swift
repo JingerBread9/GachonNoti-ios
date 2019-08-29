@@ -25,24 +25,19 @@ class tabbar: UITabBarController {
         let randNum = arc4random_uniform(10000).description
         requestHTTP(url: "http://wiffy.io/gachon/id.txt?" + randNum,completion: { result in
             //print(result)
-            if (result == "wowgachon"){
+            if (result != "wowgachon"){
                 DispatchQueue.main.async {
-                    if let arrayOfTabBarItems = self.tabBar.items as AnyObject as? NSArray,let
-                        tabBarItem = arrayOfTabBarItems[2] as? UITabBarItem {
-                        
-                        tabBarItem.isEnabled = true
-                        tabBarItem.title = "학생증"
-                    }
+                    self.viewControllers?.remove(at: 2)
                 }
             }
         })
         
-        if let arrayOfTabBarItems = self.tabBar.items as AnyObject as? NSArray,let
-            tabBarItem = arrayOfTabBarItems[2] as? UITabBarItem {
-            
-            tabBarItem.isEnabled = false
-            tabBarItem.title = "학생증(점검)"
-        }
+//        if let arrayOfTabBarItems = self.tabBar.items as AnyObject as? NSArray,let
+//            tabBarItem = arrayOfTabBarItems[2] as? UITabBarItem {
+//
+//            tabBarItem.isEnabled = false
+//            tabBarItem.title = "학생증(점검)"
+//        }
     }
     
 

@@ -185,8 +185,7 @@
 		CE32BF0A22E2457A002ACCC3 /* myID */ = {
 			isa = PBXGroup;
 			children = (
-				CE32BF0722E24577002ACCC3 /* myID.swift */,
-				CE32BF0622E24577002ACCC3 /* myIDPresenter.swift */,
+				CEEE2CAD2317BAB800B514AB /* tab0 */,
 			);
 			path = myID;
 			sourceTree = "<group>";
@@ -257,6 +256,15 @@
 				CEAEE50C22C39D3000DDECF1 /* settingPresenter.swift */,
 			);
 			path = setting;
+			sourceTree = "<group>";
+		};
+		CEEE2CAD2317BAB800B514AB /* tab0 */ = {
+			isa = PBXGroup;
+			children = (
+				CE32BF0722E24577002ACCC3 /* myID.swift */,
+				CE32BF0622E24577002ACCC3 /* myIDPresenter.swift */,
+			);
+			path = tab0;
 			sourceTree = "<group>";
 		};
 		CEFB9D7922BF899000D685DC = {
