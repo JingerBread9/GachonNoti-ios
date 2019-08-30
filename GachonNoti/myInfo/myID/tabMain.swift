@@ -19,29 +19,42 @@ class tabMain: UIViewController {
         }
         let num = tab_.selectedSegmentIndex
         if (num == 0){
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "tab0")
-            controller?.view.frame = mview.bounds
-            mview.addSubview(controller!.view)
+            add(asChildViewController: tab0)
         }
         else if (num == 1){
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "tab1")
-            controller?.view.frame = mview.bounds
-            mview.addSubview(controller!.view)
+            add(asChildViewController: tab1)
         }
         else if (num == 2){
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "tab2")
-            controller?.view.frame = mview.bounds
-            mview.addSubview(controller!.view)
+            add(asChildViewController: tab2)
         }
     }
     
+    private lazy var tab0: myID = {
+        var viewController = self.storyboard?.instantiateViewController(withIdentifier: "tab0") as! myID
+        return viewController
+    }()
+    
+    private lazy var tab1: tab1 = {
+        var viewController = self.storyboard?.instantiateViewController(withIdentifier: "tab1") as! tab1
+        return viewController
+    }()
+    
+    private lazy var tab2: tab2 = {
+        var viewController = self.storyboard?.instantiateViewController(withIdentifier: "tab2") as! tab2
+        return viewController
+    }()
+    
+    private func add(asChildViewController viewController: UIViewController) {
+        //addChild(viewController)
+        viewController.view.frame = mview.bounds
+        mview.addSubview(viewController.view)
+        //viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        //viewController.didMove(toParent: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "tab0")
-        controller?.view.frame = mview.bounds
-        mview.addSubview(controller!.view)
+        add(asChildViewController: tab0)
     }
-    
+
 }

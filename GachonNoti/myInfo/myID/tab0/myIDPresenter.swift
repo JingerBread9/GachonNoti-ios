@@ -58,6 +58,9 @@ class myIDPresenter {
             self.KNAME = result.split2(w1: "\"KNAME\":\"", w2: "\"")
             self.USER_NO = result.split2(w1: "\"USER_NO\":\"", w2: "\"")
             self.USER_IMG_PATH = result.split2(w1: "\"USER_IMG_PATH\":\"", w2: "\"").replace("\\","")
+            setData("sid", self.USER_NO)
+            setData("sname", self.KNAME)
+            setData("sdept", self.DEPT_NAME)
             
             DispatchQueue.main.async {
                 self.userView?.getInfo(self.KNAME,self.USER_NO,self.DEPT_NAME,self.USER_IMG_PATH)
