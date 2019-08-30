@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftSoup
+import PopupDialog
 
 class creditCell2: UITableViewCell {
     @IBOutlet var name: UILabel!
@@ -47,8 +48,7 @@ class tab2: UIViewController,UITableViewDataSource,UITableViewDelegate {
     }
     
     func getCredit(){
-        let id = getData("sid")
-        let url = "http://smart.gachon.ac.kr:8080/WebMain?STUDENT_NO=" + id + "&SQL_ID=mobile%2Faffairs%3AAFFAIRS_CREDIT_INFO_SQL_S01&fsp_action=AffairsAction&fsp_cmd=executeMapList&callback_page=%2Fmobile%2Fgachon%2Faffairs%2FAffCreditInfoList.jsp"
+        let url = "http://smart.gachon.ac.kr:8080/WebMain?STUDENT_NO=" + getData("sid") + "&SQL_ID=mobile%2Faffairs%3AAFFAIRS_CREDIT_INFO_SQL_S01&fsp_action=AffairsAction&fsp_cmd=executeMapList&callback_page=%2Fmobile%2Fgachon%2Faffairs%2FAffCreditInfoList.jsp"
         requestHTTP(url: url,completion: { result in
             do {
                 let doc: Document = try SwiftSoup.parse(result)
@@ -89,6 +89,14 @@ class tab2: UIViewController,UITableViewDataSource,UITableViewDelegate {
         cell.max.text = data[indexPath.row][1]
         cell.now.text = data[indexPath.row][2]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let popup = PopupDialog(title: data[indexPath.row][0], message:
+                "이수기준: " + data[indexPath.row][1] + "\n" +
+                "취득학점: " + data[indexPath.row][2], image: nil)
+        self.present(popup, animated: true, completion: nil)
     }
     
     

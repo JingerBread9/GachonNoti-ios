@@ -19,6 +19,20 @@ func requestHTTP(url:String, completion: @escaping (String)->()){
     taskk2.resume()
 }
 
+func requestHTTPJson(url:String, json:Data, completion: @escaping (String)->()){
+    let url2 = URL(string: url)!
+    var request = URLRequest(url: url2)
+    request.httpMethod = "POST"
+    request.httpBody = json
+    
+    let taskk2 = URLSession.shared.dataTask(with: request) { data, response, error in
+        guard let data = data, error == nil else { return }
+        let result = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
+        completion(result)
+    }
+    taskk2.resume()
+}
+
 func requestHTTPEUC(url:String, completion: @escaping (String)->()){
     let url3 = URL(string: url)
     let taskk2 = URLSession.shared.dataTask(with: url3! as URL) { data, response, error in
