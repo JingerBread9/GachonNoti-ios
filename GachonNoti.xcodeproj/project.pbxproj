@@ -11,12 +11,12 @@
 		9E4CF9EE6DA47DE6FD71FC39 /* Pods_GachonNotiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51202F3BBA32F3800125DA7B /* Pods_GachonNotiTests.framework */; };
 		C8E421A78AE3EC525153C9FB /* Pods_GachonNotiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E05A45F827AD526D15D5D6 /* Pods_GachonNotiUITests.framework */; };
 		CE16119A22E855DD00BB898C /* cryto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16119922E855DD00BB898C /* cryto.swift */; };
-		CE32BEFC22E1CFC0002ACCC3 /* myInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BEFB22E1CFC0002ACCC3 /* myInfo.swift */; };
-		CE32BEFE22E21A4B002ACCC3 /* myInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BEFD22E21A4B002ACCC3 /* myInfoPresenter.swift */; };
+		CE32BEFC22E1CFC0002ACCC3 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BEFB22E1CFC0002ACCC3 /* login.swift */; };
+		CE32BEFE22E21A4B002ACCC3 /* loginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BEFD22E21A4B002ACCC3 /* loginPresenter.swift */; };
 		CE32BF0022E24206002ACCC3 /* dataSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BEFF22E24206002ACCC3 /* dataSave.swift */; };
-		CE32BF0222E2431E002ACCC3 /* infoMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BF0122E2431E002ACCC3 /* infoMain.swift */; };
-		CE32BF0822E24577002ACCC3 /* myIDPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BF0622E24577002ACCC3 /* myIDPresenter.swift */; };
-		CE32BF0922E24577002ACCC3 /* myID.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BF0722E24577002ACCC3 /* myID.swift */; };
+		CE32BF0222E2431E002ACCC3 /* myinfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BF0122E2431E002ACCC3 /* myinfo.swift */; };
+		CE32BF0822E24577002ACCC3 /* tab0Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BF0622E24577002ACCC3 /* tab0Presenter.swift */; };
+		CE32BF0922E24577002ACCC3 /* tab0.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32BF0722E24577002ACCC3 /* tab0.swift */; };
 		CE48D8D922CC768F00368CD3 /* findTableXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48D8D822CC768F00368CD3 /* findTableXML.swift */; };
 		CE48D8DC22CCAFC000368CD3 /* notfound.json in Resources */ = {isa = PBXBuildFile; fileRef = CE48D8DB22CCAFC000368CD3 /* notfound.json */; };
 		CE576A8422C0D8B400E1BA5B /* requestHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE576A8322C0D8B400E1BA5B /* requestHTTP.swift */; };
@@ -35,7 +35,7 @@
 		CEAEE51422CA325D00DDECF1 /* findBuildingXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEE51322CA325D00DDECF1 /* findBuildingXML.swift */; };
 		CEC3DDB522BFD5EE00230441 /* maintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3DDB322BFD5EE00230441 /* maintable.swift */; };
 		CEC3DDB622BFD5EE00230441 /* maintablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3DDB422BFD5EE00230441 /* maintablePresenter.swift */; };
-		CEEE2CB32317C15700B514AB /* tabMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEE2CB22317C15700B514AB /* tabMain.swift */; };
+		CEEE2CB32317C15700B514AB /* afterLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEE2CB22317C15700B514AB /* afterLogin.swift */; };
 		CEEE2CB72317C78400B514AB /* tab1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEE2CB62317C78400B514AB /* tab1.swift */; };
 		CEEE2CB92317C7A400B514AB /* tab2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEE2CB82317C7A400B514AB /* tab2.swift */; };
 		CEFB9D8622BF899000D685DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB9D8522BF899000D685DC /* AppDelegate.swift */; };
@@ -73,12 +73,12 @@
 		B8E05A45F827AD526D15D5D6 /* Pods_GachonNotiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachonNotiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD20B9307C16596F90365ACA /* Pods-GachonNotiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachonNotiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GachonNotiUITests/Pods-GachonNotiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CE16119922E855DD00BB898C /* cryto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cryto.swift; sourceTree = "<group>"; };
-		CE32BEFB22E1CFC0002ACCC3 /* myInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myInfo.swift; sourceTree = "<group>"; };
-		CE32BEFD22E21A4B002ACCC3 /* myInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myInfoPresenter.swift; sourceTree = "<group>"; };
+		CE32BEFB22E1CFC0002ACCC3 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
+		CE32BEFD22E21A4B002ACCC3 /* loginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginPresenter.swift; sourceTree = "<group>"; };
 		CE32BEFF22E24206002ACCC3 /* dataSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataSave.swift; sourceTree = "<group>"; };
-		CE32BF0122E2431E002ACCC3 /* infoMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoMain.swift; sourceTree = "<group>"; };
-		CE32BF0622E24577002ACCC3 /* myIDPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myIDPresenter.swift; sourceTree = "<group>"; };
-		CE32BF0722E24577002ACCC3 /* myID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myID.swift; sourceTree = "<group>"; };
+		CE32BF0122E2431E002ACCC3 /* myinfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myinfo.swift; sourceTree = "<group>"; };
+		CE32BF0622E24577002ACCC3 /* tab0Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tab0Presenter.swift; sourceTree = "<group>"; };
+		CE32BF0722E24577002ACCC3 /* tab0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tab0.swift; sourceTree = "<group>"; };
 		CE48D8D822CC768F00368CD3 /* findTableXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = findTableXML.swift; sourceTree = "<group>"; };
 		CE48D8DB22CCAFC000368CD3 /* notfound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notfound.json; sourceTree = "<group>"; };
 		CE576A8322C0D8B400E1BA5B /* requestHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = requestHTTP.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		CEAEE51322CA325D00DDECF1 /* findBuildingXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findBuildingXML.swift; sourceTree = "<group>"; };
 		CEC3DDB322BFD5EE00230441 /* maintable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = maintable.swift; sourceTree = "<group>"; };
 		CEC3DDB422BFD5EE00230441 /* maintablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = maintablePresenter.swift; sourceTree = "<group>"; };
-		CEEE2CB22317C15700B514AB /* tabMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabMain.swift; sourceTree = "<group>"; };
+		CEEE2CB22317C15700B514AB /* afterLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = afterLogin.swift; sourceTree = "<group>"; };
 		CEEE2CB62317C78400B514AB /* tab1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tab1.swift; sourceTree = "<group>"; };
 		CEEE2CB82317C7A400B514AB /* tab2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tab2.swift; sourceTree = "<group>"; };
 		CEFB9D8222BF899000D685DC /* GachonNoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GachonNoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,8 +172,8 @@
 		CE32BEFA22E1CF95002ACCC3 /* myInfo */ = {
 			isa = PBXGroup;
 			children = (
-				CE32BF0122E2431E002ACCC3 /* infoMain.swift */,
-				CE32BF0A22E2457A002ACCC3 /* myID */,
+				CE32BF0122E2431E002ACCC3 /* myinfo.swift */,
+				CE32BF0A22E2457A002ACCC3 /* afterLogin */,
 				CE32BF0322E24347002ACCC3 /* login */,
 			);
 			path = myInfo;
@@ -182,21 +182,21 @@
 		CE32BF0322E24347002ACCC3 /* login */ = {
 			isa = PBXGroup;
 			children = (
-				CE32BEFB22E1CFC0002ACCC3 /* myInfo.swift */,
-				CE32BEFD22E21A4B002ACCC3 /* myInfoPresenter.swift */,
+				CE32BEFB22E1CFC0002ACCC3 /* login.swift */,
+				CE32BEFD22E21A4B002ACCC3 /* loginPresenter.swift */,
 			);
 			path = login;
 			sourceTree = "<group>";
 		};
-		CE32BF0A22E2457A002ACCC3 /* myID */ = {
+		CE32BF0A22E2457A002ACCC3 /* afterLogin */ = {
 			isa = PBXGroup;
 			children = (
-				CEEE2CB22317C15700B514AB /* tabMain.swift */,
+				CEEE2CB22317C15700B514AB /* afterLogin.swift */,
 				CEEE2CAD2317BAB800B514AB /* tab0 */,
 				CEEE2CB42317C76F00B514AB /* tab1 */,
 				CEEE2CB52317C77600B514AB /* tab2 */,
 			);
-			path = myID;
+			path = afterLogin;
 			sourceTree = "<group>";
 		};
 		CE48D8DA22CCAFB300368CD3 /* anim */ = {
@@ -219,6 +219,10 @@
 			isa = PBXGroup;
 			children = (
 				CE91A97D23019AA000070BCF /* tabbar.swift */,
+				CEC3DDAD22BFCE0100230441 /* main */,
+				CEAEE50E22C9E06C00DDECF1 /* timeTable */,
+				CE32BEFA22E1CF95002ACCC3 /* myInfo */,
+				CEC3DDAE22BFCE0F00230441 /* setting */,
 			);
 			path = tabbar;
 			sourceTree = "<group>";
@@ -254,6 +258,7 @@
 			children = (
 				CEC3DDB322BFD5EE00230441 /* maintable.swift */,
 				CEC3DDB422BFD5EE00230441 /* maintablePresenter.swift */,
+				CE576A8522C0F2A900E1BA5B /* mainDetail */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -270,8 +275,8 @@
 		CEEE2CAD2317BAB800B514AB /* tab0 */ = {
 			isa = PBXGroup;
 			children = (
-				CE32BF0722E24577002ACCC3 /* myID.swift */,
-				CE32BF0622E24577002ACCC3 /* myIDPresenter.swift */,
+				CE32BF0722E24577002ACCC3 /* tab0.swift */,
+				CE32BF0622E24577002ACCC3 /* tab0Presenter.swift */,
 			);
 			path = tab0;
 			sourceTree = "<group>";
@@ -318,13 +323,8 @@
 		CEFB9D8422BF899000D685DC /* GachonNoti */ = {
 			isa = PBXGroup;
 			children = (
-				CE91A97A23019A4F00070BCF /* tabbar */,
 				CE9D7B7022D5923C00ED55B6 /* util */,
-				CEAEE50E22C9E06C00DDECF1 /* timeTable */,
-				CEC3DDAE22BFCE0F00230441 /* setting */,
-				CE576A8522C0F2A900E1BA5B /* mainDetail */,
-				CEC3DDAD22BFCE0100230441 /* main */,
-				CE32BEFA22E1CF95002ACCC3 /* myInfo */,
+				CE91A97A23019A4F00070BCF /* tabbar */,
 				CEFB9DB722BF8CCF00D685DC /* GachonNoti.entitlements */,
 				CEFB9DB522BF8AAB00D685DC /* GoogleService-Info.plist */,
 				CE48D8DB22CCAFC000368CD3 /* notfound.json */,
@@ -612,20 +612,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEEE2CB32317C15700B514AB /* tabMain.swift in Sources */,
+				CEEE2CB32317C15700B514AB /* afterLogin.swift in Sources */,
 				CE576A8722C0F2BE00E1BA5B /* mainDetail.swift in Sources */,
 				CE576A8B22C0F7C600E1BA5B /* strFunc.swift in Sources */,
 				CEFB9D8622BF899000D685DC /* AppDelegate.swift in Sources */,
 				CE576A8422C0D8B400E1BA5B /* requestHTTP.swift in Sources */,
 				CE48D8D922CC768F00368CD3 /* findTableXML.swift in Sources */,
-				CE32BEFE22E21A4B002ACCC3 /* myInfoPresenter.swift in Sources */,
+				CE32BEFE22E21A4B002ACCC3 /* loginPresenter.swift in Sources */,
 				CE32BF0022E24206002ACCC3 /* dataSave.swift in Sources */,
-				CE32BEFC22E1CFC0002ACCC3 /* myInfo.swift in Sources */,
-				CE32BF0922E24577002ACCC3 /* myID.swift in Sources */,
+				CE32BEFC22E1CFC0002ACCC3 /* login.swift in Sources */,
+				CE32BF0922E24577002ACCC3 /* tab0.swift in Sources */,
 				CE9D7B6D22D58D7D00ED55B6 /* colorFunc.swift in Sources */,
 				CEAEE51422CA325D00DDECF1 /* findBuildingXML.swift in Sources */,
 				CEAEE50D22C39D3000DDECF1 /* settingPresenter.swift in Sources */,
-				CE32BF0822E24577002ACCC3 /* myIDPresenter.swift in Sources */,
+				CE32BF0822E24577002ACCC3 /* tab0Presenter.swift in Sources */,
 				CEC3DDB622BFD5EE00230441 /* maintablePresenter.swift in Sources */,
 				CEAEE51222C9E0F300DDECF1 /* timeTable.Presenter.swift in Sources */,
 				CE576A8922C0F2CF00E1BA5B /* mainDetailPresenter.swift in Sources */,
@@ -637,7 +637,7 @@
 				CE9D7B6B22D58C5A00ED55B6 /* notiFunc.swift in Sources */,
 				CE9D7B6F22D58E0400ED55B6 /* dateFunc.swift in Sources */,
 				CEEE2CB72317C78400B514AB /* tab1.swift in Sources */,
-				CE32BF0222E2431E002ACCC3 /* infoMain.swift in Sources */,
+				CE32BF0222E2431E002ACCC3 /* myinfo.swift in Sources */,
 				CEAEE51122C9E0F300DDECF1 /* timeTable.swift in Sources */,
 				CE16119A22E855DD00BB898C /* cryto.swift in Sources */,
 			);

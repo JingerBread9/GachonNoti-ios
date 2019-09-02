@@ -28,7 +28,8 @@ class setting: UITableViewController{
             } else {
                 noti_.setOn(false, animated: false)
                 notiOFF()
-                UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                //UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
             }
         }else{
             notiOFF()
@@ -63,12 +64,14 @@ class setting: UITableViewController{
         
         //후원
         if indexPath.section == 0 && indexPath.row == 2 {
-            UIApplication.shared.openURL(NSURL(string: "http://wiffy.io/gachon/donation")! as URL)
+            UIApplication.shared.open(URL(string: "http://wiffy.io/gachon/donation")!)
+            //UIApplication.shared.openURL(NSURL(string: "http://wiffy.io/gachon/donation")! as URL)
         }
         
         //버그
         if indexPath.section == 0 && indexPath.row == 3 {
-            UIApplication.shared.openURL(NSURL(string: "https://open.kakao.com/o/gE49yGCb")! as URL)
+            UIApplication.shared.open(URL(string: "https://open.kakao.com/o/gE49yGCb")!)
+            //UIApplication.shared.openURL(NSURL(string: "https://open.kakao.com/o/gE49yGCb")! as URL)
 //            textAlert()
         }
         
