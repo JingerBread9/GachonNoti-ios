@@ -51,6 +51,8 @@ class tab1: UIViewController,UITableViewDataSource,UITableViewDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //setData("sid","201635812")
+        
         card.layer.cornerRadius = 10
         card.layer.shadowColor = UIColor.gray.cgColor
         card.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
@@ -99,7 +101,7 @@ class tab1: UIViewController,UITableViewDataSource,UITableViewDelegate  {
         //print(jsonObject.description)
         requestHTTPJson(url: url,json: jsonData!,completion: { result in
             do {
-                //print(result)
+                print(result)
                 let data = result.data(using: .utf8)
                 let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
                 // Parse JSON data

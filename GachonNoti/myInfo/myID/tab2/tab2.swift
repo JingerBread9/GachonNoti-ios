@@ -57,8 +57,10 @@ class tab2: UIViewController,UITableViewDataSource,UITableViewDelegate {
                     for td in try tr.select("td"){
                         tmp.append(try td.text())
                     }
-                    if(tmp.count == 3){
-                        self.data.append(tmp)
+                    if(tmp.count >= 3){
+                        if(tmp[0] != ""){
+                            self.data.append(tmp)
+                        }
                     }
                 }
                 DispatchQueue.main.async {
