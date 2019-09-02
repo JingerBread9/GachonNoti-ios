@@ -350,7 +350,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="버그리포트 / 개선사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ApF-iZ-Dtw">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="버그리포트 (카톡 오픈채팅)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ApF-iZ-Dtw">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1095,7 +1095,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019년 1학기" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeF-yS-mjB">
-                                                            <rect key="frame" x="10" y="10.5" width="45" height="33.5"/>
+                                                            <rect key="frame" x="10" y="8" width="45" height="33.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="45" id="o9C-Je-I6U"/>
                                                             </constraints>
@@ -1104,7 +1104,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKt-HC-h2f">
-                                                            <rect key="frame" x="205" y="18.5" width="30" height="18"/>
+                                                            <rect key="frame" x="205" y="16" width="30" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="3hq-qL-hL4"/>
                                                             </constraints>
@@ -1113,13 +1113,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsw-e8-aRn">
-                                                            <rect key="frame" x="65" y="18.5" width="130" height="18"/>
+                                                            <rect key="frame" x="65" y="16" width="130" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftK-Ct-iVY">
-                                                            <rect key="frame" x="245" y="18.5" width="30" height="18"/>
+                                                            <rect key="frame" x="245" y="16" width="30" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="SFx-Xb-1SZ"/>
                                                             </constraints>
@@ -1128,7 +1128,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEn-Ja-II2">
-                                                            <rect key="frame" x="285" y="18.5" width="30" height="18"/>
+                                                            <rect key="frame" x="285" y="16" width="30" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="BEg-qD-izV"/>
                                                             </constraints>

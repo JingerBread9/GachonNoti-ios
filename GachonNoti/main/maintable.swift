@@ -87,7 +87,7 @@ class maintable: UITableViewController, UISearchBarDelegate{
         let isnoti = UserDefaults.standard.value(forKey: appVersion)
         if (isnoti == nil){
             UserDefaults.standard.set("aa", forKey: appVersion)
-            justAlert(viewController: self,title: "업데이트 내용", msg: "성적표추가\n이수학점 추가")
+            justAlert(viewController: self,title: "업데이트 내용", msg: "오픈톡방 버그리포트 추가\n성적표 버그수정")
         }
     }
     

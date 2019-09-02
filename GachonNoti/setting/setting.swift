@@ -68,7 +68,8 @@ class setting: UITableViewController{
         
         //버그
         if indexPath.section == 0 && indexPath.row == 3 {
-            textAlert()
+            UIApplication.shared.openURL(NSURL(string: "https://open.kakao.com/o/gE49yGCb")! as URL)
+//            textAlert()
         }
         
         //만든이

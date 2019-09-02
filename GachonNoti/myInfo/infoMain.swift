@@ -27,6 +27,8 @@ class infoMain: UIViewController {
     }
     
     func checkToShow(){
+        setData("id","201611111")
+        setData("pass","201611111")
         if ((getData("id") == "") || (getData("pass") == "")){
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(move))
             remove(asChildViewController: notlogin)

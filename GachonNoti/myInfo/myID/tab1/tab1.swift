@@ -56,7 +56,7 @@ class tab1: UIViewController,UITableViewDataSource,UITableViewDelegate  {
         card.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         card.layer.shadowRadius = 3
         card.layer.shadowOpacity = 0.5
-
+        
         tableview.dataSource = self
         tableview.delegate = self
         tableview.layer.masksToBounds = true
@@ -86,9 +86,9 @@ class tab1: UIViewController,UITableViewDataSource,UITableViewDelegate  {
         tableView.deselectRow(at: indexPath, animated: true)
         let popup = PopupDialog(title: data[indexPath.row][2], message:
             data[indexPath.row][0] + " " + data[indexPath.row][1] + "\n" +
-            "학년: " + data[indexPath.row][3] + "\n" +
-            "학점: " + data[indexPath.row][4] + "\n" +
-            "성적: " + data[indexPath.row][5], image: nil)
+                "학년: " + data[indexPath.row][3] + "\n" +
+                "학점: " + data[indexPath.row][4] + "\n" +
+                "성적: " + data[indexPath.row][5], image: nil)
         self.present(popup, animated: true, completion: nil)
     }
     
@@ -103,25 +103,27 @@ class tab1: UIViewController,UITableViewDataSource,UITableViewDelegate  {
                 let data = result.data(using: .utf8)
                 let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
                 // Parse JSON data
-                let jsonP = jsonResult?["ds_list"] as! [AnyObject]
-                for each in jsonP {
-                    var tmp = [String]()
-                    
-                    let CREDIT = each["CREDIT"] as! String
-                    let GRADE = each["GRADE"] as! String
-                    let YEAR = each["YEAR"] as! String
-                    let SUBJECT_NM = each["SUBJECT_NM"] as! String
-                    let MARK = each["MARK"] as! String
-                    let TERM_CD = each["TERM_CD"] as! String
-                    
-                    tmp.append(YEAR.description)
-                    tmp.append(TERM_CD.description)
-                    tmp.append(SUBJECT_NM.description)
-                    tmp.append(GRADE.description)
-                    tmp.append(CREDIT.description)
-                    tmp.append(MARK.description)
-                    
-                    self.data.append(tmp)
+                let jsonP = jsonResult?["ds_list"] as? [AnyObject]
+                if (jsonP != nil){
+                    for each in jsonP! {
+                        var tmp = [String]()
+                        
+                        let CREDIT = each["CREDIT"] as? String
+                        let GRADE = each["GRADE"] as? String
+                        let YEAR = each["YEAR"] as? String
+                        let SUBJECT_NM = each["SUBJECT_NM"] as? String
+                        let MARK = each["MARK"] as? String
+                        let TERM_CD = each["TERM_CD"] as? String
+                        
+                        tmp.append(YEAR?.description ?? "")
+                        tmp.append(TERM_CD?.description ?? "")
+                        tmp.append(SUBJECT_NM?.description ?? "")
+                        tmp.append(GRADE?.description ?? "")
+                        tmp.append(CREDIT?.description ?? "")
+                        tmp.append(MARK?.description ?? "")
+                        
+                        self.data.append(tmp)
+                    }
                 }
                 DispatchQueue.main.async {
                     //print(self.data)
@@ -142,14 +144,16 @@ class tab1: UIViewController,UITableViewDataSource,UITableViewDelegate  {
                 let data = result.data(using: .utf8)
                 let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
                 // Parse JSON data
-                let jsonP = jsonResult?["ds_list"] as! [AnyObject]
-                if(jsonP.count > 0){
-                    let CREDIT = jsonP[0]["CREDIT"] as! String
-                    let SCORE = jsonP[0]["SCORE"] as! String
-                    let MARK = jsonP[0]["MARK"] as! String
-                    
-                    DispatchQueue.main.async {
-                        self.totalnfo.text = "이수학점:" + CREDIT + " / 평점:" + MARK + " / 백분률:" + SCORE
+                let jsonP = jsonResult?["ds_list"] as? [AnyObject]
+                if(jsonP != nil){
+                    if(jsonP!.count > 0){
+                        let CREDIT = jsonP![0]["CREDIT"] as? String ?? "0"
+                        let SCORE = jsonP![0]["SCORE"] as? String ?? "0"
+                        let MARK = jsonP![0]["MARK"] as? String ?? "0"
+                        
+                        DispatchQueue.main.async {
+                            self.totalnfo.text = "이수학점:" + CREDIT + " / 평점:" + MARK + " / 백분률:" + SCORE
+                        }
                     }
                 }
             } catch {}
