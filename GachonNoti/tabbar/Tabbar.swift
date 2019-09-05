@@ -23,7 +23,7 @@ class tabbar: UITabBarController {
         super.viewDidLoad()
         
         let randNum = arc4random_uniform(10000).description
-        requestHTTP(url: "http://wiffy.io/gachon/id.txt?" + randNum,completion: { result in
+        requestHTTP(url: "http://wiffy.io/gachon/updateiOS/id_1015.txt?" + randNum,completion: { result in
             //print(result)
             if (result != "wowgachon"){
                 DispatchQueue.main.async {

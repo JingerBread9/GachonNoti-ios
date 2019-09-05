@@ -148,7 +148,8 @@ class timeTablePresenter {
             self.getTablecnt += 1
             if (self.getTablecnt >= 3){
                 self.userView?.dissmiss_hud()
-                self.userView?.justAlert(viewController: self.userView as? UIViewController, title: "성공", msg: "다운로드가 완료되었습니다.")
+                //self.userView?.justAlert(viewController: self.userView as? UIViewController, title: "성공", msg: "다운로드가 완료되었습니다.")
+                self.checkSearch()
             }
             if (result == "<no-data>"){
                 self.getTablecntError += 1

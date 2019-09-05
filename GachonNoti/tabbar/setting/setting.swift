@@ -13,7 +13,6 @@ import Firebase
 
 class setting: UITableViewController{
     
-    
     let userPresenter = settingPresenter()
     @IBOutlet var tableview: UITableView!
     @IBOutlet var noti_: UISwitch!
@@ -53,10 +52,26 @@ class setting: UITableViewController{
             campus.text = "[메디컬]"
         }
         
+        //tableview.headerView(forSection: 2)?.detailTextLabel?.text = "상호 : 위피(WIFFY)\n사업자등록번호 : 572-16-01320\nⓒ WIFFY 2019"
+    }
+    
+   
+    // Section의 title
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if(section == 0){
+            return "기능"
+        }
+        if(section == 1){
+            return "정보"
+        }
+        if(section == 2){
+            return "상호 : 위피(WIFFY)\n사업자등록번호 : 572-16-01320\nⓒ WIFFY 2019"
+        }
+        return ""
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    
         //캠퍼스선택
         if indexPath.section == 0 && indexPath.row == 1 {
             showAlert()
