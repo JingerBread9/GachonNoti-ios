@@ -59,7 +59,7 @@ class mainDetailPresenter{
                                 boardview = boardview + dtmp
                                 //print(boardview)
                                 if (boardview.contains("<script>document.location.href=\"")){
-                                    let href2 = try boardview.split2(w1: "<script>document.location.href=\""
+                                    let href2 = boardview.split2(w1: "<script>document.location.href=\""
                                         ,w2: "\";</script>")
                                     //print(href2)
                                     self.request(href: href2)

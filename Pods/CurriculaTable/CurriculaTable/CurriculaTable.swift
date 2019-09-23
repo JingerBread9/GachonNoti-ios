@@ -15,20 +15,20 @@ public class CurriculaTable: UIView {
     
     public var weekdaySymbolType = CurriculaTableWeekdaySymbolType.short {
         didSet {
-            collectionView.reloadData()
+            //collectionView.reloadData()
         }
     }
     
     public var firstWeekday = CurriculaTableWeekday.monday {
         didSet {
-            collectionView.reloadData()
+            //collectionView.reloadData()
             drawCurricula()
         }
     }
     
-    public var numberOfPeriods = 40 {
+    public var numberOfPeriods = 54 {
         didSet {
-            collectionView.reloadData()
+            //collectionView.reloadData()
             drawCurricula()
         }
     }
@@ -47,39 +47,40 @@ public class CurriculaTable: UIView {
     
     public var symbolsBgColor = UIColor.clear {
         didSet {
-            collectionView.reloadData()
+            //collectionView.reloadData()
         }
     }
     
     public var symbolsFontSize = CGFloat(14) {
         didSet {
-            collectionView.reloadData()
+            //collectionView.reloadData()
         }
     }
     
     public var heightOfWeekdaySymbols = CGFloat(28) {
         didSet {
-            collectionView.reloadData()
+            //collectionView.reloadData()
             drawCurricula()
         }
     }
     
     public var widthOfPeriodSymbols = CGFloat(32) {
         didSet {
-            collectionView.reloadData()
+            //collectionView.reloadData()
             drawCurricula()
         }
     }
     
-    public var borderWidth = CGFloat(0) {
+    public var borderWidth = CGFloat(1) {
         didSet {
-            collectionView.reloadData()
+            //collectionView.reloadData()
         }
     }
     
-    public var borderColor = UIColor.clear {
+    //UIColor.clear
+    public var borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.9) {
         didSet {
-            collectionView.reloadData()
+            //collectionView.reloadData()
         }
     }
     
@@ -168,7 +169,7 @@ public class CurriculaTable: UIView {
         super.layoutSubviews()
         
         collectionView.frame = bounds
-        collectionView.reloadData()
+        //collectionView.reloadData()
         drawCurricula()
     }
     

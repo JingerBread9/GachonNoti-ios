@@ -36,6 +36,7 @@ class tab2: UIViewController,UITableViewDataSource,UITableViewDelegate {
         tableview.dataSource = self
         tableview.delegate = self
         tableview.layer.masksToBounds = true
+        tableview.layer.cornerRadius = 10
         tableview.layer.borderWidth = 1
         tableview.layer.borderColor = UIColor(red:220/255, green:220/255, blue:220/255, alpha: 1).cgColor
         

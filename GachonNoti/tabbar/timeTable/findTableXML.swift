@@ -89,7 +89,7 @@ class findTableXML: NSObject, XMLParserDelegate {
                 for i in 2...6 {
                     //print(data[i])
                     if (data[i].contains(",")) {
-                        var scom = data[i].components(separatedBy: ",")
+                        let scom = data[i].components(separatedBy: ",")
                         
                         if ((cntroom && tmproom1.contains(roomNM)) ||
                             (!cntroom && tmproom2.contains(roomNM))){

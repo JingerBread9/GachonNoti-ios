@@ -29,6 +29,7 @@ extension CurriculaTableController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //print("========" + indexPath.row.description)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CurriculaTableCell
         cell.layer.sublayers?.removeAll()
         cell.backgroundColor = curriculaTable.symbolsBgColor

@@ -36,7 +36,7 @@ class timeTable: UIViewController , UIWebViewDelegate {
         let starAnimation = Animation.named("notfound")
         starAnimationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         starAnimationView.center.x = self.view.center.x
-        starAnimationView.center.y = self.view.center.y - 25
+        starAnimationView.center.y = self.view.center.y - 10
         starAnimationView.contentMode = .scaleAspectFill
         starAnimationView.animation = starAnimation
         starAnimationView.loopMode = .loop
@@ -79,18 +79,21 @@ extension timeTable: timeTableView {
     }
     
     func makeTable(arrTable:Array<CurriculaTableItem>?,max:Int){
-        curriculaTable.curricula = arrTable!
-        //curriculaTable.bgColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0)
-        curriculaTable.numberOfPeriods = 54
-        curriculaTable.borderWidth = 1
-        curriculaTable.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.9)
-        curriculaTable.cornerRadius = 0
-        curriculaTable.textEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
-        curriculaTable.maximumNameLength = 12
-        curriculaTable.isHidden = false
-        starAnimationView.isHidden = true
-        loadT.isHidden = true
-        loadT2.isHidden = true
+        DispatchQueue.main.async {
+            print(arrTable!.description)
+            self.curriculaTable.curricula = arrTable!
+            ////curriculaTable.bgColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0)
+            //self.curriculaTable.numberOfPeriods = 54
+            //self.curriculaTable.borderWidth = 1
+            //self.curriculaTable.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.9)
+            //self.curriculaTable.cornerRadius = 0
+            //self.curriculaTable.textEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+            self.curriculaTable.maximumNameLength = 20
+            self.curriculaTable.isHidden = false
+            self.starAnimationView.isHidden = true
+            self.loadT.isHidden = true
+            self.loadT2.isHidden = true
+        }
     }
     
     func showAlert(viewController: UIViewController?,title: String, msg: String, buttonTitle: String, handler: ((UIAlertAction) -> Swift.Void)?){
@@ -127,6 +130,7 @@ extension timeTable: timeTableView {
     func listAlert (arr:Array<String>,arr2:Array<String>,viewController: UIViewController?,title: String, msg: String){
         
         let alertController = UIAlertController(title: nil, message: "건물을 선택해주세요.", preferredStyle: .actionSheet)
+        
         for i in arr{
             func someHandler(alert: UIAlertAction!) {
                 var tmp = Array<String>()
@@ -140,6 +144,7 @@ extension timeTable: timeTableView {
             let doo = UIAlertAction(title: i, style: .default, handler: someHandler)
             alertController.addAction(doo)
         }
+        
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alertController.addAction(cancel)
         
@@ -161,7 +166,7 @@ extension timeTable: timeTableView {
         let alertController = UIAlertController(title: nil, message: "강의실을 선택해주세요.", preferredStyle: .actionSheet)
         for i in arr{
             func someHandler(alert: UIAlertAction!) {
-                userPresenter.showtable(str: i)
+                self.userPresenter.showtable(str: i)
             }
             let doo = UIAlertAction(title: i, style: .default, handler: someHandler)
             alertController.addAction(doo)

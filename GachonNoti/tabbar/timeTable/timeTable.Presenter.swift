@@ -102,8 +102,9 @@ class timeTablePresenter {
                     //print(aa)
                     DispatchQueue.main.async {
                         self.userView?.dissmiss_hud()
+                        self.userView?.listAlert(arr: self.build,arr2: self.buildTotal,viewController: self.userView as? UIViewController, title: self.ski, msg: "원하는 건물을 선택해주세요.")
                     }
-                    self.userView?.listAlert(arr: self.build,arr2: self.buildTotal,viewController: self.userView as? UIViewController, title: self.ski, msg: "원하는 건물을 선택해주세요.")
+                    //print(self.buildTotal)                    
                 }).start(self.classdata1! , self.classdata2! , self.classdata3!)
             }
         }
@@ -123,8 +124,10 @@ class timeTablePresenter {
             tablearr.append(infoSecA)
         },dd: {_ in
             //print(tablearr)
-            self.userView?.setTitle(str: str)
-            self.userView?.makeTable(arrTable: tablearr,max:maxt)
+            DispatchQueue.main.async {
+                self.userView?.setTitle(str: str)
+                self.userView?.makeTable(arrTable: tablearr,max:maxt)
+            }
         }).start(self.classdata1! , self.classdata2! , self.classdata3!)
         
     }
