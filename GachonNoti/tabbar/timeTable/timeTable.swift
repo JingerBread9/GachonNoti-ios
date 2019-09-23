@@ -36,7 +36,7 @@ class timeTable: UIViewController , UIWebViewDelegate {
         let starAnimation = Animation.named("notfound")
         starAnimationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         starAnimationView.center.x = self.view.center.x
-        starAnimationView.center.y = self.view.center.y - 100
+        starAnimationView.center.y = self.view.center.y - 25
         starAnimationView.contentMode = .scaleAspectFill
         starAnimationView.animation = starAnimation
         starAnimationView.loopMode = .loop
@@ -125,6 +125,7 @@ extension timeTable: timeTableView {
     }
     
     func listAlert (arr:Array<String>,arr2:Array<String>,viewController: UIViewController?,title: String, msg: String){
+        
         let alertController = UIAlertController(title: nil, message: "건물을 선택해주세요.", preferredStyle: .actionSheet)
         for i in arr{
             func someHandler(alert: UIAlertAction!) {
