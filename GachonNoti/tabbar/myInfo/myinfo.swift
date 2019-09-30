@@ -16,9 +16,15 @@ class infoMain: UIViewController {
     }
     
     @objc func move(sender: UIBarButtonItem) {
-        setData("id","")
-        setData("pass","")
-        checkToShow()
+        if(connectedToNetwork()){
+            notiSidOFF()
+            setData("id","")
+            setData("pass","")
+            checkToShow()
+        }else{
+            self.justAlert(title: "로그아웃 오류",msg: "인터넷 연결을 확인해주세요.")
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -32,6 +38,7 @@ class infoMain: UIViewController {
             remove(asChildViewController: notlogin)
             add(asChildViewController: login)
         }else{
+            notiSidON()
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "로그아웃", style: .plain, target: self, action: #selector(move))
             remove(asChildViewController: login)
             add(asChildViewController: notlogin)
@@ -66,6 +73,13 @@ class infoMain: UIViewController {
         viewController.view.removeFromSuperview()
         // Notify Child View Controller
         viewController.removeFromParent()
+    }
+    
+    private func justAlert(title: String, msg: String){
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alertController.addAction(cancel)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

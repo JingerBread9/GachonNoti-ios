@@ -24,6 +24,18 @@ class tab2: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet var tableview: UITableView!
     @IBOutlet var card: UIView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.data = [[String]]()
+        getCredit()
+        setInfo()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.data = [[String]]()
+        self.tableview.reloadData()
+        sinfo.text = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,8 +52,7 @@ class tab2: UIViewController,UITableViewDataSource,UITableViewDelegate {
         tableview.layer.borderWidth = 1
         tableview.layer.borderColor = UIColor(red:220/255, green:220/255, blue:220/255, alpha: 1).cgColor
         
-        getCredit()
-        setInfo()
+        
     }
     
     func setInfo(){
@@ -60,6 +71,7 @@ class tab2: UIViewController,UITableViewDataSource,UITableViewDelegate {
                     }
                     if(tmp.count >= 3){
                         if(tmp[0] != ""){
+                            //print(tmp.description)
                             self.data.append(tmp)
                         }
                     }

@@ -215,9 +215,7 @@ open class Elements: NSCopying {
 	*/
 	open func html()throws->String {
         var text = try this.reduce("") {result, name in "\(result)\(try name.html())\n"}
-        if (text != ""){
-            text.removeLast()
-        }
+        text.removeLast()
         return text
 	}
 

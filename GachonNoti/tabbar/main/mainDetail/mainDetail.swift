@@ -34,7 +34,7 @@ class mainDetail: UIViewController , UIWebViewDelegate {
     }
     
     @objc func move(sender: UIBarButtonItem) {
-        UIApplication.shared.openURL(NSURL(string: href!)! as URL)
+        UIApplication.shared.open(NSURL(string: href!)! as URL)
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {

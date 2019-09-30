@@ -36,7 +36,7 @@ class timeTable: UIViewController , UIWebViewDelegate {
         let starAnimation = Animation.named("notfound")
         starAnimationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         starAnimationView.center.x = self.view.center.x
-        starAnimationView.center.y = self.view.center.y - 10
+        starAnimationView.center.y = self.view.center.y - 60
         starAnimationView.contentMode = .scaleAspectFill
         starAnimationView.animation = starAnimation
         starAnimationView.loopMode = .loop
@@ -80,9 +80,9 @@ extension timeTable: timeTableView {
     
     func makeTable(arrTable:Array<CurriculaTableItem>?,max:Int){
         DispatchQueue.main.async {
-            print(arrTable!.description)
+            //print(arrTable!.description)
             self.curriculaTable.curricula = arrTable!
-            ////curriculaTable.bgColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0)
+            ///curriculaTable.bgColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0)
             //self.curriculaTable.numberOfPeriods = 54
             //self.curriculaTable.borderWidth = 1
             //self.curriculaTable.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.9)

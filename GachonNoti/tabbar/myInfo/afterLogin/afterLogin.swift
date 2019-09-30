@@ -52,9 +52,17 @@ class tabMain: UIViewController {
         //viewController.didMove(toParent: self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tab_.selectedSegmentIndex = 0
+        for view in mview.subviews{
+            view.removeFromSuperview()
+        }
+        add(asChildViewController: tab0)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        add(asChildViewController: tab0)
+        
     }
 
 }

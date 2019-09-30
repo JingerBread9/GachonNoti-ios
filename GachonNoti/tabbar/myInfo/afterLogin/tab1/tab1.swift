@@ -23,30 +23,47 @@ class tab1: UIViewController,UITableViewDataSource,UITableViewDelegate  {
     private var data = [[String]]()
     @IBOutlet var totalnfo: UILabel!
     
-    let jsonObject: [String:Any] = [
-        "fsp_cmd": "executeAjaxMap",
-        "STUDENT_NO": getData("sid"),
-        "YEAR": "",
-        "TERM_CD": "",
-        "GRADE": "",
-        "SQL_ID": "mobile/affairs:EXAM_GRADE_STUDENT_SQL_S01",
-        "fsp_action": "AffairsAction",
-        "jsonParams": "{\"STUDENT_NO\":\"" + getData("sid") + "\",\"YEAR\":\"\",\"TERM_CD\":\"\",\"GRADE\":\"\",\"SQL_ID\":\"mobile/affairs:EXAM_GRADE_STUDENT_SQL_S01\",\"fsp_action\":\"AffairsAction\",\"fsp_cmd\":\"executeAjaxMap\"}"
-    ]
-    
-    let jsonObject2: [String:Any] = [
-        "fsp_cmd": "executeAjaxMap",
-        "STUDENT_NO": getData("sid"),
-        "YEAR": "",
-        "TERM_CD": "",
-        "GRADE": "",
-        "SQL_ID": "mobile/affairs:EXAM_GRADE_STUDENT_AVG_SQL_S01",
-        "fsp_action": "AffairsAction",
-        "jsonParams": "{\"STUDENT_NO\":\"" + getData("sid") + "\",\"YEAR\":\"\",\"TERM_CD\":\"\",\"GRADE\":\"\",\"SQL_ID\":\"mobile/affairs:EXAM_GRADE_STUDENT_AVG_SQL_S01\",\"fsp_action\":\"AffairsAction\",\"fsp_cmd\":\"executeAjaxMap\"}"
-    ]
+    var jsonObject: [String:Any] = [:]
+    var jsonObject2: [String:Any] = [:]
     
     @IBOutlet var card: UIView!
     @IBOutlet var tableview: UITableView!
+    
+    private func setJsonObject(){
+        jsonObject = [
+            "fsp_cmd": "executeAjaxMap",
+            "STUDENT_NO": getData("sid"),
+            "YEAR": "",
+            "TERM_CD": "",
+            "GRADE": "",
+            "SQL_ID": "mobile/affairs:EXAM_GRADE_STUDENT_SQL_S01",
+            "fsp_action": "AffairsAction",
+            "jsonParams": "{\"STUDENT_NO\":\"" + getData("sid") + "\",\"YEAR\":\"\",\"TERM_CD\":\"\",\"GRADE\":\"\",\"SQL_ID\":\"mobile/affairs:EXAM_GRADE_STUDENT_SQL_S01\",\"fsp_action\":\"AffairsAction\",\"fsp_cmd\":\"executeAjaxMap\"}"
+        ]
+        jsonObject2 = [
+            "fsp_cmd": "executeAjaxMap",
+            "STUDENT_NO": getData("sid"),
+            "YEAR": "",
+            "TERM_CD": "",
+            "GRADE": "",
+            "SQL_ID": "mobile/affairs:EXAM_GRADE_STUDENT_AVG_SQL_S01",
+            "fsp_action": "AffairsAction",
+            "jsonParams": "{\"STUDENT_NO\":\"" + getData("sid") + "\",\"YEAR\":\"\",\"TERM_CD\":\"\",\"GRADE\":\"\",\"SQL_ID\":\"mobile/affairs:EXAM_GRADE_STUDENT_AVG_SQL_S01\",\"fsp_action\":\"AffairsAction\",\"fsp_cmd\":\"executeAjaxMap\"}"
+        ]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setJsonObject()
+        self.data = [[String]]()
+        getGrade()
+        getInfo()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.data = [[String]]()
+        self.tableview.reloadData()
+        self.totalnfo.text = ""
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,8 +83,7 @@ class tab1: UIViewController,UITableViewDataSource,UITableViewDelegate  {
         tableview.layer.borderWidth = 1
         tableview.layer.borderColor = UIColor(red:220/255, green:220/255, blue:220/255, alpha: 1).cgColor
         
-        getGrade()
-        getInfo()
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -102,7 +118,8 @@ class tab1: UIViewController,UITableViewDataSource,UITableViewDelegate  {
         //print(jsonObject.description)
         requestHTTPJson(url: url,json: jsonData!,completion: { result in
             do {
-                print(result)
+                //print(result)
+                
                 let data = result.data(using: .utf8)
                 let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
                 // Parse JSON data
@@ -143,7 +160,9 @@ class tab1: UIViewController,UITableViewDataSource,UITableViewDelegate  {
         //print(jsonObject.description)
         requestHTTPJson(url: url,json: jsonData!,completion: { result in
             do {
-                print(result)
+                //print(result)
+                //self.data = [[String]]()
+                
                 let data = result.data(using: .utf8)
                 let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
                 // Parse JSON data
