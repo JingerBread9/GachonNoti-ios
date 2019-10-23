@@ -11,7 +11,7 @@
         <!--공지사항-->
         <scene sceneID="ZMx-a5-FB5">
             <objects>
-                <tableViewController id="UK9-kZ-uhM" customClass="maintable" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="UK9-kZ-uhM" customClass="MainTable" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q2h-Ie-Ofo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="main_cell" id="Rvk-Oh-1Pa" customClass="main_cell" customModule="GachonNoti" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="main_cell" id="Rvk-Oh-1Pa" customClass="MainTableCell" customModule="GachonNoti" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="128" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rvk-Oh-1Pa" id="veO-HZ-wm5">
@@ -153,7 +153,7 @@
                     <connections>
                         <outlet property="search_" destination="1Lf-bv-I8Y" id="k9U-Af-gZl"/>
                         <outlet property="selectCate_" destination="i8K-TD-PGa" id="aRT-GO-3z0"/>
-                        <outlet property="tableview" destination="Q2h-Ie-Ofo" id="hU4-fT-ZHt"/>
+                        <outlet property="mTableView" destination="Q2h-Ie-Ofo" id="hU4-fT-ZHt"/>
                         <segue destination="FNs-Yd-3fu" kind="push" id="MRl-ET-1qw"/>
                     </connections>
                 </tableViewController>
@@ -164,7 +164,7 @@
         <!--Main Detail-->
         <scene sceneID="GKd-2e-ul8">
             <objects>
-                <viewController storyboardIdentifier="mainDetail" id="FNs-Yd-3fu" customClass="mainDetail" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainDetail" id="FNs-Yd-3fu" customClass="MainDetail" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="43I-6B-B5u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -244,9 +244,9 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="9pR-WL-e3T"/>
                     <connections>
-                        <outlet property="contentt" destination="ggR-wS-eRs" id="Yha-7p-2XS"/>
-                        <outlet property="datee" destination="vK9-bO-JHD" id="A0t-wg-JUY"/>
-                        <outlet property="titlee" destination="Q9W-lL-Ciq" id="stS-cO-kS1"/>
+                        <outlet property="mContent" destination="ggR-wS-eRs" id="Yha-7p-2XS"/>
+                        <outlet property="mDate" destination="vK9-bO-JHD" id="A0t-wg-JUY"/>
+                        <outlet property="mTitle" destination="Q9W-lL-Ciq" id="stS-cO-kS1"/>
                         <outlet property="web" destination="efr-6j-lOq" id="tDk-aP-8q3"/>
                     </connections>
                 </viewController>
@@ -257,7 +257,7 @@
         <!--설정-->
         <scene sceneID="t1P-Dg-XbL">
             <objects>
-                <tableViewController id="Krr-mI-56A" customClass="setting" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Krr-mI-56A" customClass="Setting" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ELH-cz-1bP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -275,7 +275,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9FI-gt-hM7">
                                                     <rect key="frame" x="311" y="6.5" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="noti:" destination="Krr-mI-56A" eventType="valueChanged" id="vkE-A2-rrd"/>
+                                                        <action selector="notificationSwitchListener:" destination="Krr-mI-56A" eventType="valueChanged" id="vkE-A2-rrd"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vza-q5-GMU">
@@ -444,8 +444,8 @@
                     <navigationItem key="navigationItem" title="설정" id="vCZ-r7-bqs"/>
                     <connections>
                         <outlet property="campus" destination="G0I-g7-En5" id="sYr-cc-Dig"/>
-                        <outlet property="noti_" destination="9FI-gt-hM7" id="kjY-as-opU"/>
-                        <outlet property="tableview" destination="ELH-cz-1bP" id="19j-Wr-6l2"/>
+                        <outlet property="notificationSwitch" destination="9FI-gt-hM7" id="kjY-as-opU"/>
+                        <outlet property="mTableView" destination="ELH-cz-1bP" id="19j-Wr-6l2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zR1-NF-sGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -474,7 +474,7 @@
         <!--내 정보-->
         <scene sceneID="X2v-xF-zA9">
             <objects>
-                <viewController id="v6m-5T-zWZ" customClass="infoMain" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="v6m-5T-zWZ" customClass="InfoMain" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hsb-Pk-XH2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -528,7 +528,7 @@
         <!--빈 강의실 찾기-->
         <scene sceneID="KnR-70-gVE">
             <objects>
-                <viewController id="RiK-uD-WPp" customClass="timeTable" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RiK-uD-WPp" customClass="TimeTable" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ldl-pn-TcV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -596,7 +596,7 @@
         <!--Tabbar-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="tabbar" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabBar" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -617,7 +617,7 @@
         <!--My Info-->
         <scene sceneID="qv0-FK-aCp">
             <objects>
-                <viewController storyboardIdentifier="myInfo" id="UPE-eP-FX4" customClass="myInfo" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myInfo" id="UPE-eP-FX4" customClass="MyInfo" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eKn-rL-W7y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -789,7 +789,7 @@
         <!--Tab Main-->
         <scene sceneID="LAg-Ov-TzU">
             <objects>
-                <viewController storyboardIdentifier="tabMain" id="mcN-aV-nNp" customClass="tabMain" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tabMain" id="mcN-aV-nNp" customClass="TabMain" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ueQ-2m-LgA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -831,7 +831,7 @@
                         <outlet property="card" destination="fY1-H1-0Qw" id="cC4-F6-lkg"/>
                         <outlet property="dept" destination="r4S-WV-bo9" id="b0p-Bd-9oF"/>
                         <outlet property="logo" destination="OVv-6J-oMl" id="ASi-bO-Erv"/>
-                        <outlet property="mview" destination="mGR-hn-qiQ" id="KXM-ZE-zJ8"/>
+                        <outlet property="mView" destination="mGR-hn-qiQ" id="KXM-ZE-zJ8"/>
                         <outlet property="name" destination="pfp-RT-eDI" id="uSm-xh-bjx"/>
                         <outlet property="qrPic" destination="qsz-Uf-YZA" id="ufb-Hf-eVU"/>
                         <outlet property="reNew_" destination="vwf-tx-p0V" id="3fE-1b-pWG"/>
@@ -850,7 +850,7 @@
         <!--MyID-->
         <scene sceneID="KiQ-re-BG5">
             <objects>
-                <viewController storyboardIdentifier="tab0" id="sq2-HH-ab7" customClass="myID" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tab0" id="sq2-HH-ab7" customClass="IDCard" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ANu-iV-wM7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1014,7 +1014,7 @@
         <!--Tab1-->
         <scene sceneID="o43-Cv-gRk">
             <objects>
-                <viewController storyboardIdentifier="tab1" id="2Pu-8x-531" customClass="tab1" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tab1" id="2Pu-8x-531" customClass="Grade" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZVU-YL-CPI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1095,7 +1095,7 @@
                                             </constraints>
                                         </view>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gradeCell" id="CDo-87-ZTx" customClass="gradeCell" customModule="GachonNoti" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gradeCell" id="CDo-87-ZTx" customClass="GradeCell" customModule="GachonNoti" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="72" width="325" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CDo-87-ZTx" id="zwV-cV-1aS">
@@ -1193,8 +1193,8 @@
                     <navigationItem key="navigationItem" id="amW-4T-beH"/>
                     <connections>
                         <outlet property="card" destination="2b5-rY-26S" id="maZ-wp-zx4"/>
-                        <outlet property="tableview" destination="ZyC-gx-f7c" id="ACT-zC-sZz"/>
-                        <outlet property="totalnfo" destination="ege-aP-fL2" id="LxU-Fb-uDZ"/>
+                        <outlet property="mTableView" destination="ZyC-gx-f7c" id="ACT-zC-sZz"/>
+                        <outlet property="totalInfo" destination="ege-aP-fL2" id="LxU-Fb-uDZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBK-St-NJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1204,7 +1204,7 @@
         <!--Tab2-->
         <scene sceneID="le3-kp-7Kt">
             <objects>
-                <viewController storyboardIdentifier="tab2" id="kl7-Pm-5l3" customClass="tab2" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tab2" id="kl7-Pm-5l3" customClass="Credit" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1h1-LY-CsB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1322,7 +1322,7 @@
                                             </constraints>
                                         </view>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="creditCell2" rowHeight="40" id="EG3-eD-pSB" customClass="creditCell2" customModule="GachonNoti" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="creditCell2" rowHeight="40" id="EG3-eD-pSB" customClass="CreditCell" customModule="GachonNoti" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="63" width="325" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EG3-eD-pSB" id="bhb-rX-PVE">
@@ -1402,7 +1402,7 @@
                     <connections>
                         <outlet property="card" destination="eQ0-5S-RSH" id="jtc-lF-RUv"/>
                         <outlet property="sinfo" destination="uR3-iU-LO0" id="w9c-VO-W6v"/>
-                        <outlet property="tableview" destination="BH8-mh-252" id="Ft8-ys-owz"/>
+                        <outlet property="mTableView" destination="BH8-mh-252" id="Ft8-ys-owz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2U-dR-aMN" userLabel="First Responder" sceneMemberID="firstResponder"/>

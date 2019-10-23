@@ -35,10 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }else{
                         //UserDefaults.standard.set(0, forKey: "isnoti")
                     }
-                    if (getNoti()){
-                        notiON()
+                    if (getNotification()){
+                        notificationON()
                     }else{
-                        notiOFF()
+                        notificationOFF()
                     }
             })
         } else {
