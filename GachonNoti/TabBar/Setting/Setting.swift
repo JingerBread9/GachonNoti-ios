@@ -52,6 +52,9 @@ class Setting: UITableViewController {
             campus.text = "[메디컬]"
         }
 
+        if(dark_theme){
+            self.navigationController?.navigationBar.barTintColor = UIColor.black
+        }
         //tableview.headerView(forSection: 2)?.detailTextLabel?.text = "상호 : 위피(WIFFY)\n사업자등록번호 : 572-16-01320\nⓒ WIFFY 2019"
     }
 

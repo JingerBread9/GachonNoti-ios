@@ -48,7 +48,7 @@ class MyInfo: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if (getData("autoLogin") != "0") {
             autoLogin_.setOn(true, animated: true)
             setData("autoLogin", "1")
@@ -86,6 +86,13 @@ class MyInfo: UIViewController {
         grayView.roundCorners([.topLeft], radius: 10)
         grayView2.roundCorners([.topRight], radius: 10)
 
+        if(dark_theme){
+            self.view.backgroundColor = UIColor.black
+            self.loginView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.15)
+        }else{
+            self.view.backgroundColor = UIColor.white
+            self.loginView.backgroundColor = UIColor.white
+        }
     }
 
 

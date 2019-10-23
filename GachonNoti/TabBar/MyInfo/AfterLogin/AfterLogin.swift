@@ -12,7 +12,7 @@ import UIKit
 class TabMain: UIViewController {
     @IBOutlet var tab_: UISegmentedControl!
     @IBOutlet var mView: UIView!
-
+    
     @IBAction func tab(_ sender: Any) {
         for view in mView.subviews {
             view.removeFromSuperview()
@@ -26,22 +26,22 @@ class TabMain: UIViewController {
             add(asChildViewController: tab2)
         }
     }
-
+    
     private lazy var tab0: IDCard = {
         var viewController = self.storyboard?.instantiateViewController(withIdentifier: "tab0") as! IDCard
         return viewController
     }()
-
+    
     private lazy var tab1: Grade = {
         var viewController = self.storyboard?.instantiateViewController(withIdentifier: "tab1") as! Grade
         return viewController
     }()
-
+    
     private lazy var tab2: Credit = {
         var viewController = self.storyboard?.instantiateViewController(withIdentifier: "tab2") as! Credit
         return viewController
     }()
-
+    
     private func add(asChildViewController viewController: UIViewController) {
         //addChild(viewController)
         viewController.view.frame = mView.bounds
@@ -49,7 +49,7 @@ class TabMain: UIViewController {
         //viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         //viewController.didMove(toParent: self)
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         tab_.selectedSegmentIndex = 0
         for view in mView.subviews {
@@ -57,10 +57,13 @@ class TabMain: UIViewController {
         }
         add(asChildViewController: tab0)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if(dark_theme){
+            self.view.backgroundColor = UIColor.black
+            tab_.backgroundColor = UIColor.black
+        }
     }
-
+    
 }

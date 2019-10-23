@@ -14,58 +14,62 @@ import NVActivityIndicatorView
 import Lottie
 
 class TimeTable: UIViewController, UIWebViewDelegate {
-
+    
     @IBOutlet var loadT2: UILabel!
     @IBOutlet var loadT: UILabel!
     var starAnimationView = AnimationView()
     @IBOutlet weak var curriculaTable: CurriculaTable!
     let userPresenter = timeTablePresenter()
-
+    
     override func viewWillAppear(_ animated: Bool) {
         starAnimationView.play()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userPresenter.attachView(self)
         tableInit()
     }
-
+    
     func tableInit() {
         starAnimationView = AnimationView()
         let starAnimation = Animation.named("notfound")
         starAnimationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         starAnimationView.center.x = self.view.center.x
-        starAnimationView.center.y = self.view.center.y - 60
+        starAnimationView.center.y = self.view.center.y - 30
         starAnimationView.contentMode = .scaleAspectFill
         starAnimationView.animation = starAnimation
         starAnimationView.loopMode = .loop
         view.addSubview(starAnimationView)
-
+        
         curriculaTable.layer.cornerRadius = 10
         curriculaTable.layer.shadowColor = UIColor.gray.cgColor
         curriculaTable.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         curriculaTable.layer.shadowRadius = 5
         curriculaTable.layer.shadowOpacity = 0.7
         curriculaTable.isHidden = true
-
+        
         loadT.numberOfLines = 0
         loadT.text = "오른쪽 하단 검색으로\n강의실 시간표를 불러오세요."
         loadT2.numberOfLines = 0
         loadT2.text = "(현재 시간에 맞춰 자동으로 \n해당 학기 시간표를 가져옵니다.)"
-
-
+        if(dark_theme){
+            self.navigationController?.navigationBar.barTintColor = UIColor.black
+            self.view.backgroundColor = UIColor.black
+        }else{
+            self.view.backgroundColor = UIColor.white
+        }
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "데이터 리셋", style: .plain, target: self, action: #selector(del))
     }
-
+    
     @objc func del(sender: UIBarButtonItem) {
         userPresenter.resetData()
     }
-
+    
 }
 
 extension TimeTable: TimeTableView {
-
+    
     func makeFAB() {
         let actionButton = DTZFloatingActionButton()
         actionButton.handler = {
@@ -77,7 +81,7 @@ extension TimeTable: TimeTableView {
         actionButton.buttonImage = UIImage(named: "search")
         self.view.addSubview(actionButton)
     }
-
+    
     func makeTable(arrTable: Array<CurriculaTableItem>?, max: Int) {
         DispatchQueue.main.async {
             //print(arrTable!.description)
@@ -95,42 +99,42 @@ extension TimeTable: TimeTableView {
             self.loadT2.isHidden = true
         }
     }
-
+    
     func showAlert(viewController: UIViewController?, title: String, msg: String, buttonTitle: String, handler: ((UIAlertAction) -> Swift.Void)?) {
-
+        
         let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-
+        
         let defaultAction = UIAlertAction(title: buttonTitle, style: .default, handler: handler)
         alertController.addAction(defaultAction)
-
+        
         let cancel = UIAlertAction(title: "취소", style: .default, handler: nil)
         alertController.addAction(cancel)
-
+        
         viewController?.present(alertController, animated: true, completion: nil)
     }
-
+    
     func show_hud() {
         if (!NVActivityIndicatorPresenter.sharedInstance.isAnimating) {
             let activityData = ActivityData()
             NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
         }
     }
-
+    
     func dismiss_hud() {
         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
     }
-
+    
     func justAlert(viewController: UIViewController?, title: String, msg: String) {
         let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         let cancel = UIAlertAction(title: "확인", style: .default, handler: nil)
         alertController.addAction(cancel)
         viewController?.present(alertController, animated: true, completion: nil)
     }
-
+    
     func listAlert(arr: Array<String>, arr2: Array<String>, viewController: UIViewController?, title: String, msg: String) {
-
+        
         let alertController = UIAlertController(title: nil, message: "건물을 선택해주세요.", preferredStyle: .actionSheet)
-
+        
         for i in arr {
             func someHandler(alert: UIAlertAction!) {
                 var tmp = Array<String>()
@@ -141,14 +145,14 @@ extension TimeTable: TimeTableView {
                 }
                 self.listAlert2(arr: tmp, viewController: self)
             }
-
+            
             let doo = UIAlertAction(title: i, style: .default, handler: someHandler)
             alertController.addAction(doo)
         }
-
+        
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alertController.addAction(cancel)
-
+        
         if UIDevice.current.userInterfaceIdiom == .pad { //디바이스 타입이 iPad일때
             if let popoverController = alertController.popoverPresentationController {
                 // ActionSheet가 표현되는 위치를 저장해줍니다.
@@ -160,23 +164,23 @@ extension TimeTable: TimeTableView {
         } else {
             viewController?.present(alertController, animated: true, completion: nil)
         }
-
+        
     }
-
+    
     func listAlert2(arr: Array<String>, viewController: UIViewController?) {
         let alertController = UIAlertController(title: nil, message: "강의실을 선택해주세요.", preferredStyle: .actionSheet)
         for i in arr {
             func someHandler(alert: UIAlertAction!) {
                 self.userPresenter.showTable(str: i)
             }
-
+            
             let doo = UIAlertAction(title: i, style: .default, handler: someHandler)
             alertController.addAction(doo)
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alertController.addAction(cancel)
-
-
+        
+        
         if UIDevice.current.userInterfaceIdiom == .pad { //디바이스 타입이 iPad일때
             if let popoverController = alertController.popoverPresentationController {
                 // ActionSheet가 표현되는 위치를 저장해줍니다.
@@ -189,11 +193,11 @@ extension TimeTable: TimeTableView {
             viewController?.present(alertController, animated: true, completion: nil)
         }
     }
-
+    
     func setTitle(str: String) {
         self.navigationItem.title = str
     }
-
+    
 }
 
 

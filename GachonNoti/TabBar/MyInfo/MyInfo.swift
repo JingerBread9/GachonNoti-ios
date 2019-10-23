@@ -24,11 +24,11 @@ class InfoMain: UIViewController {
         } else {
             self.justAlert(title: "로그아웃 오류", msg: "인터넷 연결을 확인해주세요.")
         }
-
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         checkToShow()
     }
 
@@ -42,6 +42,10 @@ class InfoMain: UIViewController {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "로그아웃", style: .plain, target: self, action: #selector(move))
             remove(asChildViewController: login)
             add(asChildViewController: notLogin)
+        }
+        
+        if(dark_theme){
+            self.navigationController?.navigationBar.barTintColor = UIColor.black
         }
     }
 
@@ -62,7 +66,7 @@ class InfoMain: UIViewController {
         view.addSubview(viewController.view)
 
         let tabBarHeight = self.tabBarController!.tabBar.frame.size.height
-        viewController.view.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - tabBarHeight)
+        viewController.view.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - 0)
         viewController.didMove(toParent: self)
     }
 

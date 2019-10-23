@@ -14,9 +14,9 @@ import NVActivityIndicatorView
 let idPresenter = IDCardPresenter()
 
 class IDCard: UIViewController {
-
+    
     @IBOutlet var timer: UILabel!
-
+    
     @IBOutlet var logo: UIImageView!
     @IBOutlet var topView2: UIView!
     @IBOutlet var topView: UIView!
@@ -28,42 +28,50 @@ class IDCard: UIViewController {
     @IBOutlet var sID: UILabel!
     @IBOutlet var name: UILabel!
     let userPresenter = idPresenter
-
+    
     @IBAction func reNew(_ sender: Any) {
         userPresenter.getInfo2()
     }
-
+    
     var mTimer: Timer?
     var number: Int = 300
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         logo.isHidden = true
         timer.isHidden = true
-
+        
         card.layer.cornerRadius = 10
         card.layer.shadowColor = UIColor.gray.cgColor
         card.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         card.layer.shadowRadius = 3
         card.layer.shadowOpacity = 0.5
-
+        
         reNew_.layer.cornerRadius = 5
         reNew_.layer.shadowColor = UIColor(red: 6 / 255, green: 68 / 255, blue: 138 / 255, alpha: 1).cgColor
         reNew_.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         reNew_.layer.shadowRadius = 5
         reNew_.layer.shadowOpacity = 0.7
-
+        
         topView.roundCorners([.topLeft], radius: 10)
         topView2.roundCorners([.topRight], radius: 10)
-
+        
         if (mTimer == nil) {
             mTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
         }
-
+        
+        if(dark_theme){
+            self.view.backgroundColor = UIColor.black
+            sID.textColor = UIColor.black
+            dept.textColor = UIColor.black
+            name.textColor = UIColor.black
+            //card.backgroundColor = UIColor.darkGray
+            //tab_.backgroundColor = UIColor.black
+        }
         userPresenter.attachView(self)
     }
-
+    
     @objc func timerCallback() {
         if (number > 0) {
             number -= 1
@@ -72,22 +80,22 @@ class IDCard: UIViewController {
             timer.text = min.description + " 분 " + sec.description + " 초"
         }
     }
-
+    
 }
 
 extension IDCard: IDCardView {
-
+    
     func getInfo(_ name1: String, _ sID1: String, _ dept1: String, _ url: String) {
         name.text = name1
         sID.text = sID1
         dept.text = dept1
         logo.isHidden = false
         timer.isHidden = false
-
+        
         if (url.contains("http")) {
             let url = URL(string: url)
             let data = try? Data(contentsOf: url!)
-
+            
             if let imageData = data {
                 let image = UIImage(data: imageData)
                 userPic.image = image
@@ -96,14 +104,14 @@ extension IDCard: IDCardView {
                 userPic.layer.borderColor = UIColor(red: 220 / 255, green: 220 / 255, blue: 220 / 255, alpha: 1).cgColor
             }
         }
-
+        
     }
-
+    
     func getInfo2(_ url: String) {
         if (url.contains("http")) {
             let url = URL(string: url)
             let data = try? Data(contentsOf: url!)
-
+            
             if let imageData = data {
                 let image = UIImage(data: imageData)
                 number = 300
@@ -111,22 +119,22 @@ extension IDCard: IDCardView {
             }
         }
     }
-
+    
     func show_hud() {
         if (!NVActivityIndicatorPresenter.sharedInstance.isAnimating) {
             let activityData = ActivityData()
             NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
         }
     }
-
+    
     func dismiss_hud() {
         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
     }
-
+    
 }
 
 extension UIView {
-
+    
     func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let maskLayer = CAShapeLayer()
@@ -134,6 +142,6 @@ extension UIView {
         maskLayer.path = path.cgPath
         self.layer.mask = maskLayer
     }
-
+    
 }
 

@@ -9,19 +9,30 @@
 import UIKit
 import Foundation
 
+var dark_theme = false
+
 class TabBar: UITabBarController {
-
     override func viewDidAppear(_ animated: Bool) {
-
+        
     }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
-
+        
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if #available(iOS 13.0, *) {
+            if self.traitCollection.userInterfaceStyle == .dark {
+                dark_theme = true
+            } else {
+                dark_theme = false
+            }
+        }else {
+            dark_theme = false
+        }
+        
         let randNum = arc4random_uniform(10000).description
         requestHTTP(url: "http://wiffy.io/gachon/updateiOS/id_1015.txt?" + randNum, completion: { result in
             //print(result)
@@ -31,14 +42,14 @@ class TabBar: UITabBarController {
                 }
             }
         })
-
-//        if let arrayOfTabBarItems = self.tabBar.items as AnyObject as? NSArray,let
-//            tabBarItem = arrayOfTabBarItems[2] as? UITabBarItem {
-//
-//            tabBarItem.isEnabled = false
-//            tabBarItem.title = "학생증(점검)"
-//        }
+        
+        
+        //        if let arrayOfTabBarItems = self.tabBar.items as AnyObject as? NSArray,let
+        //            tabBarItem = arrayOfTabBarItems[2] as? UITabBarItem {
+        //
+        //            tabBarItem.isEnabled = false
+        //            tabBarItem.title = "학생증(점검)"
+        //        }
     }
-
-
+    
 }

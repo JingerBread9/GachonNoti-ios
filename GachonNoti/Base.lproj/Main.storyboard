@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
             <objects>
                 <tableViewController id="UK9-kZ-uhM" customClass="MainTable" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q2h-Ie-Ofo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="SzJ-3m-mBg">
@@ -84,7 +84,7 @@
                                 <rect key="frame" x="0.0" y="128" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rvk-Oh-1Pa" id="veO-HZ-wm5">
-                                    <rect key="frame" x="0.0" y="0.0" width="347.5" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="348" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[공통]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVi-Pf-iPi">
@@ -94,7 +94,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RG2-jl-oBl">
-                                            <rect key="frame" x="10" y="10" width="327.5" height="21"/>
+                                            <rect key="frame" x="10" y="10" width="328" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -151,9 +151,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="공지사항" id="qgx-yJ-lPJ"/>
                     <connections>
+                        <outlet property="mTableView" destination="Q2h-Ie-Ofo" id="hU4-fT-ZHt"/>
                         <outlet property="search_" destination="1Lf-bv-I8Y" id="k9U-Af-gZl"/>
                         <outlet property="selectCate_" destination="i8K-TD-PGa" id="aRT-GO-3z0"/>
-                        <outlet property="mTableView" destination="Q2h-Ie-Ofo" id="hU4-fT-ZHt"/>
+                        <outlet property="viewSearch" destination="ROW-Ri-biW" id="CdJ-6u-DBc"/>
+                        <outlet property="viewTab" destination="v73-W1-U80" id="YD3-Co-Ofn"/>
                         <segue destination="FNs-Yd-3fu" kind="push" id="MRl-ET-1qw"/>
                     </connections>
                 </tableViewController>
@@ -166,11 +168,11 @@
             <objects>
                 <viewController storyboardIdentifier="mainDetail" id="FNs-Yd-3fu" customClass="MainDetail" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="43I-6B-B5u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vyb-w0-6Hh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggR-wS-eRs">
                                         <rect key="frame" x="10" y="10" width="355" height="23"/>
@@ -259,7 +261,7 @@
             <objects>
                 <tableViewController id="Krr-mI-56A" customClass="Setting" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ELH-cz-1bP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -444,8 +446,8 @@
                     <navigationItem key="navigationItem" title="설정" id="vCZ-r7-bqs"/>
                     <connections>
                         <outlet property="campus" destination="G0I-g7-En5" id="sYr-cc-Dig"/>
-                        <outlet property="notificationSwitch" destination="9FI-gt-hM7" id="kjY-as-opU"/>
                         <outlet property="mTableView" destination="ELH-cz-1bP" id="19j-Wr-6l2"/>
+                        <outlet property="notificationSwitch" destination="9FI-gt-hM7" id="kjY-as-opU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zR1-NF-sGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -457,7 +459,7 @@
             <objects>
                 <navigationController id="aHE-2L-icJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="내 정보" image="stdid" id="qgx-J1-X85"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="wAQ-Fy-gWU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="wAQ-Fy-gWU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -476,7 +478,7 @@
             <objects>
                 <viewController id="v6m-5T-zWZ" customClass="InfoMain" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hsb-Pk-XH2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fLU-wZ-FYt"/>
@@ -492,7 +494,7 @@
             <objects>
                 <navigationController id="YLK-uU-Bjk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="설정" image="sett" id="hzw-Kp-VL9"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="DPd-w5-Waw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="DPd-w5-Waw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -511,7 +513,7 @@
             <objects>
                 <navigationController id="jDQ-6T-Mz2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="빈 강의실 찾기" image="search2" selectedImage="search2" id="M0d-T5-PlM"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="xUl-4s-BhE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="xUl-4s-BhE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -530,21 +532,21 @@
             <objects>
                 <viewController id="RiK-uD-WPp" customClass="TimeTable" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ldl-pn-TcV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qy-JX-iOb" customClass="CurriculaTable" customModule="CurriculaTable">
-                                <rect key="frame" x="10" y="10" width="355" height="554"/>
+                                <rect key="frame" x="10" y="54" width="355" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hello" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYO-om-BOL">
-                                <rect key="frame" x="169.5" y="351.5" width="36.5" height="20.5"/>
+                                <rect key="frame" x="169.5" y="379" width="36.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pf8-SY-CDw">
-                                <rect key="frame" x="168" y="382" width="39.5" height="19.5"/>
+                                <rect key="frame" x="168" y="409.5" width="39.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -559,7 +561,7 @@
                             <constraint firstItem="gUx-Bz-gA3" firstAttribute="trailing" secondItem="1Qy-JX-iOb" secondAttribute="trailing" constant="10" id="VcB-Lf-I4u"/>
                             <constraint firstItem="Pf8-SY-CDw" firstAttribute="top" secondItem="sYO-om-BOL" secondAttribute="bottom" constant="10" id="W1g-Rd-HpN"/>
                             <constraint firstItem="1Qy-JX-iOb" firstAttribute="leading" secondItem="gUx-Bz-gA3" secondAttribute="leading" constant="10" id="bxe-kA-41S"/>
-                            <constraint firstItem="sYO-om-BOL" firstAttribute="centerY" secondItem="ldl-pn-TcV" secondAttribute="centerY" constant="50" id="drj-4N-lyI"/>
+                            <constraint firstItem="sYO-om-BOL" firstAttribute="centerY" secondItem="ldl-pn-TcV" secondAttribute="centerY" constant="80" id="drj-4N-lyI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gUx-Bz-gA3"/>
                     </view>
@@ -579,7 +581,7 @@
             <objects>
                 <navigationController id="gnQ-AC-oBV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="공지사항" image="noti" selectedImage="noti" id="e70-2z-MPy"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="bXR-Fr-sOs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="bXR-Fr-sOs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -593,11 +595,11 @@
             </objects>
             <point key="canvasLocation" x="721" y="0.0"/>
         </scene>
-        <!--Tabbar-->
+        <!--Tab Bar-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" customClass="TabBar" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -847,7 +849,7 @@
             </objects>
             <point key="canvasLocation" x="2158" y="2068"/>
         </scene>
-        <!--MyID-->
+        <!--Card-->
         <scene sceneID="KiQ-re-BG5">
             <objects>
                 <viewController storyboardIdentifier="tab0" id="sq2-HH-ab7" customClass="IDCard" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
@@ -1011,7 +1013,7 @@
             </objects>
             <point key="canvasLocation" x="2865" y="2068"/>
         </scene>
-        <!--Tab1-->
+        <!--Grade-->
         <scene sceneID="o43-Cv-gRk">
             <objects>
                 <viewController storyboardIdentifier="tab1" id="2Pu-8x-531" customClass="Grade" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
@@ -1194,6 +1196,7 @@
                     <connections>
                         <outlet property="card" destination="2b5-rY-26S" id="maZ-wp-zx4"/>
                         <outlet property="mTableView" destination="ZyC-gx-f7c" id="ACT-zC-sZz"/>
+                        <outlet property="tableview1" destination="Trw-dr-xrE" id="3Qw-Jf-Qyh"/>
                         <outlet property="totalInfo" destination="ege-aP-fL2" id="LxU-Fb-uDZ"/>
                     </connections>
                 </viewController>
@@ -1201,7 +1204,7 @@
             </objects>
             <point key="canvasLocation" x="3544.8000000000002" y="2067.6161919040483"/>
         </scene>
-        <!--Tab2-->
+        <!--Credit-->
         <scene sceneID="le3-kp-7Kt">
             <objects>
                 <viewController storyboardIdentifier="tab2" id="kl7-Pm-5l3" customClass="Credit" customModule="GachonNoti" customModuleProvider="target" sceneMemberID="viewController">
@@ -1401,8 +1404,10 @@
                     <navigationItem key="navigationItem" id="Hhm-hQ-OeT"/>
                     <connections>
                         <outlet property="card" destination="eQ0-5S-RSH" id="jtc-lF-RUv"/>
-                        <outlet property="sinfo" destination="uR3-iU-LO0" id="w9c-VO-W6v"/>
                         <outlet property="mTableView" destination="BH8-mh-252" id="Ft8-ys-owz"/>
+                        <outlet property="sinfo" destination="uR3-iU-LO0" id="w9c-VO-W6v"/>
+                        <outlet property="tableview1" destination="CZa-o6-Dnn" id="phb-91-vM6"/>
+                        <outlet property="tableview2" destination="I87-b1-Mf5" id="ESg-kR-4rW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2U-dR-aMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
