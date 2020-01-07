@@ -12,32 +12,32 @@ import UIKit
 import SwiftSoup
 
 protocol MainDetailView: NSObjectProtocol {
-
+    
     func show_web(js: String)
     func initTitle()
-
+    
 }
 
 class MainDetailPresenter {
-
+    
     private var userView: MainDetailView?
-
+    
     init() {
     }
-
+    
     func make_web(str: String) {
         userView?.show_web(js: str)
     }
-
+    
     func attachView(_ view: MainDetailView, href: String) {
         userView = view
         request(href: href)
     }
-
+    
     func detachView() {
         userView = nil
     }
-
+    
     private func request(href: String) {
         //print(href)
         requestHTTP(url: href, completion: { result in
@@ -60,14 +60,14 @@ class MainDetailPresenter {
                                 //print(boardview)
                                 if (boardView.contains("<script>document.location.href=\"")) {
                                     let href2 = boardView.split2(w1: "<script>document.location.href=\""
-                                            , w2: "\";</script>")
+                                        , w2: "\";</script>")
                                     //print(href2)
                                     self.request(href: href2)
                                 } else {
                                     boardView = boardView.replace("src=\"/",
-                                            "src=\"http://www.gachon.ac.kr/")
+                                                                  "src=\"http://www.gachon.ac.kr/")
                                     boardView = boardView.replace("href=\"/",
-                                            "href=\"http://www.gachon.ac.kr/")
+                                                                  "href=\"http://www.gachon.ac.kr/")
                                     DispatchQueue.main.async {
                                         self.userView?.show_web(js: boardView)
                                     }

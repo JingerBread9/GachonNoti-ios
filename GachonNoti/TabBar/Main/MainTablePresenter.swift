@@ -11,58 +11,58 @@ import UIKit
 import SwiftSoup
 
 protocol MainTableView: NSObjectProtocol {
-
+    
     func makeTable(get: [[String]])
     func show_hud()
     func dismiss_hud()
-
+    
 }
 
 class MainTablePresenter {
-
+    
     private var data = [[String]]()
     private var userView: MainTableView?
     private var cnt = 0
     private var loading = false
     private var selectCateNum = "358"
-
+    
     init() {
     }
-
+    
     func changeCateNum(_ num: String) {
         selectCateNum = num
     }
-
+    
     func attachView(_ view: MainTableView) {
         userView = view
         findNotification(num: "0")
         //moreLoad()
     }
-
+    
     func detachView() {
         userView = nil
     }
-
+    
     func reloadData() {
         self.data = [[String]]()
         self.cnt = 0
         self.findNotification(num: "0")
     }
-
+    
     func getData() -> [[String]] {
         return data
     }
-
+    
     func isLoading() -> Bool {
         return loading
     }
-
+    
     func moreLoad() {
         loading = true
         request(num: cnt.description)
         cnt += 1
     }
-
+    
     private func request(num: String) {
         userView?.show_hud()
         let url = "http://m.gachon.ac.kr/gachon/notice.jsp?pageNum=" + num + "&pageSize=20&boardType_seq=" + selectCateNum
@@ -88,7 +88,7 @@ class MainTablePresenter {
             }
         })
     }
-
+    
     private func findNotification(num: String) {
         userView?.show_hud()
         let url = "http://m.gachon.ac.kr/gachon/notice.jsp?pageNum=" + num + "&pageSize=10&boardType_seq=" + selectCateNum
@@ -112,7 +112,7 @@ class MainTablePresenter {
             }
         })
     }
-
+    
     private func parseList(li: SwiftSoup.Element, cate: String) {
         do {
             var href = try li.select("a").attr("href")
