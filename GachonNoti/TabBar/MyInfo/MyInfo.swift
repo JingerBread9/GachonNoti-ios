@@ -16,25 +16,30 @@ class InfoMain: UIViewController {
     }
     
     @objc func move(sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
         
-        present(UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert).apply{ it in
-            it.addAction(UIAlertAction(title: "확인", style: .destructive){ (action) in
-                if (connectedToNetwork()) {
-                    notificationStudentIDOFF()
-                    setData("id", "")
-                    setData("pass", "")
-                    self.checkToShow()
-                } else {
-                    self.justAlert(title: "로그아웃 오류", msg: "인터넷 연결을 확인해주세요.")
-                }
-            })
-            it.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
-        }, animated: true, completion: nil)
+        func logout(alert: UIAlertAction!) {
+            if (connectedToNetwork()) {
+                notificationStudentIDOFF()
+                setData("id", "")
+                setData("pass", "")
+                self.checkToShow()
+            } else {
+                self.justAlert(title: "로그아웃 오류", msg: "인터넷 연결을 확인해주세요.")
+            }
+        }
+        
+        let global = UIAlertAction(title: "확인", style: .default, handler: logout)
+        alertController.addAction(global)
+        
+        let medical = UIAlertAction(title: "취소", style: .default, handler: nil)
+        alertController.addAction(medical)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         checkToShow()
     }
     
@@ -71,7 +76,7 @@ class InfoMain: UIViewController {
         addChild(viewController)
         view.addSubview(viewController.view)
         
-        let tabBarHeight = self.tabBarController!.tabBar.frame.size.height
+        //let tabBarHeight = self.tabBarController!.tabBar.frame.size.height
         viewController.view.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - 0)
         viewController.didMove(toParent: self)
     }

@@ -111,7 +111,7 @@ class MainTable: UITableViewController, UISearchBarDelegate{
         let isNotification = UserDefaults.standard.value(forKey: appVersion)
         if (isNotification == nil) {
             UserDefaults.standard.set("aa", forKey: appVersion)
-            justAlert(viewController: self, title: "업데이트 내용", msg: "ios13 대응")
+            justAlert(viewController: self, title: "업데이트 내용", msg: "iOS13 대응 및 버그 수정")
         }
     }
     
