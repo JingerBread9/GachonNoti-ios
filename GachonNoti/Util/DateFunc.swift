@@ -14,7 +14,7 @@ func getSemester() -> String {
     let monthFormatter = DateFormatter()
     monthFormatter.dateFormat = "M"
     let month = Int(monthFormatter.string(from: today as Date))!
-
+    
     if (month >= 3 && month <= 6) {
         return "1"
     } else if (month >= 7 && month <= 8) {
@@ -24,7 +24,7 @@ func getSemester() -> String {
     } else if (month >= 1 && month <= 2) {
         return "4"
     }
-
+    
     return "0"
 }
 
@@ -33,7 +33,7 @@ func getSemesterStr() -> String {
     let monthFormatter = DateFormatter()
     monthFormatter.dateFormat = "M"
     let month = Int(monthFormatter.string(from: today as Date))!
-
+    
     if (month >= 3 && month <= 6) {
         return "1학기"
     } else if (month >= 7 && month <= 8) {
@@ -43,7 +43,7 @@ func getSemesterStr() -> String {
     } else if (month >= 1 && month <= 2) {
         return "겨울학기"
     }
-
+    
     return "---"
 }
 
@@ -52,7 +52,7 @@ func getSemesterHttp() -> String {
     let monthFormatter = DateFormatter()
     monthFormatter.dateFormat = "M"
     let month = Int(monthFormatter.string(from: today as Date))!
-
+    
     if (month >= 3 && month <= 6) {
         return "10"
     } else if (month >= 7 && month <= 8) {
@@ -62,7 +62,7 @@ func getSemesterHttp() -> String {
     } else if (month >= 1 && month <= 2) {
         return "21"
     }
-
+    
     return "0"
 }
 

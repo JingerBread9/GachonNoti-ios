@@ -16,7 +16,7 @@ protocol SettingView: NSObjectProtocol {
 }
 
 class SettingPresenter {
-
+    
     private var userView : SettingView?
     
     init(){
@@ -29,7 +29,7 @@ class SettingPresenter {
     func detachView() {
         userView = nil
     }
-
+    
 }
 
 

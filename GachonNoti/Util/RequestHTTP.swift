@@ -26,7 +26,7 @@ func requestHTTPJson(url: String, json: Data, completion: @escaping (String) -> 
     var request = URLRequest(url: mUrl)
     request.httpMethod = "POST"
     request.httpBody = json
-
+    
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
         guard let data = data, error == nil else {
             return
@@ -45,16 +45,16 @@ func requestHTTPEUC(url: String, completion: @escaping (String) -> ()) {
         }
         //let result = NSString(data: data, encoding: String.Encoding.e)! as String
         guard let result = String(data: data, encoding: String.Encoding(rawValue: CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(
-                CFStringEncodings.EUC_KR.rawValue)))) else {
-            completion("<no-data>")
-            return
+            CFStringEncodings.EUC_KR.rawValue)))) else {
+                completion("<no-data>")
+                return
         }
         if (result.contains("haksuNo")) {
             completion(result)
         } else {
             completion("<no-data>")
         }
-
+        
     }
     task.resume()
 }
@@ -66,16 +66,16 @@ func requestPost(_ url: String, _ data: String, _ completion: @escaping (String)
     request.httpMethod = "POST"
     let parr = data
     request.httpBody = parr.data(using: .utf8)
-
+    
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
         guard let data = data, error == nil else {
             return
         }
         let result = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
-
+        
         completion(result)
     }
-
+    
     task.resume()
 }
 
@@ -86,7 +86,7 @@ extension Dictionary {
             let escapedValue = "\(value)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
             return escapedKey + "=" + escapedValue
         }
-                .joined(separator: "&")
+        .joined(separator: "&")
     }
 }
 
@@ -94,7 +94,7 @@ extension CharacterSet {
     static let urlQueryValueAllowed: CharacterSet = {
         let generalDelimitersToEncode = ":#[]@" // does not include "?" or "/" due to RFC 3986 - Section 3.4
         let subDelimitersToEncode = "!$&'()*+,;="
-
+        
         var allowed = CharacterSet.urlQueryAllowed
         allowed.remove(charactersIn: "\(generalDelimitersToEncode)\(subDelimitersToEncode)")
         return allowed
@@ -110,14 +110,14 @@ func connectedToNetwork() -> Bool {
             SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
         }
     }
-
+    
     var flags = SCNetworkReachabilityFlags()
     if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
         return false
     }
     let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
     let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
-
+    
     return (isReachable && !needsConnection)
 }
 

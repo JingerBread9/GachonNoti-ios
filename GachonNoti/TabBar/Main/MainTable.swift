@@ -78,7 +78,7 @@ class MainTable: UITableViewController, UISearchBarDelegate{
         super.viewDidLoad()
         userPresenter.attachView(self)
         showUpdateStr()
-
+        
         mRefreshControl = UIRefreshControl()
         mRefreshControl.tintColor = UIColor.white
         mRefreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)

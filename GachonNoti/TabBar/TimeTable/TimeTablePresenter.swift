@@ -12,7 +12,7 @@ import UIKit
 import CurriculaTable
 
 protocol TimeTableView: NSObjectProtocol {
-
+    
     func makeFAB()
     func makeTable(arrTable: Array<CurriculaTableItem>?, max: Int)
     func showAlert(viewController: UIViewController?, title: String, msg: String, buttonTitle: String, handler: ((UIAlertAction) -> Swift.Void)?)
@@ -21,43 +21,43 @@ protocol TimeTableView: NSObjectProtocol {
     func justAlert(viewController: UIViewController?, title: String, msg: String)
     func listAlert(arr: Array<String>, arr2: Array<String>, viewController: UIViewController?, title: String, msg: String)
     func setTitle(str: String)
-
+    
 }
 
 class timeTablePresenter {
-
+    
     let year = getYear()
     let semester = getSemester()
     let semesterStr = getSemesterStr()
     var ski = ""
-
+    
     var classData1: String?
     var classData2: String?
     var classData3: String?
-
+    
     var build = Array<String>()
     var buildTotal = Array<String>()
     private var userView: TimeTableView?
     private var getTableCount = 0
     private var getTableCountError = 0
-
+    
     init() {
     }
-
+    
     func attachView(_ view: TimeTableView) {
         userView = view
         initTitle()
         userView?.makeFAB()
     }
-
+    
     func detachView() {
         userView = nil
     }
-
+    
     func initTitle() {
         self.userView?.setTitle(str: semesterStr)
     }
-
+    
     func resetData() {
         ski = year + "-" + semester.description
         UserDefaults.standard.set("<no-data>", forKey: ski + "-1-" + getCampusHttp())
@@ -65,16 +65,16 @@ class timeTablePresenter {
         UserDefaults.standard.set("<no-data>", forKey: ski + "-3-" + getCampusHttp())
         self.userView?.justAlert(viewController: self.userView as? UIViewController, title: "성공", msg: "시간표 데이터를 리셋하였습니다.")
     }
-
+    
     func checkSearch() {
         ski = year + "-" + semester.description
         classData1 = getUserDefaults(ski + "-1-" + getCampusHttp())
         classData2 = getUserDefaults(ski + "-2-" + getCampusHttp())
         classData3 = getUserDefaults(ski + "-3-" + getCampusHttp())
-
+        
         if (classData1!.contains("<no-data>") &&
-                classData2!.contains("<no-data>") &&
-                classData3!.contains("<no-data>")) {
+            classData2!.contains("<no-data>") &&
+            classData3!.contains("<no-data>")) {
             toDownload(ski: ski)
         } else {
             self.userView?.show_hud()
@@ -109,11 +109,11 @@ class timeTablePresenter {
             }
         }
     }
-
+    
     func showTable(str: String) {
         var tableArr = Array<CurriculaTableItem>()
         var maxT = 0
-
+        
         FindTableXML(roomN: str, com: { sub, time, day in
             //print(sub)//print(time[0].description)//print(time[1].description)
             if (maxT < time[1]) {
@@ -130,19 +130,19 @@ class timeTablePresenter {
                 self.userView?.makeTable(arrTable: tableArr, max: maxT)
             }
         }).start(self.classData1!, self.classData2!, self.classData3!)
-
+        
     }
-
+    
     func toDownload(ski: String) {
         func someHandler(alert: UIAlertAction!) {
             request("searchIsuCD=002", ski + "-1")
             request("searchIsuCD=001", ski + "-2")
             request("searchIsuCD=004", ski + "-3")
         }
-
+        
         userView?.showAlert(viewController: userView! as? UIViewController, title: "[" + getCampusStr() + "] " + semesterStr + "\n시간표 데이터를 가져옵니다.", msg: "시간이 다소 걸릴 수 있으니 중간에 앱을 종료하지 마세요.\n(최초 한번만 다운로드 합니다.)", buttonTitle: "다운로드", handler: someHandler)
     }
-
+    
     private func request(_ para: String, _ ski: String) {
         userView?.show_hud()
         let url = "http://gcis.gachon.ac.kr/haksa/src/jsp/ssu/ssu1000q.jsp?"
@@ -164,5 +164,5 @@ class timeTablePresenter {
             }
         })
     }
-
+    
 }

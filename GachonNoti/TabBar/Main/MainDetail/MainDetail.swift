@@ -12,19 +12,19 @@ import JavaScriptCore
 import WebKit
 
 class MainDetail: UIViewController, UIWebViewDelegate {
-
+    
     let userPresenter = MainDetailPresenter()
-
+    
     var href: String?
     var titleS: String?
     var contentS: String?
     var dateS: String?
-
+    
     @IBOutlet var web: UIWebView!
     @IBOutlet var mContent: UILabel!
     @IBOutlet var mTitle: UILabel!
     @IBOutlet var mDate: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initTitle()
@@ -32,11 +32,11 @@ class MainDetail: UIViewController, UIWebViewDelegate {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(move))
         web.delegate = self
     }
-
+    
     @objc func move(sender: UIBarButtonItem) {
         UIApplication.shared.open(NSURL(string: href!)! as URL)
     }
-
+    
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
         if navigationType == .linkClicked {
             guard let url = request.url else {
@@ -50,11 +50,11 @@ class MainDetail: UIViewController, UIWebViewDelegate {
 }
 
 extension MainDetail: MainDetailView {
-
+    
     func show_web(js: String) {
         self.web.loadHTMLString(js, baseURL: nil)
     }
-
+    
     func initTitle() {
         self.navigationItem.title = titleS?.replace("[", "").replace("]", "")
         mTitle.text = dateS
@@ -63,7 +63,7 @@ extension MainDetail: MainDetailView {
         mContent.numberOfLines = 2;
         mDate.text = ""
     }
-
+    
 }
 
 

@@ -10,33 +10,33 @@ import Foundation
 import UIKit
 
 protocol InfoView: NSObjectProtocol {
-
+    
     func show_hud()
     func dismiss_hud()
     func reloadView()
     func justAlert(title: String, msg: String)
-
+    
 }
 
 class myInfoPresenter {
-
+    
     private var userView: InfoView?
-
+    
     init() {
     }
-
+    
     func attachView(_ view: InfoView) {
         userView = view
     }
-
+    
     func detachView() {
         userView = nil
     }
-
+    
     func login(_ id: String, _ pass: String) {
-
+        
         let parr = "{\"fsp_cmd\": \"login\",\"fsp_action\": \"UserAction\",\"DVIC_ID\": \"dwFraM1pVhl6mMn4npgL2dtZw7pZxw2lo2uqpm1yuMs=\",\"LOGIN_ID\": \"" + id + "\",\"USER_ID\": \"" + id + "\",\"PWD\": \"" + pass + "\",\"APPS_ID\": \"com.sz.Atwee.gachon\"}"
-
+        
         userView?.show_hud()
         requestPost("http://smart.gachon.ac.kr:8080//WebJSON", parr, { result in
             //print(result)
@@ -51,7 +51,7 @@ class myInfoPresenter {
                     setData("pass", aesEn)
                 } catch {
                 }
-
+                
                 DispatchQueue.main.async {
                     self.userView?.reloadView()
                 }
@@ -64,5 +64,5 @@ class myInfoPresenter {
             }
         })
     }
-
+    
 }
