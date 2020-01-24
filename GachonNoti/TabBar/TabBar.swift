@@ -23,14 +23,23 @@ class TabBar: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        if #available(iOS 13.0, *) {
+//            if self.traitCollection.userInterfaceStyle == .dark {
+//                dark_theme = true
+//            } else {
+//                dark_theme = false
+//            }
+//        }else {
+//            dark_theme = false
+//        }
+        
         if #available(iOS 13.0, *) {
-            if self.traitCollection.userInterfaceStyle == .dark {
-                dark_theme = true
-            } else {
-                dark_theme = false
+            if(getDarkMode()){
+                self.overrideUserInterfaceStyle = .dark
+            }else{
+                self.overrideUserInterfaceStyle = .light
             }
-        }else {
-            dark_theme = false
+            dark_theme = getDarkMode();
         }
         
         let randNum = arc4random_uniform(10000).description

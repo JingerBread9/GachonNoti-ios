@@ -22,6 +22,19 @@ func getNotification() -> Bool {
     }
 }
 
+func getDarkMode() -> Bool {
+    let isDark = UserDefaults.standard.value(forKey: "isdark")
+    if (isDark == nil) {
+        return false
+    } else {
+        if (isDark as! Int == 1) {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
 func getNotificationStudentID() -> Bool {
     let isNotification = UserDefaults.standard.value(forKey: "isnotisid")
     if (isNotification == nil) {
@@ -45,6 +58,14 @@ func notificationOFF() {
     Messaging.messaging().unsubscribe(fromTopic: "noti") { error in
         UserDefaults.standard.set(0, forKey: "isnoti")
     }
+}
+
+func darModeON() {
+    UserDefaults.standard.set(1, forKey: "isdark")
+}
+
+func darkModeOFF() {
+    UserDefaults.standard.set(0, forKey: "isdark")
 }
 
 func notificationStudentIDON() {
