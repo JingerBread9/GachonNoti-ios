@@ -26,7 +26,12 @@ class MainTablePresenter {
     private var loading = false
     private var selectCateNum = "358"
     
+    var notificationTitle = ""
+    var notificationHref = ""
+    var notificationDate = ""
+    
     init() {
+        getWiffyNoti()
     }
     
     func changeCateNum(_ num: String) {
@@ -63,6 +68,18 @@ class MainTablePresenter {
         cnt += 1
     }
     
+    private func getWiffyNoti(){
+        let randNum = arc4random_uniform(10000).description
+        requestHTTP(url: "http://wiffy.io/gachon/notification.txt?" + randNum, completion: { result in
+            let content = result.components(separatedBy: ",")
+            if(content[0] == "on"){
+                self.notificationTitle = content[1]
+                self.notificationDate = content[2]
+                self.notificationHref = content[3]
+            }
+        })
+    }
+    
     private func request(num: String) {
         userView?.show_hud()
         let url = "http://m.gachon.ac.kr/gachon/notice.jsp?pageNum=" + num + "&pageSize=20&boardType_seq=" + selectCateNum
@@ -82,6 +99,10 @@ class MainTablePresenter {
                 DispatchQueue.main.async {
                     self.userView?.dismiss_hud()
                     self.loading = false
+                    
+                    if(self.notificationTitle != "" && num == "0"){
+                        self.data.insert(contentsOf: [["[가천알림이]", self.notificationTitle, self.notificationDate, self.notificationHref, "n", "y", "noti"]], at: 0)
+                    }
                     self.userView?.makeTable(get: self.data)
                 }
             } catch {

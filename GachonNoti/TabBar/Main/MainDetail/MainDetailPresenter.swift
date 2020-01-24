@@ -15,6 +15,7 @@ protocol MainDetailView: NSObjectProtocol {
     
     func show_web(js: String)
     func initTitle()
+    func show_web_original(url: String)
     
 }
 
@@ -31,7 +32,11 @@ class MainDetailPresenter {
     
     func attachView(_ view: MainDetailView, href: String) {
         userView = view
-        request(href: href)
+        if(href.contains("gachon.ac.kr")){
+            request(href: href)
+        }else{
+            self.userView?.show_web_original(url: href)
+        }
     }
     
     func detachView() {

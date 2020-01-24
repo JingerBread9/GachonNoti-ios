@@ -22,7 +22,7 @@ class Setting: UITableViewController {
     
     @IBAction func darkSwitchListener(_ sender: Any) {
         showDarkPopupu()
-//        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+        //        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
     }
     @IBAction func notificationSwitchListener(_ sender: Any) {
         if notificationSwitch.isOn {
@@ -45,7 +45,7 @@ class Setting: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userPresenter.attachView(self)
-
+        
         notificationSwitch.setOn(getNotification(), animated: false)
         if #available(iOS 13.0, *) {
             darkSwitch.setOn(getDarkMode(), animated: false)
