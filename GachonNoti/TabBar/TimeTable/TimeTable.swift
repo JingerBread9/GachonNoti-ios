@@ -114,21 +114,28 @@ extension TimeTable: TimeTableView {
     }
     
     func show_hud() {
-        if (!NVActivityIndicatorPresenter.sharedInstance.isAnimating) {
-            let activityData = ActivityData()
-            NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+        DispatchQueue.main.async {
+            if (!NVActivityIndicatorPresenter.sharedInstance.isAnimating) {
+                let activityData = ActivityData()
+                NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+            }
         }
     }
     
     func dismiss_hud() {
-        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+        DispatchQueue.main.async {
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+        }
     }
     
     func justAlert(viewController: UIViewController?, title: String, msg: String) {
         let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         let cancel = UIAlertAction(title: "확인", style: .default, handler: nil)
         alertController.addAction(cancel)
-        viewController?.present(alertController, animated: true, completion: nil)
+        
+        DispatchQueue.main.async {
+            viewController?.present(alertController, animated: true, completion: nil)
+        }
     }
     
     func listAlert(arr: Array<String>, arr2: Array<String>, viewController: UIViewController?, title: String, msg: String) {
