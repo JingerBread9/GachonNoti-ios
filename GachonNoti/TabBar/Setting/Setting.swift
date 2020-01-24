@@ -17,7 +17,13 @@ class Setting: UITableViewController {
     @IBOutlet var mTableView: UITableView!
     @IBOutlet var notificationSwitch: UISwitch!
     @IBOutlet var campus: UILabel!
+    @IBOutlet var darkSwitch: UISwitch!
+    @IBOutlet weak var darkView: UIView!
     
+    @IBAction func darkSwitchListener(_ sender: Any) {
+        showDarkPopupu()
+//        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+    }
     @IBAction func notificationSwitchListener(_ sender: Any) {
         if notificationSwitch.isOn {
             print("to on")
@@ -39,11 +45,16 @@ class Setting: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userPresenter.attachView(self)
+
+        notificationSwitch.setOn(getNotification(), animated: false)
+        if #available(iOS 13.0, *) {
+            darkSwitch.setOn(getDarkMode(), animated: false)
+        }else{
+            darkView.isHidden = true
+        }
         
-        if (getNotification()) {
-            notificationSwitch.setOn(true, animated: false)
-        } else {
-            notificationSwitch.setOn(false, animated: false)
+        if(dark_theme){
+            self.navigationController?.navigationBar.barTintColor = UIColor.black
         }
         
         if (getCampus()) {
@@ -52,9 +63,7 @@ class Setting: UITableViewController {
             campus.text = "[메디컬]"
         }
         
-        if(dark_theme){
-            self.navigationController?.navigationBar.barTintColor = UIColor.black
-        }
+        
         //tableview.headerView(forSection: 2)?.detailTextLabel?.text = "상호 : 위피(WIFFY)\n사업자등록번호 : 572-16-01320\nⓒ WIFFY 2019"
     }
     
@@ -218,6 +227,30 @@ class Setting: UITableViewController {
         let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         let cancel = UIAlertAction(title: "확인", style: .default, handler: nil)
         alertController.addAction(cancel)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showDarkPopupu() {
+        let alertController = UIAlertController(title: "앱을 재시작하면 모드가 적용됩니다.", message: nil, preferredStyle: .alert)
+        
+        func globalHandler(alert: UIAlertAction!) {
+            if darkSwitch.isOn {
+                darModeON()
+            }else{
+                darkModeOFF()
+            }
+            exit(0)
+        }
+        
+        let global = UIAlertAction(title: "확인", style: .default, handler: globalHandler)
+        alertController.addAction(global)
+        
+        func medicalHandler(alert: UIAlertAction!) {
+            darkSwitch.setOn(!darkSwitch.isOn, animated: false)
+        }
+        
+        let medical = UIAlertAction(title: "취소", style: .default, handler: medicalHandler)
+        alertController.addAction(medical)
         self.present(alertController, animated: true, completion: nil)
     }
 }

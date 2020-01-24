@@ -57,7 +57,9 @@ class myInfoPresenter {
                 }
             } else {
                 //print("로그인실패")
-                self.userView?.justAlert(title: "로그인 실패", msg: "다시한번 확인해주세요.")
+                DispatchQueue.main.async {
+                    self.userView?.justAlert(title: "로그인 실패", msg: "다시한번 확인해주세요.")
+                }
             }
             DispatchQueue.main.async {
                 self.userView?.dismiss_hud()
