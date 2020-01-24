@@ -135,6 +135,8 @@ class timeTablePresenter {
     
     func toDownload(ski: String) {
         func someHandler(alert: UIAlertAction!) {
+            getTableCount = 0
+            getTableCountError = 0
             request("searchIsuCD=002", ski + "-1")
             request("searchIsuCD=001", ski + "-2")
             request("searchIsuCD=004", ski + "-3")
@@ -146,22 +148,28 @@ class timeTablePresenter {
     private func request(_ para: String, _ ski: String) {
         userView?.show_hud()
         let url = "http://gcis.gachon.ac.kr/haksa/src/jsp/ssu/ssu1000q.jsp?"
-        let url2 = "groupType=" + getCampusHttp() + "&searchYear=" + getYear() + "&searchTerm=" + getSemesterHttp() + "&" + para + "&operationType=MAINSEARCH&comType=DEPT_TOT_CD&comViewValue=N&comResultTarget=cbDeptCD&condition1=CS0000&condition2=20&condition3=TOT"
+        let url2 = "groupType=" + getCampusHttp() + "&searchYear=" + year + "&searchTerm=" + getSemesterHttp() + "&" + para + "&operationType=MAINSEARCH&comType=DEPT_TOT_CD&comViewValue=N&comResultTarget=cbDeptCD&condition1=CS0000&condition2=20&condition3=TOT"
         requestHTTPEUC(url: url + url2, completion: { result in
             let resultTMP = result.replace("(M)", "")
+
             UserDefaults.standard.set(resultTMP, forKey: ski + "-" + getCampusHttp())
             self.getTableCount += 1
-            if (self.getTableCount >= 3) {
-                self.userView?.dismiss_hud()
-                //self.userView?.justAlert(viewController: self.userView as? UIViewController, title: "성공", msg: "다운로드가 완료되었습니다.")
-                self.checkSearch()
-            }
+            
             if (result == "<no-data>") {
                 self.getTableCountError += 1
             }
+            
             if (self.getTableCountError >= 3) {
+                self.userView?.dismiss_hud()
                 self.userView?.justAlert(viewController: self.userView as? UIViewController, title: "실패", msg: "데이터가 없습니다.")
+            }else{
+                if (self.getTableCount >= 3) {
+                    self.userView?.dismiss_hud()
+                    //self.userView?.justAlert(viewController: self.userView as? UIViewController, title: "성공", msg: "다운로드가 완료되었습니다.")
+                    self.checkSearch()
+                }
             }
+            
         })
     }
     
