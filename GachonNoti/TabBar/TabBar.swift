@@ -43,7 +43,7 @@ class TabBar: UITabBarController {
         }
         
         let randNum = arc4random_uniform(10000).description
-        requestHTTP(url: "http://wiffy.io/gachon/updateiOS/id_1015.txt?" + randNum, completion: { result in
+        requestHTTP(url: "http://wiffy.io/gachon/updateiOS/id_0124.txt?" + randNum, completion: { result in
             //print(result)
             if (result != "wowgachon") {
                 DispatchQueue.main.async {
@@ -51,8 +51,7 @@ class TabBar: UITabBarController {
                 }
             }
         })
-        
-        
+
         //        if let arrayOfTabBarItems = self.tabBar.items as AnyObject as? NSArray,let
         //            tabBarItem = arrayOfTabBarItems[2] as? UITabBarItem {
         //

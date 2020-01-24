@@ -55,6 +55,11 @@ extension MainDetail: MainDetailView {
         self.web.loadHTMLString(js, baseURL: nil)
     }
     
+    func show_web_original(url: String) {
+        let urll = URL(string: url)
+        self.web.loadRequest(URLRequest(url: urll!))
+    }
+    
     func initTitle() {
         self.navigationItem.title = titleS?.replace("[", "").replace("]", "")
         mTitle.text = dateS
