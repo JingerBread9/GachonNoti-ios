@@ -77,7 +77,7 @@ class Setting: UITableViewController {
             return "정보"
         }
         if (section == 2) {
-            return "상호 : 위피(WIFFY)\n사업자등록번호 : 572-16-01320\nⓒ WIFFY 2019"
+            return "Copyright 2020 WIFFY\nLicensed under the Apache 2.0 License"
         }
         return ""
     }
@@ -246,7 +246,7 @@ class Setting: UITableViewController {
         alertController.addAction(global)
         
         func medicalHandler(alert: UIAlertAction!) {
-            darkSwitch.setOn(!darkSwitch.isOn, animated: false)
+            darkSwitch.setOn(!darkSwitch.isOn, animated: true)
         }
         
         let medical = UIAlertAction(title: "취소", style: .default, handler: medicalHandler)
